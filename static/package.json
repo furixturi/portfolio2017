@@ -1,0 +1,7 @@
+{
+  "name": "portfolio2017",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp-concat": "^2.6.1"
+  }
+}
