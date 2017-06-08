@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    webserver = require('gulp-webserver');
 
 gulp.task('sass', function() {
     gulp.src(['src/scss/*.scss',
@@ -15,4 +16,13 @@ gulp.task('watch', function() {
             'src/components/*/scss/*.scss'], ['sass'])
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('webserver', function() {
+    gulp.src('src')
+        .pipe(webserver({
+            livereload: true,
+            directoryListing: false,
+            open: true
+        }));
+});
+
+gulp.task('default', ['watch', 'webserver']);
