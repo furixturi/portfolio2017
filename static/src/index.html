@@ -13,6 +13,16 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <link rel="shortcut icon" href="">
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'oxv7bnf',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
 </head>
 <body>
     <nav class="navi">
@@ -22,7 +32,14 @@
             <li><a href="#" data-navi="lab">Lab</a></li>        
         </ul>
     </nav>
-    <article id="home"></article>
+    <article id="home">
+        <h1>
+            Hi, welcome to the online residence of
+            <span class="name">Shen Xiaoli,</span>
+            a craftswoman of
+            <span class="">digital experiences.</span>
+        </h1>
+    </article>
     <article id="projects"></article>
     <article id="about"></article>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
