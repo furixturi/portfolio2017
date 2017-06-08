@@ -1,0 +1,14 @@
+/* home--------------*/
+#home {
+    h1 {
+        font-weight: 100;
+        span {
+            display: block;
+
+            &.name {
+                font-weight: 600;
+            }
+        }
+    }
+    
+}
