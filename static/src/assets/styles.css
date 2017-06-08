@@ -1,5 +1,8 @@
 /* Colors -------------------*/
 /* Fonts --------------------*/
+html {
+  font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 /* Typography ---------------*/
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -39,3 +42,11 @@ nav li {
 nav a {
   color: #666666;
   text-decoration: none; }
+
+/* home--------------*/
+#home h1 {
+  font-weight: 100; }
+  #home h1 span {
+    display: block; }
+    #home h1 span.name {
+      font-weight: 600; }
