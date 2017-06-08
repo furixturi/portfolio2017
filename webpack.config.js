@@ -6,10 +6,15 @@ module.exports = {
     ],
     module: {
         loaders: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'react-hot-loader!babel-loader'
-        }]
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'react-hot-loader!babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'sass']
+            }
+        ]
     },
     resolve: {
         extensions: ['*', '.js', '.jsx']    
