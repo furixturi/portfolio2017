@@ -21,8 +21,9 @@ gulp.task('webserver', function() {
         .pipe(webserver({
             livereload: true,
             directoryListing: false,
-            open: true
+            open: true,
+            host: '0.0.0.0'
         }));
 });
 
-gulp.task('default', ['watch', 'webserver']);
+gulp.task('default', ['webserver', 'watch']);
