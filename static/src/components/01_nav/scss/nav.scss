@@ -1,7 +1,5 @@
 nav {
-    ul {
-        
-    }
+    display: block;
 
     li {
         display: inline-block;
@@ -10,5 +8,54 @@ nav {
     a {
         color: $text-color;
         text-decoration: none;
+        display: inline-block;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 67px); //fix mobile safari problem of viewport height changing
+        min-height: 560px;
+
+        li {
+            display: block;
+            position: absolute;            
+
+            &.bottom { //PROJECTS
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &.left { //LAB
+                transform-origin: 0 100%;
+                transform: rotate(90deg) translateX(-100%);
+                left: 20px;
+                top: 50%;
+            }
+
+            &.right {//ABOUT                
+                transform-origin: 100% 100%;
+                transform: rotate(-90deg) translateX(80%);
+                right: 20px;
+                top: 50%;
+            }
+        }
+
+        a {
+            font-family: "Roboto", Arial, sans-serif;
+            @include fontSize(18px);
+            text-transform: uppercase;
+            color: black;
+            padding: 5px 6px 5px 10px;
+            border: 1px solid black;
+            letter-spacing: 0.2em;
+        }
+    }
+
+    @media only screen and (max-width: 767px) and (orientation: landscape) { 
+        min-height: 667px;
     }
 }

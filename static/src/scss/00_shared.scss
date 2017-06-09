@@ -1,3 +1,19 @@
+
+/* Function and mixins -----*/
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+}
+
+@function lineHeight($pixelFontSize, $pixelLineHeight) {
+    @return $pixelLineHeight / $pixelFontSize;
+}
+
 /* Colors -------------------*/
 $text-color: #666666;
 $highlight-color: #231f20;
@@ -7,6 +23,7 @@ $highlight-color: #231f20;
 html {
     font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 
 
 /* Typography ---------------*/
