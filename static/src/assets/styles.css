@@ -52,6 +52,13 @@ html {
   font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* Typography ---------------*/
+/* Layout -------------------*/
+nav, section {
+  width: 100vw; }
+  nav > .container, section > .container {
+    max-width: 1440px;
+    margin: 0 auto; }
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (max-width: 767px) {
   /* Styles */ }
@@ -146,7 +153,6 @@ nav {
 /* home--------------*/
 #home {
   width: 100vw;
-  height: 100vh;
   display: block; }
   #home h1 {
     font-weight: 100;
@@ -187,3 +193,6 @@ nav {
           font-size: 26px;
           font-size: 1.625rem;
           line-height: 1.23077; } }
+  @media only screen and (min-width: 768px) {
+    #home {
+      height: 100vh; } }

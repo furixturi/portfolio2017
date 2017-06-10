@@ -1,7 +1,6 @@
 /* home--------------*/
 #home {
     width: 100vw;
-    height: 100vh;
     display: block;
 
     h1 {
@@ -25,6 +24,7 @@
         margin: 0 auto;
     }
 
+    // mobile
     @media only screen and (max-width: 767px) {
         height: auto;
         
@@ -59,6 +59,11 @@
             }
 
         }
+    }
+
+    // tablet and desktop
+    @media only screen and (min-width: 768px) {
+        height: 100vh;
     }
 }
 
