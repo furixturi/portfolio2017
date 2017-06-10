@@ -1,5 +1,15 @@
 
 /* Function and mixins -----*/
+// clearfix
+@mixin clearfix {
+    &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+}
+
+// font size and line height calculation s
 @function calculateRem($size) {
     $remSize: $size / 16px;
     @return #{$remSize}rem;
@@ -13,6 +23,8 @@
 @function lineHeight($pixelFontSize, $pixelLineHeight) {
     @return $pixelLineHeight / $pixelFontSize;
 }
+
+//
 
 /* Colors -------------------*/
 $text-color: #666666;

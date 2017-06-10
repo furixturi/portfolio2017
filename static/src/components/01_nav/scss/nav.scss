@@ -1,5 +1,11 @@
 nav {
     display: block;
+    position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 1440px;
+        margin: 0 auto;
 
     li {
         display: inline-block;
@@ -11,11 +17,8 @@ nav {
         display: inline-block;
     }
     
+    // mobile
     @media only screen and (max-width: 767px) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
         height: calc(100vh - 67px); //fix mobile safari problem of viewport height changing
         min-height: 560px;
 
@@ -49,13 +52,29 @@ nav {
             @include fontSize(18px);
             text-transform: uppercase;
             color: black;
-            padding: 5px 6px 5px 10px;
+            padding: 5px 8px 5px 10px;
             border: 1px solid black;
             letter-spacing: 0.2em;
         }
     }
 
+    // mobile landscape
     @media only screen and (max-width: 767px) and (orientation: landscape) { 
         min-height: 667px;
+    }
+
+    // tablet and desktop
+    @media only screen and (min-width: 768px) {
+        @include clearfix;
+
+        ul {
+            float: right;
+            margin-top: 30px;
+            margin-right: 60px;
+        }
+
+        li {margin-left: 40px;
+
+        }
     }
 }
