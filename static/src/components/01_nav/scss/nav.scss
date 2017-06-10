@@ -2,9 +2,8 @@ nav {
     display: block;
     position: absolute;
         top: 0;
-        left: 0;
-        width: 100vw;
-        max-width: 1440px;
+        left: 50%;
+        transform: translateX(-50%);
         margin: 0 auto;
 
     li {
@@ -73,12 +72,15 @@ nav {
 
         ul {
             float: right;
-            margin-top: 30px;
-            margin-right: 60px;
+            margin-top: 20px;
+            margin-right: 50px;
         }
 
-        li {margin-left: 40px;
-
+        li {
+            margin-left: 20px;
+            a {
+                padding: 10px;
+            }
         }
     }
 }
