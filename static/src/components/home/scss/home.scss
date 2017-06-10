@@ -17,29 +17,8 @@
     img#face {
         display: block;
         width: 33.333333%;
-        max-width: 160px;
         border-radius: 50%;
         margin: 0 auto;
-    }
-
-    .scrollCTA {
-        color: black;
-        display: block;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        position: absolute;
-        bottom: 35px;
-        left: 50%;
-        transform: translateX(-50%);
-
-
-        .icon {
-            display: block;
-            text-align: center;
-            font-size: 30px;
-            margin-top: 10px;
-        }
     }
 
     // mobile
@@ -58,7 +37,6 @@
 
         h1 {
             text-align: center;
-            
             line-height: lineHeight(20, 27);
 
             .greeting {
@@ -94,8 +72,9 @@
             min-height: 660px;
             position: relative;
         }
-        
+
         img#face {
+            max-width: 160px;
             margin-top: 200 / 900 * 100vh;
             margin-bottom: 40px;
         }
@@ -120,6 +99,26 @@
         .craft {
             @include fontSize(36px);
         }
+
+        .scrollCTA {
+            color: black;
+            display: block;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .icon {
+                display: block;
+                text-align: center;
+                font-size: 30px;
+                margin-top: 10px;
+            }
+        }
+
     }
 
     // hd desktop
