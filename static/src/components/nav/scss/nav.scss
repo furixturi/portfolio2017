@@ -71,6 +71,7 @@ nav {
         }
     }
 
+    // real mobile device
     @media only screen and (max-device-width: 736px) {
         height: calc(100vh - 67px); //fix mobile browser problem of viewport height changing
     }
@@ -82,6 +83,8 @@ nav {
 
     // tablet and desktop
     @media only screen and (min-width: 768px) {
+        position: fixed;
+        
         @include clearfix;
         width: 100vw;
         > .container {
