@@ -23,12 +23,18 @@ nav {
     }
 
     // mobile
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 767px) {;
+        width: 100vw;
         height: 100vh;
         min-height: 560px;
+        > .container {
+            min-height: 560px;
+        }
+        
         .slogan {
             display: none;
         }
+
         li {
             display: block;
             position: absolute;            
@@ -77,6 +83,11 @@ nav {
     // tablet and desktop
     @media only screen and (min-width: 768px) {
         @include clearfix;
+        width: 100vw;
+        > .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
         .slogan {
             float: left;
             @include fontSize(14px);
