@@ -5,15 +5,15 @@
         font-weight: 100;
         span {
             display: block;
-
-            &.name {
-                font-weight: 600;
-            }
         }
-        max-width: 455px;
+        
         margin: 0 auto;
     }
     
+    .name {
+        font-weight: 600;
+    }
+
     img#face {
         display: block;
         width: 33.333333%;
@@ -62,6 +62,45 @@
     // tablet and desktop
     @media only screen and (min-width: 768px) {
         height: 100vh;
+        
+        img#face {
+            margin-top: 200 / 900 * 100vh;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            @include fontSize(24px);
+            line-height: lineHeight(28, 36);
+            max-width: 392px;
+        }
+
+        .greeting, .residence {
+            display: inline;
+        }
+
+        .name {
+            font-weight: 400;
+            @include fontSize(50px);
+            line-height: lineHeight(64, 82);
+        }
+
+        .craft {
+            @include fontSize(36px);
+        }
+    }
+
+    // hd desktop
+    @media only screen and (min-width: 1024px) {
+        h1 {
+            @include fontSize(28px); 
+            max-width: 456px;           
+        }
+        .name {
+            @include fontSize(64px);
+        }
+        .craft {
+            @include fontSize(48px);
+        }
     }
 }
 
