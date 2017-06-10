@@ -45,7 +45,34 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?kexani");
+  src: url("fonts/icomoon.eot?kexani#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?kexani") format("truetype"), url("fonts/icomoon.woff?kexani") format("woff"), url("fonts/icomoon.svg?kexani#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-icon-arrow-down:before {
+  content: "\e900"; }
+
 /* Function and mixins -----*/
+/* Normalize ----------------*/
+a {
+  text-decoration: none; }
+
 /* Colors -------------------*/
 /* Fonts --------------------*/
 html {
@@ -54,7 +81,8 @@ html {
 /* Typography ---------------*/
 /* Layout -------------------*/
 * {
-  overflow: auto; }
+  overflow: auto;
+  transition: all 200ms ease; }
 
 nav, section {
   width: 100vw; }
@@ -94,6 +122,104 @@ nav, section {
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
 
+/* home--------------*/
+#home h1 {
+  font-weight: 100;
+  margin: 0 auto; }
+  #home h1 span {
+    display: block; }
+
+#home .name {
+  font-weight: 600; }
+
+#home img#face {
+  display: block;
+  width: 33.333333%;
+  max-width: 160px;
+  border-radius: 50%;
+  margin: 0 auto; }
+
+#home .scrollCTA {
+  color: black;
+  display: block;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%); }
+  #home .scrollCTA .icon {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px; }
+
+@media only screen and (max-width: 767px) {
+  #home {
+    height: auto; }
+    #home .scrollCTA {
+      display: none; }
+    #home img#face {
+      max-width: 250px;
+      margin-top: 80px;
+      margin-bottom: 30px; }
+    #home h1 {
+      text-align: center;
+      line-height: 1.35; }
+      #home h1 .greeting {
+        font-size: 30px;
+        font-size: 1.875rem; }
+      #home h1 .preps, #home h1 .residence, #home h1 .role {
+        font-size: 20px;
+        font-size: 1.25rem; }
+      #home h1 .name {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 1.3125; }
+      #home h1 .role {
+        line-height: 1.5; }
+      #home h1 .craft {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 1.23077; } }
+
+@media only screen and (min-width: 768px) {
+  #home > .container {
+    height: 100vh;
+    min-height: 660px;
+    position: relative; }
+  #home img#face {
+    margin-top: 22.22222vh;
+    margin-bottom: 40px; }
+  #home h1 {
+    line-height: 1.28571;
+    max-width: 392px; }
+  #home .greeting, #home .preps, #home .residence, #home .role {
+    display: inline;
+    font-size: 24px;
+    font-size: 1.5rem; }
+  #home .name {
+    font-weight: 400;
+    font-size: 50px;
+    font-size: 3.125rem;
+    line-height: 1.28125; }
+  #home .craft {
+    font-size: 36px;
+    font-size: 2.25rem; } }
+
+@media only screen and (min-width: 1024px) {
+  #home h1 {
+    font-size: 28px;
+    font-size: 1.75rem;
+    max-width: 456px; }
+  #home .name {
+    font-size: 64px;
+    font-size: 4rem; }
+  #home .craft {
+    font-size: 48px;
+    font-size: 3rem; } }
+
 nav {
   display: block;
   position: absolute;
@@ -106,7 +232,7 @@ nav {
   nav a {
     color: #666666;
     text-decoration: none;
-    display: inline-block; }
+    display: block; }
   @media only screen and (max-width: 767px) {
     nav {
       height: 100vh;
@@ -156,80 +282,3 @@ nav {
       margin-left: 20px; }
       nav li a {
         padding: 10px; } }
-
-/* home--------------*/
-#home h1 {
-  font-weight: 100;
-  margin: 0 auto; }
-  #home h1 span {
-    display: block; }
-
-#home .name {
-  font-weight: 600; }
-
-#home img#face {
-  display: block;
-  width: 33.333333%;
-  max-width: 160px;
-  border-radius: 50%;
-  margin: 0 auto; }
-
-@media only screen and (max-width: 767px) {
-  #home {
-    height: auto; }
-    #home img#face {
-      max-width: 250px;
-      margin-top: 80px;
-      margin-bottom: 30px; }
-    #home h1 {
-      text-align: center;
-      font-size: 20px;
-      font-size: 1.25rem;
-      line-height: 1.35; }
-      #home h1 .greeting {
-        font-size: 30px;
-        font-size: 1.875rem; }
-      #home h1 .name {
-        font-size: 32px;
-        font-size: 2rem;
-        line-height: 1.3125; }
-      #home h1 .role {
-        line-height: 1.5; }
-      #home h1 .craft {
-        font-size: 26px;
-        font-size: 1.625rem;
-        line-height: 1.23077; } }
-
-@media only screen and (min-width: 768px) {
-  #home {
-    height: 100vh; }
-    #home img#face {
-      margin-top: 22.22222vh;
-      margin-bottom: 40px; }
-    #home h1 {
-      font-size: 24px;
-      font-size: 1.5rem;
-      line-height: 1.28571;
-      max-width: 392px; }
-    #home .greeting, #home .residence {
-      display: inline; }
-    #home .name {
-      font-weight: 400;
-      font-size: 50px;
-      font-size: 3.125rem;
-      line-height: 1.28125; }
-    #home .craft {
-      font-size: 36px;
-      font-size: 2.25rem; } }
-
-@media only screen and (min-width: 1024px) {
-  #home h1 {
-    font-size: 28px;
-    font-size: 1.75rem;
-    max-width: 456px; }
-  #home .name {
-    font-size: 64px;
-    font-size: 4rem; }
-  #home .craft {
-    font-size: 48px;
-    font-size: 3rem; } }

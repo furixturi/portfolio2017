@@ -26,6 +26,11 @@
 
 //
 
+/* Normalize ----------------*/
+a {
+    text-decoration: none;
+}
+
 /* Colors -------------------*/
 $text-color: #666666;
 $highlight-color: #231f20;
@@ -44,6 +49,7 @@ html {
 /* Layout -------------------*/
 * {
     overflow: auto; //don't collapse margin so marign-top on child doesn't move parent
+    transition: all 200ms ease; //smooth everything
 }
 
 nav, section {

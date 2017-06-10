@@ -22,10 +22,34 @@
         margin: 0 auto;
     }
 
+    .scrollCTA {
+        color: black;
+        display: block;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+
+
+        .icon {
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+    }
+
     // mobile
     @media only screen and (max-width: 767px) {
         height: auto;
-        
+
+        .scrollCTA {
+            display: none;
+        }
+
         img#face {
             max-width: 250px;
             margin-top: 80px; 
@@ -34,12 +58,15 @@
 
         h1 {
             text-align: center;
-
-            @include fontSize(20px);
+            
             line-height: lineHeight(20, 27);
 
             .greeting {
                 @include fontSize(30px);
+            }
+
+            .preps, .residence, .role {
+                @include fontSize(20px);
             }
 
             .name {
@@ -61,7 +88,12 @@
 
     // tablet and desktop
     @media only screen and (min-width: 768px) {
-        height: 100vh;
+
+        > .container {
+            height: 100vh;
+            min-height: 660px;
+            position: relative;
+        }
         
         img#face {
             margin-top: 200 / 900 * 100vh;
@@ -69,13 +101,14 @@
         }
 
         h1 {
-            @include fontSize(24px);
+            
             line-height: lineHeight(28, 36);
             max-width: 392px;
         }
 
-        .greeting, .residence {
+        .greeting, .preps, .residence, .role {
             display: inline;
+            @include fontSize(24px);
         }
 
         .name {
