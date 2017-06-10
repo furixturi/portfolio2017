@@ -5,6 +5,7 @@ nav {
         left: 50%;
         transform: translateX(-50%);
         margin: 0 auto;
+    z-index: 1;
 
     li {
         display: inline-block;
@@ -15,12 +16,19 @@ nav {
         text-decoration: none;
         display: block;
     }
-    
+
+    .slogan {
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+
     // mobile
     @media only screen and (max-width: 767px) {
         height: 100vh;
         min-height: 560px;
-
+        .slogan {
+            display: none;
+        }
         li {
             display: block;
             position: absolute;            
@@ -69,7 +77,13 @@ nav {
     // tablet and desktop
     @media only screen and (min-width: 768px) {
         @include clearfix;
-
+        .slogan {
+            float: left;
+            @include fontSize(14px);
+            .name {
+                @include fontSize(18px);
+            }
+        }
         ul {
             float: right;
             margin-top: 20px;
