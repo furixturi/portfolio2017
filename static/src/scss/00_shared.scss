@@ -52,12 +52,22 @@ html {
     transition: all 200ms ease; //smooth everything
 }
 
-nav, section {
+.full-viewport {
     width: 100vw;
+    height: 100vh;
+
     > .container {
+        position: relative;
         max-width: 1440px;
         margin: 0 auto;
+        height: 100vh;        
+    }
 
-        //border: 1px solid #ccc; //DEBUG
-    }    
+    @media only screen and (min-width: 768px) {
+        min-height: 660px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        min-height: 560px;
+    }
 }

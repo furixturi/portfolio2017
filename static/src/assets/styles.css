@@ -84,11 +84,20 @@ html {
   overflow: auto;
   transition: all 200ms ease; }
 
-nav, section {
-  width: 100vw; }
-  nav > .container, section > .container {
+.full-viewport {
+  width: 100vw;
+  height: 100vh; }
+  .full-viewport > .container {
+    position: relative;
     max-width: 1440px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    height: 100vh; }
+  @media only screen and (min-width: 768px) {
+    .full-viewport {
+      min-height: 660px; } }
+  @media only screen and (max-width: 767px) {
+    .full-viewport {
+      min-height: 560px; } }
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (max-width: 767px) {
@@ -122,6 +131,93 @@ nav, section {
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
 
+#adam-visualizer {
+  background: #faf5f5; }
+
+nav {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  z-index: 1; }
+  nav li {
+    display: inline-block; }
+  nav a {
+    color: #666666;
+    text-decoration: none;
+    display: block; }
+  nav .slogan {
+    margin-top: 30px;
+    margin-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    nav {
+      width: 100vw;
+      height: 100vh;
+      min-height: 560px; }
+      nav > .container {
+        min-height: 560px; }
+      nav .slogan {
+        display: none; }
+      nav li {
+        display: block;
+        position: absolute; }
+        nav li.bottom {
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%); }
+        nav li.left {
+          transform-origin: 0 100%;
+          transform: rotate(90deg) translateX(-100%);
+          left: 20px;
+          top: 50%; }
+        nav li.right {
+          transform-origin: 100% 100%;
+          transform: rotate(-90deg) translateX(80%);
+          right: 20px;
+          top: 50%; }
+      nav a {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px 8px 5px 10px;
+        border: 1px solid black;
+        letter-spacing: 0.2em; } }
+  @media only screen and (max-device-width: 736px) {
+    nav {
+      height: calc(100vh - 67px); } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    nav {
+      min-height: 667px; } }
+  @media only screen and (min-width: 768px) {
+    nav {
+      width: 100vw; }
+      nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      nav > .container {
+        max-width: 1440px;
+        margin: 0 auto; }
+      nav .slogan {
+        float: left;
+        font-size: 14px;
+        font-size: 0.875rem; }
+        nav .slogan .name {
+          font-size: 18px;
+          font-size: 1.125rem; }
+      nav ul {
+        float: right;
+        margin-top: 20px;
+        margin-right: 50px; }
+      nav li {
+        margin-left: 20px; }
+        nav li a {
+          padding: 10px; } }
+
 /* home--------------*/
 #home h1 {
   font-weight: 100;
@@ -135,25 +231,8 @@ nav, section {
 #home img#face {
   display: block;
   width: 33.333333%;
-  max-width: 160px;
   border-radius: 50%;
   margin: 0 auto; }
-
-#home .scrollCTA {
-  color: black;
-  display: block;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: absolute;
-  bottom: 35px;
-  left: 50%;
-  transform: translateX(-50%); }
-  #home .scrollCTA .icon {
-    display: block;
-    text-align: center;
-    font-size: 30px;
-    margin-top: 10px; }
 
 @media only screen and (max-width: 767px) {
   #home {
@@ -190,6 +269,7 @@ nav, section {
     min-height: 660px;
     position: relative; }
   #home img#face {
+    max-width: 160px;
     margin-top: 22.22222vh;
     margin-bottom: 40px; }
   #home h1 {
@@ -206,7 +286,22 @@ nav, section {
     line-height: 1.28125; }
   #home .craft {
     font-size: 36px;
-    font-size: 2.25rem; } }
+    font-size: 2.25rem; }
+  #home .scrollCTA {
+    color: black;
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%); }
+    #home .scrollCTA .icon {
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 10px; } }
 
 @media only screen and (min-width: 1024px) {
   #home h1 {
@@ -219,79 +314,3 @@ nav, section {
   #home .craft {
     font-size: 48px;
     font-size: 3rem; } }
-
-nav {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto;
-  z-index: 1; }
-  nav li {
-    display: inline-block; }
-  nav a {
-    color: #666666;
-    text-decoration: none;
-    display: block; }
-  nav .slogan {
-    margin-top: 30px;
-    margin-left: 40px; }
-  @media only screen and (max-width: 767px) {
-    nav {
-      height: 100vh;
-      min-height: 560px; }
-      nav .slogan {
-        display: none; }
-      nav li {
-        display: block;
-        position: absolute; }
-        nav li.bottom {
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%); }
-        nav li.left {
-          transform-origin: 0 100%;
-          transform: rotate(90deg) translateX(-100%);
-          left: 20px;
-          top: 50%; }
-        nav li.right {
-          transform-origin: 100% 100%;
-          transform: rotate(-90deg) translateX(80%);
-          right: 20px;
-          top: 50%; }
-      nav a {
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        color: black;
-        padding: 5px 8px 5px 10px;
-        border: 1px solid black;
-        letter-spacing: 0.2em; } }
-  @media only screen and (max-device-width: 736px) {
-    nav {
-      height: calc(100vh - 67px); } }
-  @media only screen and (max-width: 767px) and (orientation: landscape) {
-    nav {
-      min-height: 667px; } }
-  @media only screen and (min-width: 768px) {
-    nav:after {
-      content: "";
-      display: table;
-      clear: both; }
-    nav .slogan {
-      float: left;
-      font-size: 14px;
-      font-size: 0.875rem; }
-      nav .slogan .name {
-        font-size: 18px;
-        font-size: 1.125rem; }
-    nav ul {
-      float: right;
-      margin-top: 20px;
-      margin-right: 50px; }
-    nav li {
-      margin-left: 20px; }
-      nav li a {
-        padding: 10px; } }
