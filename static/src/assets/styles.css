@@ -86,7 +86,8 @@ html {
 
 .full-viewport {
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
   .full-viewport > .container {
     position: relative;
     max-width: 1440px;
@@ -130,9 +131,6 @@ html {
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
-
-#adam-visualizer {
-  background: #faf5f5; }
 
 nav {
   display: block;
@@ -194,6 +192,7 @@ nav {
       min-height: 667px; } }
   @media only screen and (min-width: 768px) {
     nav {
+      position: fixed;
       width: 100vw; }
       nav:after {
         content: "";
@@ -314,3 +313,68 @@ nav {
   #home .craft {
     font-size: 48px;
     font-size: 3rem; } }
+
+#projects article {
+  position: relative; }
+  #projects article .lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; }
+    @media only screen and (min-width: 768px) {
+      #projects article .lines {
+        min-height: 660px; } }
+    @media only screen and (max-width: 767px) {
+      #projects article .lines {
+        min-height: 560px; } }
+    #projects article .lines span {
+      display: block;
+      position: absolute; }
+    #projects article .lines span.vertical {
+      width: 0;
+      border-left: 1px solid #b3b3b3; }
+    #projects article .lines span.horizontal {
+      height: 0;
+      width: 83.88889%;
+      border-top: 1px solid #b3b3b3; }
+      #projects article .lines span.horizontal.top {
+        top: 22.22222%;
+        left: 0;
+        max-width: 1208px;
+        min-width: calc(200 / 1440 * 100% + 687px + (140 / 1440 * 100%)); }
+      #projects article .lines span.horizontal.bottom {
+        top: calc((200 / 900) * 100% + 389px);
+        right: 0;
+        min-width: calc(100vw - (200 / 1440) * 100% + 77px); }
+    #projects article .lines span.vertical {
+      height: 84.44444%; }
+
+#projects .key-visual {
+  position: absolute;
+  width: 680px;
+  height: 381px;
+  left: calc((200 / 1440) * 100% + 4px);
+  top: calc((200 / 900) * 100% + 4px); }
+  #projects .key-visual img {
+    transform: perspective(950px) scale(0.9, 0.9) rotate3d(0, -10, 0, -35deg) translate(-95px, 10px); }
+  #projects .key-visual:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: black;
+    opacity: 0.55; }
+
+#projects article:nth-child(odd) .lines span.vertical.left {
+  left: calc((200 / 1440) * 100%);
+  bottom: 0; }
+
+#projects article:nth-child(odd) .lines span.vertical.right {
+  left: calc((200 / 1440) * 100% + 687px);
+  top: 0; }
+
+#adam-visualizer {
+  background: #faf5f5; }

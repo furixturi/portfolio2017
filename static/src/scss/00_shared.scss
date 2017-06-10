@@ -34,6 +34,7 @@ a {
 /* Colors -------------------*/
 $text-color: #666666;
 $highlight-color: #231f20;
+$line-color: #b3b3b3;
 
 
 /* Fonts --------------------*/
@@ -55,6 +56,7 @@ html {
 .full-viewport {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 
     > .container {
         position: relative;

@@ -1,0 +1,106 @@
+#projects {
+
+    article {
+        position: relative;
+
+        .lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            @media only screen and (min-width: 768px) {
+                min-height: 660px;
+            }
+
+            @media only screen and (max-width: 767px) {
+                min-height: 560px;
+            }
+
+            span {
+                display: block;
+                position: absolute;
+            }
+
+            span.vertical {
+                width: 0;
+                //height: calc(100vh - 140px);
+                border-left: 1px solid $line-color;              
+            }
+
+            span.horizontal {
+                height: 0;
+                //width: calc(100vw - 240px);
+                width: (1208 / 1440) * 100%;
+                border-top: 1px solid $line-color;
+
+                &.top {
+                    top: (200 / 900) * 100%;
+                    left: 0;
+                    max-width: 1208px;
+                    min-width: calc(200 / 1440 * 100% + 687px + (140 / 1440 * 100%));
+                    //transform: translate(0, 200px);
+                }
+
+                &.bottom {
+                    top: calc((200 / 900) * 100% + 389px);
+                    right: 0;
+                    min-width: calc(100vw - (200 / 1440) * 100% + 77px);
+                    //transform: translate(122px, 589px);
+                }
+            }
+
+            span.vertical {
+                height: (760 / 900) * 100%;
+            }
+        } 
+    }
+
+    .key-visual {
+        position: absolute;
+        width: 680px;
+        height: 381px;
+        left: calc((200 / 1440) * 100% + 4px);
+        top: calc((200 / 900) * 100% + 4px);
+
+        img {
+            transform: perspective(950px) 
+                        scale(0.9, 0.9) 
+                        rotate3d(0, -10, 0, -35deg) 
+                        translate(-95px, 10px);
+        }
+
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: black;
+            opacity: 0.55;
+        }
+    }
+
+    article:nth-child(odd) .lines {
+
+        span.vertical {            
+            &.left {
+                left: calc((200 / 1440) * 100%);
+                bottom: 0;
+                //transform: translate(200px, 138px);
+            }
+            &.right {
+                left: calc((200 / 1440) * 100% + 687px);
+                top: 0;
+                //transform: translate(887px, 0px);
+            }
+        }
+
+        
+    }
+
+    article:nth-child(even) {
+        
+    }
+}
