@@ -1,9 +1,11 @@
 #projects {
 
-    
-// key visual
+// ------------ desktop ------------ //
+/// -------- overview ---------- ///
+//// key visual
     .key-visual {
         position: absolute;
+        overflow: hidden;
         width: 680px;
         height: 381px;
         left: calc((200 / 1440) * 100% + 4px);
@@ -27,7 +29,7 @@
             opacity: 0.55;
         }
     }
-// title
+//// title
     h2 {
         font-family: $helvetica;
         font-weight: bold;
@@ -39,22 +41,85 @@
 
         position: absolute;
         left: (360 / 1440) * 100%;
-        top: 340 / 900 * 100vh;
+        top: 340 / 900 * 100%;
         z-index: 1;
     }
+//// info texts
+    .info {
+        color: $text-color;
+        @include fontSize(14px);
+        line-height: lineHeight(14, 22);
+        position: absolute;
 
-//lines
+        &.time {
+            @include fontSize(12px);
+            left: calc((200 / 1440) * 100% + 14px);
+            top: calc((200 / 900) * 100% + -20px);
+        }
+
+        &.index {
+            @include fontSize(18px);
+            font-weight: 100;
+            left: calc((200 / 1440) * 100% + 687px + 10px);
+            top: calc((200 / 900) * 100% - 30px);
+        }
+
+        &.more-info {
+            @include fontSize(12px);
+            
+            left: calc((200 / 1440) * 100% + 687px + 10px);
+            top: calc((200 / 900) * 100% + 389px - 24px);
+            .icon {
+                @include fontSize(17px);
+                font-weight: 600;
+
+            }
+        }
+
+
+        &.project {
+
+            left: (200 / 1440) * 100%;
+            top: calc((200 / 900) * 100% + 389px + 14px);
+
+            width: 687px;
+
+            line-height: lineHeight(14, 22);
+
+            span {
+                display: block;
+                &.title {
+                    @include fontSize(12px);
+                    text-decoration: underline;
+                }
+            }
+
+            p {
+                margin-bottom: 1em;
+            }
+
+            li:before {
+                content: "-";
+                margin-right: 4px;
+            }
+
+        }
+    }
+
+
+//// lines
     article {
         position: relative;
 
         .lines {
+            pointer-events: none;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             @media only screen and (min-width: 768px) {
-                min-height: 660px;
+                min-height: 768px;
             }
 
             @media only screen and (max-width: 767px) {
@@ -94,7 +159,9 @@
             }
         } 
     }
-// odd even
+
+
+//// odd even
     article:nth-child(odd) .lines {
 
         span.vertical {            
@@ -149,5 +216,7 @@
             left: (200 / 1440) * 100%;
         }
     }
+
+
 
 }

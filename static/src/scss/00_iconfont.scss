@@ -24,6 +24,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-icon-arrow-down:before {
-  content: "\e900";
+.icon-icon-arrow{
+  transform-origin: 50% 50%;
+  display: inline-block;
+
+  &:before {
+    content: "\e900";
+  }
+
+  &.top {
+    transform: rotate(180deg);
+  }
+
+  &.left {
+    transform: rotate(90deg);
+  }
+
+  &.right {
+    transform: rotate(-90deg) translateX(-4px);
+  }
 }

@@ -67,12 +67,6 @@
     // tablet and desktop
     @media only screen and (min-width: 768px) {
 
-        > .container {
-            height: 100vh;
-            min-height: 660px;
-            position: relative;
-        }
-
         img#face {
             max-width: 160px;
             margin-top: 200 / 900 * 100vh;
