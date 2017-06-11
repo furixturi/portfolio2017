@@ -11,9 +11,19 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('src/assets'))
 });
 
+gulp.task('js', function() {
+    gulp.src(['src/js/*.js',
+        'src/components/*/js/*.js'])
+        .pipe(concat('bundle.js'))
+        .pipe(gulp.dest('src/assets'))
+})
+
 gulp.task('watch', function() {
-    gulp.watch(['src/scss/*.scss',
-            'src/components/*/scss/*.scss'], ['sass'])
+    gulp.watch(['src/js/*.js',
+            'src/scss/*.scss',
+            'src/components/*/scss/*.scss',
+            'src/components/*/js/*.js'], 
+            ['sass', 'js'])
 });
 
 gulp.task('webserver', function() {
