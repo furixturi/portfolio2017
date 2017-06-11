@@ -1,7 +1,7 @@
 nav {
     z-index: 2;
-    transition: all 600ms ease-in-out;
-
+    transition: all 600ms cubic-bezier(0.935, -0.600, 0.030, 1.650); /* custom */
+    
     li {
         display: inline-block;
     }
@@ -82,7 +82,7 @@ nav {
     @media only screen and (min-width: 768px) {
         position: fixed;
         box-shadow: 0 0 5px 0 #cccccc;
-        background: rgba(255, 255, 255, .95);
+        background: rgba(255, 255, 255, .85);
 
         transform-origin: top;
         transform: perspective(800px) rotate3d(1, 0, 0, 90deg);

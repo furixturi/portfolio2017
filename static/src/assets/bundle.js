@@ -1650,7 +1650,7 @@ window.$ === undefined && (window.$ = Zepto)
 }))
 $(function(){
     var $el = $('nav'),
-        revealTimeout = 200;
+        revealTimeout = 100;
 
     setTimeout(function(){
         $el.addClass('reveal');
