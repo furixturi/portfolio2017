@@ -65,6 +65,8 @@
         }
 
         &.more-info {
+            white-space: nowrap;
+
             @include fontSize(12px);
             
             left: calc((200 / 1440) * 100% + 687px + 10px);
