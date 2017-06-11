@@ -1,6 +1,6 @@
 nav {
     z-index: 2;
-    transition: all 400ms ease-in;
+    transition: all 600ms ease-in-out;
 
     li {
         display: inline-block;
@@ -89,7 +89,6 @@ nav {
 
         &.reveal {
             transform: perspective(800px) rotate3d(1, 0, 0, 0deg);
-
         }
         
         @include clearfix;

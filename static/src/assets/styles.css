@@ -237,6 +237,95 @@ html {
     font-size: 48px;
     font-size: 3rem; } }
 
+nav {
+  z-index: 2;
+  transition: all 600ms ease-in-out; }
+  nav li {
+    display: inline-block; }
+  nav a {
+    color: #666666;
+    text-decoration: none;
+    display: block; }
+  nav .slogan {
+    margin-top: 30px;
+    margin-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    nav {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      min-height: 560px; }
+      nav > .container {
+        height: 100vh;
+        min-height: 560px; }
+      nav .slogan {
+        display: none; }
+      nav li {
+        display: block;
+        position: absolute; }
+        nav li.bottom {
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%); }
+        nav li.left {
+          transform-origin: 0 100%;
+          transform: rotate(90deg) translateX(-100%);
+          left: 20px;
+          top: 50%; }
+        nav li.right {
+          transform-origin: 100% 100%;
+          transform: rotate(-90deg) translateX(80%);
+          right: 20px;
+          top: 50%; }
+      nav a {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px 8px 5px 10px;
+        border: 1px solid black;
+        letter-spacing: 0.2em; } }
+  @media only screen and (max-device-width: 736px) {
+    nav {
+      height: calc(100vh - 67px); } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    nav {
+      min-height: 667px; } }
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      box-shadow: 0 0 5px 0 #cccccc;
+      background: rgba(255, 255, 255, 0.95);
+      transform-origin: top;
+      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
+      width: 100vw;
+      /*> .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }*/ }
+      nav.reveal {
+        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
+      nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      nav .slogan {
+        float: left;
+        font-size: 14px;
+        font-size: 0.875rem; }
+        nav .slogan .name {
+          font-size: 18px;
+          font-size: 1.125rem; }
+      nav ul {
+        float: right;
+        margin-top: 20px;
+        margin-right: 50px; }
+      nav li {
+        margin-left: 20px; }
+        nav li a {
+          padding: 10px; } }
+
 #projects .key-visual {
   position: absolute;
   width: 680px;
@@ -337,92 +426,3 @@ html {
 
 #adam-visualizer {
   background: #faf5f5; }
-
-nav {
-  z-index: 2;
-  transition: all 400ms ease-in; }
-  nav li {
-    display: inline-block; }
-  nav a {
-    color: #666666;
-    text-decoration: none;
-    display: block; }
-  nav .slogan {
-    margin-top: 30px;
-    margin-left: 40px; }
-  @media only screen and (max-width: 767px) {
-    nav {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      min-height: 560px; }
-      nav > .container {
-        height: 100vh;
-        min-height: 560px; }
-      nav .slogan {
-        display: none; }
-      nav li {
-        display: block;
-        position: absolute; }
-        nav li.bottom {
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%); }
-        nav li.left {
-          transform-origin: 0 100%;
-          transform: rotate(90deg) translateX(-100%);
-          left: 20px;
-          top: 50%; }
-        nav li.right {
-          transform-origin: 100% 100%;
-          transform: rotate(-90deg) translateX(80%);
-          right: 20px;
-          top: 50%; }
-      nav a {
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        color: black;
-        padding: 5px 8px 5px 10px;
-        border: 1px solid black;
-        letter-spacing: 0.2em; } }
-  @media only screen and (max-device-width: 736px) {
-    nav {
-      height: calc(100vh - 67px); } }
-  @media only screen and (max-width: 767px) and (orientation: landscape) {
-    nav {
-      min-height: 667px; } }
-  @media only screen and (min-width: 768px) {
-    nav {
-      position: fixed;
-      box-shadow: 0 0 5px 0 #cccccc;
-      background: rgba(255, 255, 255, 0.95);
-      transform-origin: top;
-      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
-      width: 100vw;
-      /*> .container {
-            max-width: 1440px;
-            margin: 0 auto;
-        }*/ }
-      nav.reveal {
-        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
-      nav:after {
-        content: "";
-        display: table;
-        clear: both; }
-      nav .slogan {
-        float: left;
-        font-size: 14px;
-        font-size: 0.875rem; }
-        nav .slogan .name {
-          font-size: 18px;
-          font-size: 1.125rem; }
-      nav ul {
-        float: right;
-        margin-top: 20px;
-        margin-right: 50px; }
-      nav li {
-        margin-left: 20px; }
-        nav li a {
-          padding: 10px; } }
