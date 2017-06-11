@@ -84,14 +84,22 @@ html {
   overflow: auto;
   transition: all 200ms ease; }
 
+.container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto; }
+
+.boundary {
+  box-shadow: 0 0 10px -1px #ddd; }
+
 .full-viewport {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden; }
   .full-viewport > .container {
-    position: relative;
-    max-width: 1440px;
-    margin: 0 auto;
+    /*position: relative;
+        max-width: 1440px;
+        margin: 0 auto;*/
     height: 100vh; }
   @media only screen and (min-width: 768px) {
     .full-viewport {
@@ -131,91 +139,6 @@ html {
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
-
-nav {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto;
-  z-index: 1; }
-  nav li {
-    display: inline-block; }
-  nav a {
-    color: #666666;
-    text-decoration: none;
-    display: block; }
-  nav .slogan {
-    margin-top: 30px;
-    margin-left: 40px; }
-  @media only screen and (max-width: 767px) {
-    nav {
-      width: 100vw;
-      height: 100vh;
-      min-height: 560px; }
-      nav > .container {
-        min-height: 560px; }
-      nav .slogan {
-        display: none; }
-      nav li {
-        display: block;
-        position: absolute; }
-        nav li.bottom {
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%); }
-        nav li.left {
-          transform-origin: 0 100%;
-          transform: rotate(90deg) translateX(-100%);
-          left: 20px;
-          top: 50%; }
-        nav li.right {
-          transform-origin: 100% 100%;
-          transform: rotate(-90deg) translateX(80%);
-          right: 20px;
-          top: 50%; }
-      nav a {
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        color: black;
-        padding: 5px 8px 5px 10px;
-        border: 1px solid black;
-        letter-spacing: 0.2em; } }
-  @media only screen and (max-device-width: 736px) {
-    nav {
-      height: calc(100vh - 67px); } }
-  @media only screen and (max-width: 767px) and (orientation: landscape) {
-    nav {
-      min-height: 667px; } }
-  @media only screen and (min-width: 768px) {
-    nav {
-      position: fixed;
-      width: 100vw; }
-      nav:after {
-        content: "";
-        display: table;
-        clear: both; }
-      nav > .container {
-        max-width: 1440px;
-        margin: 0 auto; }
-      nav .slogan {
-        float: left;
-        font-size: 14px;
-        font-size: 0.875rem; }
-        nav .slogan .name {
-          font-size: 18px;
-          font-size: 1.125rem; }
-      nav ul {
-        float: right;
-        margin-top: 20px;
-        margin-right: 50px; }
-      nav li {
-        margin-left: 20px; }
-        nav li a {
-          padding: 10px; } }
 
 /* home--------------*/
 #home h1 {
@@ -314,6 +237,38 @@ nav {
     font-size: 48px;
     font-size: 3rem; } }
 
+#projects .key-visual {
+  position: absolute;
+  width: 680px;
+  height: 381px;
+  left: calc((200 / 1440) * 100% + 4px);
+  top: calc((200 / 900) * 100% + 4px); }
+  #projects .key-visual img {
+    transform: perspective(950px) scale(0.9, 0.9) rotate3d(0, -10, 0, -35deg) translate(-95px, 10px); }
+  #projects .key-visual:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: black;
+    opacity: 0.55; }
+
+#projects h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+  font-size: 6.25rem;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 0px 0px 2px #9d9d9d;
+  padding: 2px;
+  position: absolute;
+  left: 25%;
+  top: 37.77778vh;
+  z-index: 1; }
+
 #projects article {
   position: relative; }
   #projects article .lines {
@@ -333,6 +288,7 @@ nav {
       position: absolute; }
     #projects article .lines span.vertical {
       width: 0;
+      height: 84.44444%;
       border-left: 1px solid #b3b3b3; }
     #projects article .lines span.horizontal {
       height: 0;
@@ -347,26 +303,6 @@ nav {
         top: calc((200 / 900) * 100% + 389px);
         right: 0;
         min-width: calc(100vw - (200 / 1440) * 100% + 77px); }
-    #projects article .lines span.vertical {
-      height: 84.44444%; }
-
-#projects .key-visual {
-  position: absolute;
-  width: 680px;
-  height: 381px;
-  left: calc((200 / 1440) * 100% + 4px);
-  top: calc((200 / 900) * 100% + 4px); }
-  #projects .key-visual img {
-    transform: perspective(950px) scale(0.9, 0.9) rotate3d(0, -10, 0, -35deg) translate(-95px, 10px); }
-  #projects .key-visual:after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: black;
-    opacity: 0.55; }
 
 #projects article:nth-child(odd) .lines span.vertical.left {
   left: calc((200 / 1440) * 100%);
@@ -376,5 +312,117 @@ nav {
   left: calc((200 / 1440) * 100% + 687px);
   top: 0; }
 
+#projects article:nth-child(even) span.vertical.left {
+  right: calc((200 / 1440) * 100% + 687px);
+  bottom: 0; }
+
+#projects article:nth-child(even) span.vertical.right {
+  right: calc((200 / 1440) * 100%);
+  top: 0; }
+
+#projects article:nth-child(even) span.horizontal.top {
+  left: auto;
+  right: 0; }
+
+#projects article:nth-child(even) span.horizontal.bottom {
+  left: 0;
+  right: auto; }
+
+#projects article:nth-child(even) .key-visual {
+  left: auto;
+  right: calc((200 / 1440) * 100% + 4px); }
+
+#projects article:nth-child(even) h2 {
+  left: 13.88889%; }
+
 #adam-visualizer {
   background: #faf5f5; }
+
+nav {
+  z-index: 2;
+  transition: all 400ms ease-in; }
+  nav li {
+    display: inline-block; }
+  nav a {
+    color: #666666;
+    text-decoration: none;
+    display: block; }
+  nav .slogan {
+    margin-top: 30px;
+    margin-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    nav {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      min-height: 560px; }
+      nav > .container {
+        height: 100vh;
+        min-height: 560px; }
+      nav .slogan {
+        display: none; }
+      nav li {
+        display: block;
+        position: absolute; }
+        nav li.bottom {
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%); }
+        nav li.left {
+          transform-origin: 0 100%;
+          transform: rotate(90deg) translateX(-100%);
+          left: 20px;
+          top: 50%; }
+        nav li.right {
+          transform-origin: 100% 100%;
+          transform: rotate(-90deg) translateX(80%);
+          right: 20px;
+          top: 50%; }
+      nav a {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px 8px 5px 10px;
+        border: 1px solid black;
+        letter-spacing: 0.2em; } }
+  @media only screen and (max-device-width: 736px) {
+    nav {
+      height: calc(100vh - 67px); } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    nav {
+      min-height: 667px; } }
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      box-shadow: 0 0 5px 0 #cccccc;
+      background: rgba(255, 255, 255, 0.95);
+      transform-origin: top;
+      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
+      width: 100vw;
+      /*> .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }*/ }
+      nav.reveal {
+        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
+      nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      nav .slogan {
+        float: left;
+        font-size: 14px;
+        font-size: 0.875rem; }
+        nav .slogan .name {
+          font-size: 18px;
+          font-size: 1.125rem; }
+      nav ul {
+        float: right;
+        margin-top: 20px;
+        margin-right: 50px; }
+      nav li {
+        margin-left: 20px; }
+        nav li a {
+          padding: 10px; } }

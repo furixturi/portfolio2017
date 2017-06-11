@@ -1,11 +1,6 @@
 nav {
-    display: block;
-    position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 0 auto;
-    z-index: 1;
+    z-index: 2;
+    transition: all 400ms ease-in;
 
     li {
         display: inline-block;
@@ -22,12 +17,14 @@ nav {
         margin-left: 40px;
     }
 
-    // mobile
-    @media only screen and (max-width: 767px) {;
+// mobile
+    @media only screen and (max-width: 767px) {
+        position: absolute;
         width: 100vw;
         height: 100vh;
         min-height: 560px;
         > .container {
+            height: 100vh;
             min-height: 560px;
         }
         
@@ -61,7 +58,7 @@ nav {
         }
 
         a {
-            font-family: "Roboto", Arial, sans-serif;
+            font-family: $roboto;
             @include fontSize(18px);
             text-transform: uppercase;
             color: black;
@@ -81,16 +78,26 @@ nav {
         min-height: 667px;
     }
 
-    // tablet and desktop
+// tablet and desktop
     @media only screen and (min-width: 768px) {
         position: fixed;
+        box-shadow: 0 0 5px 0 #cccccc;
+        background: rgba(255, 255, 255, .95);
+
+        transform-origin: top;
+        transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
+
+        &.reveal {
+            transform: perspective(800px) rotate3d(1, 0, 0, 0deg);
+
+        }
         
         @include clearfix;
         width: 100vw;
-        > .container {
+        /*> .container {
             max-width: 1440px;
             margin: 0 auto;
-        }
+        }*/
         .slogan {
             float: left;
             @include fontSize(14px);
