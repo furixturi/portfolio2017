@@ -38,8 +38,11 @@ $line-color: #b3b3b3;
 
 
 /* Fonts --------------------*/
+$raleway: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$roboto: "Roboto", Arial, sans-serif;
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
 html {
-    font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $raleway;
 }
 
 
@@ -53,15 +56,25 @@ html {
     transition: all 200ms ease; //smooth everything
 }
 
+.container {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.boundary {
+    box-shadow: 0 0 10px -1px #ddd;
+}
+
 .full-viewport {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
 
     > .container {
-        position: relative;
+        /*position: relative;
         max-width: 1440px;
-        margin: 0 auto;
+        margin: 0 auto;*/
         height: 100vh;        
     }
 
