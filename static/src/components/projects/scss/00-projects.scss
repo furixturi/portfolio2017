@@ -1,61 +1,7 @@
 #projects {
 
-    article {
-        position: relative;
-
-        .lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            @media only screen and (min-width: 768px) {
-                min-height: 660px;
-            }
-
-            @media only screen and (max-width: 767px) {
-                min-height: 560px;
-            }
-
-            span {
-                display: block;
-                position: absolute;
-            }
-
-            span.vertical {
-                width: 0;
-                //height: calc(100vh - 140px);
-                border-left: 1px solid $line-color;              
-            }
-
-            span.horizontal {
-                height: 0;
-                //width: calc(100vw - 240px);
-                width: (1208 / 1440) * 100%;
-                border-top: 1px solid $line-color;
-
-                &.top {
-                    top: (200 / 900) * 100%;
-                    left: 0;
-                    max-width: 1208px;
-                    min-width: calc(200 / 1440 * 100% + 687px + (140 / 1440 * 100%));
-                    //transform: translate(0, 200px);
-                }
-
-                &.bottom {
-                    top: calc((200 / 900) * 100% + 389px);
-                    right: 0;
-                    min-width: calc(100vw - (200 / 1440) * 100% + 77px);
-                    //transform: translate(122px, 589px);
-                }
-            }
-
-            span.vertical {
-                height: (760 / 900) * 100%;
-            }
-        } 
-    }
-
+    
+// key visual
     .key-visual {
         position: absolute;
         width: 680px;
@@ -81,7 +27,74 @@
             opacity: 0.55;
         }
     }
+// title
+    h2 {
+        font-family: $helvetica;
+        font-weight: bold;
+        @include fontSize(100px);
+        line-height: lineHeight(100, 120);
+        color: white;
+        text-shadow: 0px 0px 2px #9d9d9d;
+        padding: 2px;
 
+        position: absolute;
+        left: (360 / 1440) * 100%;
+        top: 340 / 900 * 100vh;
+        z-index: 1;
+    }
+
+//lines
+    article {
+        position: relative;
+
+        .lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            @media only screen and (min-width: 768px) {
+                min-height: 660px;
+            }
+
+            @media only screen and (max-width: 767px) {
+                min-height: 560px;
+            }
+
+            span {
+                display: block;
+                position: absolute;
+            }
+
+            span.vertical {
+                width: 0;
+                height: (760 / 900) * 100%;
+                border-left: 1px solid $line-color;              
+            }
+
+            span.horizontal {
+                height: 0;
+                width: (1208 / 1440) * 100%;
+                border-top: 1px solid $line-color;
+
+                &.top {
+                    top: (200 / 900) * 100%;
+                    left: 0;
+                    max-width: 1208px;
+                    min-width: calc(200 / 1440 * 100% + 687px + (140 / 1440 * 100%));
+                    //transform: translate(0, 200px);
+                }
+
+                &.bottom {
+                    top: calc((200 / 900) * 100% + 389px);
+                    right: 0;
+                    min-width: calc(100vw - (200 / 1440) * 100% + 77px);
+                    //transform: translate(122px, 589px);
+                }
+            }
+        } 
+    }
+// odd even
     article:nth-child(odd) .lines {
 
         span.vertical {            
@@ -101,6 +114,40 @@
     }
 
     article:nth-child(even) {
-        
+
+        span.vertical {            
+            &.left {
+                right: calc((200 / 1440) * 100% + 687px);
+                bottom: 0;
+                //transform: translate(200px, 138px);
+            }
+            &.right {
+                right: calc((200 / 1440) * 100% );
+                top: 0;
+                //transform: translate(887px, 0px);
+            }
+        }
+
+        span.horizontal {
+            &.top {
+                left: auto;
+                right: 0;
+            }
+            &.bottom {
+                left: 0;
+                right: auto;
+            }
+
+        }
+
+        .key-visual {
+            left:auto;
+            right: calc((200 / 1440) * 100% + 4px);
+        }
+
+        h2 {
+            left: (200 / 1440) * 100%;
+        }
     }
+
 }
