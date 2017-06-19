@@ -21,8 +21,8 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
     gulp.watch(['src/js/*.js',
             'src/scss/*.scss',
-            'src/components/*/scss/*.scss',
-            'src/components/*/js/*.js'], 
+            'src/components/*/js/*.js', 
+            'src/components/*/scss/*.scss'],            
             ['sass', 'js'])
 });
 
