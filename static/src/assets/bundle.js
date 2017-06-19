@@ -1648,12 +1648,115 @@ window.$ === undefined && (window.$ = Zepto)
 })()
   return Zepto
 }))
+/**
+ * 01-app.js
+ */
+; (function ($) {
+    // namespace
+    window.xiaoliPortfolio2017 = {
+        info: "Xiaoli Shen | Portfolio 2017"
+    };
+
+    $(function () {
+
+        var app = window.xiaoliPortfolio2017;
+        app.$components = {
+            nav : $('nav')
+        }
+
+        /* $('a[href="#projects"]').on('click', function(e){
+             e.preventDefault();
+         })
+     
+         app.navigateTo = function(){
+     
+         };*/
+
+//// navigation
+        $(document).on('nav_change', function (e, arg) {
+            app.onNavChange(arg);
+        });
+
+        app.onNavChange = function(target) {
+
+        }
+        
+//// open/close project detail
+        $(document).on('project_detail_open', function(e, arg) {
+            app.$components.nav.trigger('nav_hide');
+        });
+
+        $(document).on('project_detail_close', function(e, arg) {
+            app.$components.nav.trigger('nav_show');
+        });
+
+
+    });
+})($);
 $(function(){
     var $el = $('nav'),
         revealTimeout = 100;
 
+    // show
     setTimeout(function(){
         $el.addClass('reveal');
     }, revealTimeout);
+
+
+    $el.find('a').on('click', function(e){
+        var $navEl = $(this);
+        e.preventDefault();
+        $(document).trigger('nav_change', [$navEl.data('navi')]);
+    });
+
+    $el.on('nav_change_complete', function(e, arg){
+
+        $to = $el.find('a[data-navi="arg"]');
+
+        if( $to && !$to.hasClass('active') ) {
+
+            $from = $el.find('a.active');
+            if($from) $from.removeClass('active')
+
+            $to.addClass('active');
+
+        }
+
+    })
+
+    $el.on('nav_hide', function(e, arg) {
+        console.log('hide nav')
+        $el.addClass('hide');
+    });
+
+    $el.on('nav_show', function(e, arg) {
+        $el.removeClass('hide');
+    });
+
     
-})
+    
+});
+$(function(){
+    var projects = $('#projects article');
+
+    $.each(projects, function(){
+        var $el = $(this),
+            $moreInfo = $el.find('a.more-info'),
+            $lessInfo = $el.find('a.less-info');
+
+        $moreInfo.on('click', function(e){
+            e.preventDefault();
+            $el.addClass('detail');
+            $(document).trigger('project_detail_open', [$el])
+        });
+
+        $lessInfo.on('click', function(e){
+            e.preventDefault();
+            $el.removeClass('detail');
+            $(document).trigger('project_detail_close', [$el])
+
+        });
+
+
+    })
+});
