@@ -36,6 +36,7 @@ $col-padding: 14px;
 
 /* Colors -------------------*/
 $text-color: #666666;
+$text-color-light: #b3b3b3;
 $highlight-color: #231f20;
 $line-color: #b3b3b3;
 
@@ -69,6 +70,10 @@ html {
     float: left;
     box-sizing: border-box;
     padding: 0 $col-padding / 2;
+}
+
+.col-1-2 {
+    width: 50%;
 }
 
 .col-1-3 {
