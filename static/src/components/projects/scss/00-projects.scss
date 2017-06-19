@@ -58,10 +58,10 @@
 
     // title
     h2 {
-        transition: opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+        transition: opacity 0.4s ease-in;
 
         &.detail-title {
-            transition: opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.8s;
+            transition: opacity 0.3s ease-in 0.2s;
         }
     }
 
@@ -77,7 +77,7 @@
     .key-visual-container {
         width: 100vh; // margin top is calculated based on parent width instead of height
         // height: 100%;
-        // min-height: 768px;
+        min-width: 768px;
         overflow: visible;
         position: relative;
         top: 0;
@@ -133,7 +133,7 @@
 
         &.overview-title {            
             left: (360 / 1440) * 100%;
-            top: (340 / 900 * 100) * 1vh;
+            top: (340 / 900) * 100%;
         }
 
         &.detail-title {
