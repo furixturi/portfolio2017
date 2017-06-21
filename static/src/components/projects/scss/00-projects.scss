@@ -65,6 +65,32 @@
         }
     }
 
+    // odd even
+    article:nth-child(even) {
+        .lines {
+            span.vertical {
+                transition: height 0.4s, right 0.4s;
+                &.right {
+                    transition: height 0.3s 0.4s, right 0.3s 0.4s;
+                }
+            }
+            span.horizontal {
+                transition: width 0.4s, top 0.3s 0.4s;
+                &.bottom {
+                    transition: width 0.4s, top 0.4s;
+                }
+            }
+        }
+
+        .key-visual {
+            transition: margin-top 0.3s 0.4s, margin-left 0.3s;
+
+            img {
+                transition: transform 0.6s 0.4s, margin-left 0.3s 0.4s;
+            }
+        }
+    }
+
 //// detail-closing
 
 /// -------- overview ---------- ///
@@ -73,7 +99,7 @@
         visibility: hidden;
         display: none;
     }
-//// key visual
+//// overview: key visual
     .key-visual-container {
         width: 100vh; // margin top is calculated based on parent width instead of height
         // height: 100%;
@@ -117,7 +143,7 @@
             opacity: 0.55;
         }
     }
-//// title
+//// overview: title
     h2 {
         @include fontSize(100px);
         white-space: nowrap;
@@ -144,7 +170,7 @@
             transform-origin: 0 0;
         }
     }
-//// info texts
+//// overview: info texts
     .info {
         color: $text-color;
         @include fontSize(14px);
@@ -164,18 +190,33 @@
             top: calc((200 / 900) * 100% - 30px);
         }
 
-        &.more-info {
-            white-space: nowrap;
-
-            @include fontSize(12px);
+        &.more-info, 
+        &.less-info {
             
-            left: calc((200 / 1440) * 100% + 687px + 10px);
-            top: calc((200 / 900) * 100% + 389px - 24px);
+            padding: 10px;
+            white-space: nowrap;
+            display: block;
+            @include fontSize(12px);
+            transition: opacity 1s 0.6s;
+
+            left: calc((200 / 1440) * 100% + 687px);
+            top: calc((200 / 900) * 100% + 389px - 34px);
+
             .icon {
                 @include fontSize(17px);
                 font-weight: 600;
-
             }
+        }
+
+        &.more-info {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &.less-info {
+            opacity: 0;
+            visibility: hidden;
+            background: rgba(0, 0, 0, 0);                       
         }
 
 
@@ -210,7 +251,7 @@
     }
 
 
-//// lines
+//// overview: lines
     .lines {
         pointer-events: none;
         position: absolute;
@@ -261,18 +302,18 @@
     
 
 
-//// odd even
+//// overview: odd even
     article:nth-child(odd) .lines {
 
         span.vertical {            
             &.left {
                 left: calc((200 / 1440) * 100%);
-                bottom: 0;
+                top: 0;
                 //transform: translate(200px, 138px);
             }
             &.right {
                 left: calc((200 / 1440) * 100% + 687px);
-                top: 0;
+                bottom: 0;
                 //transform: translate(887px, 0px);
             }
         }
@@ -284,11 +325,13 @@
 
         span.vertical {            
             &.left {
+                left: auto;
                 right: calc((200 / 1440) * 100% + 687px);
                 bottom: 0;
                 //transform: translate(200px, 138px);
             }
             &.right {
+                left: auto;
                 right: calc((200 / 1440) * 100% );
                 top: 0;
                 //transform: translate(887px, 0px);
@@ -307,13 +350,62 @@
 
         }
 
-        .key-visual {
-            left:auto;
+        .key-visual-container {
+            position: absolute;
+            left: auto;
             right: calc((200 / 1440) * 100% + 4px);
+            
         }
 
+        .key-visual {
+            margin-left: calc(100% - 680px);
+
+            .key-visual-img-container {
+                transform: perspective(850px) 
+                    translate3d(0px, -15px, -50px);
+                transform-origin: 100% 0;
+            }
+                    
+            img {
+                display: block;  
+                width: 800px;
+                height: 440px;
+                margin-left: -(800 - 680) * 1px;
+                // margin-top: -(440 - 380) / 2 * 1px;
+
+                transform-origin: 100% 50%;
+                transform: perspective(850px) 
+                    rotate3d(0, -1, 0, 15deg);                      
+            }
+
+        }
+        
         h2 {
             left: (200 / 1440) * 100%;
+        }
+
+        .info {
+
+            &.time {
+                left: auto;
+                right: calc((200 / 1440) * 100% + 687px - 70px);
+            }
+
+            &.index {
+                left: auto;
+                right: calc((200 / 1440) * 100% - 36px);
+            }
+
+            &.more-info,
+            &.less-info {
+                left: auto;
+                right: calc((200 / 1440) * 100% - 92px);
+            }
+
+            &.project {
+                left: auto;
+                right: (200 / 1440) * 100%;
+            }
         }
     }
 
@@ -360,9 +452,10 @@
         }
 
     
-//// key visual
+//// detail: key visual
         .key-visual-container {
             left: calc(50% - 400px);
+            position: relative;
         }
         .key-visual {
             position: relative;
@@ -385,7 +478,7 @@
                 opacity: 0;
             }
         }
-//// title
+//// detail: title
         h2 {
             &.overview-title {
                 opacity: 0;
@@ -395,7 +488,7 @@
             }            
         }
 
-//// info texts
+//// detail: info texts
         .info {
             color: $text-color-light;
 
@@ -410,18 +503,17 @@
             }
 
             &.less-info {
-                position: fixed;
-                white-space: nowrap;
-
-                @include fontSize(12px);
-                
+                opacity: 1;
+                visibility: visible;
+                position: fixed;                
                 left: calc(50% + 415px);
                 top: 592px;
-                .icon {
-                    @include fontSize(17px);
-                    font-weight: 600;
+                background: rgba(0, 0, 0, 0.5); 
+            }
 
-                }
+            &.more-info {
+                opacity: 0;
+                visibility: hidden;
             }
 
             &.project {
@@ -432,7 +524,7 @@
                 padding-top: 40px;
                 // background: rgba(0, 0, 0, .8);
                 
-////project detail
+//// detail: project detail
                 overflow: visible;
 
             }
@@ -467,7 +559,7 @@
                 }
             }
         }
-////lines
+//// detail: lines
         .lines {
 
             &.horizontal-lines {
@@ -500,6 +592,41 @@
                 }
             }
         }
+
+//// detail: odd even
+
+        &:nth-child(even) {
+            span.vertical {            
+                &.left {
+                    left: auto;
+                    right: calc(50% + 400px);;
+                }
+                &.right {
+                    left: auto;
+                    right: calc(50% - 400px);
+                }
+            }
+
+            .key-visual-container {
+                left: auto;
+                right: calc(50% - 400px);
+                position: absolute;
+            }
+
+            .key-visual {
+                right: 0;
+                position: absolute;
+                img {
+                    margin-left: 0;
+                }
+            }
+
+            .info.project {
+                margin-top: 620px;
+            }
+        }
     }
+
+
 
 }

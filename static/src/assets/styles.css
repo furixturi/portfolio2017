@@ -394,9 +394,24 @@ nav {
     transition: opacity 0.4s,  width 0.3s, height 0.3s; }
 
 #projects h2 {
-  transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1); }
+  transition: opacity 0.4s ease-in; }
   #projects h2.detail-title {
-    transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s; }
+    transition: opacity 0.3s ease-in 0.2s; }
+
+#projects article:nth-child(even) .lines span.vertical {
+  transition: height 0.4s, right 0.4s; }
+  #projects article:nth-child(even) .lines span.vertical.right {
+    transition: height 0.3s 0.4s, right 0.3s 0.4s; }
+
+#projects article:nth-child(even) .lines span.horizontal {
+  transition: width 0.4s, top 0.3s 0.4s; }
+  #projects article:nth-child(even) .lines span.horizontal.bottom {
+    transition: width 0.4s, top 0.4s; }
+
+#projects article:nth-child(even) .key-visual {
+  transition: margin-top 0.3s 0.4s, margin-left 0.3s; }
+  #projects article:nth-child(even) .key-visual img {
+    transition: transform 0.6s 0.4s, margin-left 0.3s 0.4s; }
 
 #projects .detail-only {
   opacity: 0;
@@ -405,6 +420,7 @@ nav {
 
 #projects .key-visual-container {
   width: 100vh;
+  min-width: 768px;
   overflow: visible;
   position: relative;
   top: 0;
@@ -450,7 +466,7 @@ nav {
   opacity: 1; }
   #projects h2.overview-title {
     left: 25%;
-    top: 37.77778vh; }
+    top: 37.77778%; }
   #projects h2.detail-title {
     opacity: 0;
     left: calc(50% + 380px);
@@ -475,16 +491,26 @@ nav {
     font-weight: 100;
     left: calc((200 / 1440) * 100% + 687px + 10px);
     top: calc((200 / 900) * 100% - 30px); }
-  #projects .info.more-info {
+  #projects .info.more-info, #projects .info.less-info {
+    padding: 10px;
     white-space: nowrap;
+    display: block;
     font-size: 12px;
     font-size: 0.75rem;
-    left: calc((200 / 1440) * 100% + 687px + 10px);
-    top: calc((200 / 900) * 100% + 389px - 24px); }
-    #projects .info.more-info .icon {
+    transition: opacity 1s 0.6s;
+    left: calc((200 / 1440) * 100% + 687px);
+    top: calc((200 / 900) * 100% + 389px - 34px); }
+    #projects .info.more-info .icon, #projects .info.less-info .icon {
       font-size: 17px;
       font-size: 1.0625rem;
       font-weight: 600; }
+  #projects .info.more-info {
+    opacity: 1;
+    visibility: visible; }
+  #projects .info.less-info {
+    opacity: 0;
+    visibility: hidden;
+    background: transparent; }
   #projects .info.project {
     left: 13.88889%;
     top: calc((200 / 900) * 100% + 389px + 14px);
@@ -537,17 +563,19 @@ nav {
 
 #projects article:nth-child(odd) .lines span.vertical.left {
   left: calc((200 / 1440) * 100%);
-  bottom: 0; }
+  top: 0; }
 
 #projects article:nth-child(odd) .lines span.vertical.right {
   left: calc((200 / 1440) * 100% + 687px);
-  top: 0; }
+  bottom: 0; }
 
 #projects article:nth-child(even) span.vertical.left {
+  left: auto;
   right: calc((200 / 1440) * 100% + 687px);
   bottom: 0; }
 
 #projects article:nth-child(even) span.vertical.right {
+  left: auto;
   right: calc((200 / 1440) * 100%);
   top: 0; }
 
@@ -559,12 +587,42 @@ nav {
   left: 0;
   right: auto; }
 
-#projects article:nth-child(even) .key-visual {
+#projects article:nth-child(even) .key-visual-container {
+  position: absolute;
   left: auto;
   right: calc((200 / 1440) * 100% + 4px); }
 
+#projects article:nth-child(even) .key-visual {
+  margin-left: calc(100% - 680px); }
+  #projects article:nth-child(even) .key-visual .key-visual-img-container {
+    transform: perspective(850px) translate3d(0px, -15px, -50px);
+    transform-origin: 100% 0; }
+  #projects article:nth-child(even) .key-visual img {
+    display: block;
+    width: 800px;
+    height: 440px;
+    margin-left: -120px;
+    transform-origin: 100% 50%;
+    transform: perspective(850px) rotate3d(0, -1, 0, 15deg); }
+
 #projects article:nth-child(even) h2 {
   left: 13.88889%; }
+
+#projects article:nth-child(even) .info.time {
+  left: auto;
+  right: calc((200 / 1440) * 100% + 687px - 70px); }
+
+#projects article:nth-child(even) .info.index {
+  left: auto;
+  right: calc((200 / 1440) * 100% - 36px); }
+
+#projects article:nth-child(even) .info.more-info, #projects article:nth-child(even) .info.less-info {
+  left: auto;
+  right: calc((200 / 1440) * 100% - 92px); }
+
+#projects article:nth-child(even) .info.project {
+  left: auto;
+  right: 13.88889%; }
 
 #projects article.detail {
   z-index: 2; }
@@ -589,7 +647,8 @@ nav {
   #projects article.detail .detail-short-row {
     width: 78%; }
   #projects article.detail .key-visual-container {
-    left: calc(50% - 400px); }
+    left: calc(50% - 400px);
+    position: relative; }
   #projects article.detail .key-visual {
     position: relative;
     width: 800px;
@@ -616,16 +675,15 @@ nav {
       left: calc(50% + 415px);
       top: 150px; }
     #projects article.detail .info.less-info {
+      opacity: 1;
+      visibility: visible;
       position: fixed;
-      white-space: nowrap;
-      font-size: 12px;
-      font-size: 0.75rem;
       left: calc(50% + 415px);
-      top: 592px; }
-      #projects article.detail .info.less-info .icon {
-        font-size: 17px;
-        font-size: 1.0625rem;
-        font-weight: 600; }
+      top: 592px;
+      background: rgba(0, 0, 0, 0.5); }
+    #projects article.detail .info.more-info {
+      opacity: 0;
+      visibility: hidden; }
     #projects article.detail .info.project {
       position: relative;
       width: 800px;
@@ -665,6 +723,23 @@ nav {
       left: calc(50% - 400px); }
     #projects article.detail .lines span.vertical.right {
       left: calc(50% + 400px); }
+  #projects article.detail:nth-child(even) span.vertical.left {
+    left: auto;
+    right: calc(50% + 400px); }
+  #projects article.detail:nth-child(even) span.vertical.right {
+    left: auto;
+    right: calc(50% - 400px); }
+  #projects article.detail:nth-child(even) .key-visual-container {
+    left: auto;
+    right: calc(50% - 400px);
+    position: absolute; }
+  #projects article.detail:nth-child(even) .key-visual {
+    right: 0;
+    position: absolute; }
+    #projects article.detail:nth-child(even) .key-visual img {
+      margin-left: 0; }
+  #projects article.detail:nth-child(even) .info.project {
+    margin-top: 620px; }
 
 #adam-visualizer {
   background: #faf5f5; }
