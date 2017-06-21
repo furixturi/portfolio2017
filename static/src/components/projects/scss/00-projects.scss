@@ -20,7 +20,7 @@
     // lines
     .lines {
         span.vertical {
-            transition: height 0.3s 0.4s, left 0.3s 0.4s;
+            transition: height 0.3s 0.4s, left 0.4s;
             &.right {
                 transition: height 0.4s, left 0.4s;
             }
@@ -35,11 +35,11 @@
 
     // key visual
     .key-visual-container {
-        transition: left 0.3s 0.4s;
+        transition: left 0.4s;
     }
 
     .key-visual {
-        transition: margin-top 0.3s 0.4s;
+        transition: margin-top 0.3s 0.4s, width 0.4s, height 0.3s;
         
         .key-visual-img-container {
             transition: transform 0.4s;
@@ -80,6 +80,11 @@
                     transition: width 0.4s, top 0.4s;
                 }
             }
+        }
+
+        // key visual
+        .key-visual-container {
+            transition: right 0.3s 0.4s;
         }
 
         .key-visual {
@@ -361,16 +366,19 @@
             margin-left: calc(100% - 680px);
 
             .key-visual-img-container {
+                height: 440px;
                 transform: perspective(850px) 
                     translate3d(0px, -15px, -50px);
                 transform-origin: 100% 0;
             }
                     
             img {
+                position: absolute;
+                right: 0;
                 display: block;  
                 width: 800px;
                 height: 440px;
-                margin-left: -(800 - 680) * 1px;
+                // margin-left: -(800 - 680) * 1px;
                 // margin-top: -(440 - 380) / 2 * 1px;
 
                 transform-origin: 100% 50%;
