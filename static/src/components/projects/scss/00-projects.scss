@@ -4,6 +4,9 @@
         position: relative;
     }
 
+    .key-visual-container * {
+        overflow: hidden;
+    }
 
 // ------------ desktop ------------ //
 @media only screen and (min-width: 961px) {
@@ -434,12 +437,12 @@
 
 /// -------- detail ---------- ///
     article.detail {
-        // position: fixed;
-        // top: 0;
-        // left: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
         // height: 100vh;
         z-index: 2;
-        overflow: scroll;
+        overflow-y: scroll;
 
         &.full-viewport {
             // height: auto;

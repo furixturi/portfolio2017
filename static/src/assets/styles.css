@@ -133,6 +133,7 @@ html {
     /*position: relative;
         max-width: 1440px;
         margin: 0 auto;*/
+    overflow: auto;
     height: 100vh; }
   @media only screen and (min-width: 768px) {
     .full-viewport {
@@ -330,6 +331,7 @@ nav {
     nav {
       position: fixed;
       background: rgba(255, 255, 255, 0.85);
+      background: white;
       transform-origin: top;
       transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
       width: 100vw;
@@ -370,6 +372,9 @@ nav {
 
 #projects article {
   position: relative; }
+
+#projects .key-visual-container * {
+  overflow: hidden; }
 
 #projects article {
   transition: background 1200ms cubic-bezier(0.39, 0.575, 0.565, 1); }
@@ -644,8 +649,11 @@ nav {
   right: 13.88889%; }
 
 #projects article.detail {
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 2;
-  overflow: scroll; }
+  overflow-y: scroll; }
   #projects article.detail.full-viewport > .container {
     height: auto; }
   #projects article.detail .first-row {
@@ -769,8 +777,9 @@ nav {
     top: 620px; }
 
 #adam-visualizer {
-  background: #faf5f5; }
+  background: #ffea4d; }
   #adam-visualizer.detail {
     background: #0a0206; }
   #adam-visualizer .project-detail .bg {
-    background: #faf5f5; }
+    background: #faf5f5;
+    background: #ffea4d; }
