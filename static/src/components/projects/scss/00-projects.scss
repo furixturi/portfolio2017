@@ -49,10 +49,12 @@
             transition: transform 0.6s 0.4s;
         }
 
-        &:after {
-            transition: opacity 0.4s, 
-                        width 0.3s, height 0.3s;
-                        // width 600ms 600ms, height 600ms 600ms;
+        .img-shadow {
+            // transition: width 0.3s, height 0.3s;
+
+            &:after {
+                transition: opacity 0.3s 0.4s; 
+            }
         }
     }
 
@@ -71,7 +73,7 @@
             span.vertical {
                 transition: height 0.4s, right 0.4s;
                 &.right {
-                    transition: height 0.3s 0.4s, right 0.3s 0.4s;
+                    transition: height 0.3s 0.4s, right 0.4s;
                 }
             }
             span.horizontal {
@@ -84,14 +86,18 @@
 
         // key visual
         .key-visual-container {
-            transition: right 0.3s 0.4s;
+            transition: right 0.4s;
         }
 
         .key-visual {
-            transition: margin-top 0.3s 0.4s, margin-left 0.3s;
+            transition: margin-top 0.3s 0.4s, margin-left 0.4s, width 0.4s, height 0.3s;
+
+            .key-visual-img-container {
+                transition: transform 0.4s;
+            }
 
             img {
-                transition: transform 0.6s 0.4s, margin-left 0.3s 0.4s;
+                transition: transform 0.6s 0.4s, margin-left 0.4s;
             }
         }
     }
@@ -131,22 +137,28 @@
             display: block;  
             width: 800px;
             height: 440px;
+       
+        }
+        .img-shadow {
+            display: block;
+            width: 800px;
+            height: 440px;
             transform-origin: 0 50%;
-
             transform: perspective(850px) 
-                rotate3d(0, -1, 0, -15deg);                      
-        }
+                rotate3d(0, -1, 0, -15deg);
 
-        &:after {
-            content: "";
-            width: 680px;
-            height: 381px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: black;
-            opacity: 0.55;
+            &:after {
+                content: "";
+                width: 800px;
+                height: 440px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: black;
+                opacity: 0.55;
+            }               
         }
+        
     }
 //// overview: title
     h2 {
@@ -363,7 +375,8 @@
         }
 
         .key-visual {
-            margin-left: calc(100% - 680px);
+            position: absolute;
+            right: 0;
 
             .key-visual-img-container {
                 height: 440px;
@@ -375,15 +388,20 @@
             img {
                 position: absolute;
                 right: 0;
-                display: block;  
-                width: 800px;
-                height: 440px;
-                // margin-left: -(800 - 680) * 1px;
-                // margin-top: -(440 - 380) / 2 * 1px;
+                display: block;       
+            }
 
+            .img-shadow {
+                position: absolute;
+                right: 0;
                 transform-origin: 100% 50%;
                 transform: perspective(850px) 
-                    rotate3d(0, -1, 0, 15deg);                      
+                    rotate3d(0, -1, 0, 15deg);
+
+                &:after {
+                    left: auto;
+                    right: 0;
+                }
             }
 
         }
@@ -424,7 +442,7 @@
         // left: 0;
         // height: 100vh;
         z-index: 2;
-        // overflow: scroll;
+        overflow: scroll;
 
         &.full-viewport {
             // height: auto;
@@ -476,15 +494,24 @@
             }
 
             img {
-                transform: perspective(850px) 
-                        rotate3d(0, -1, 0, 0deg);            
+                // transform: perspective(850px) 
+                        // rotate3d(0, -1, 0, 0deg);            
             }
 
-            &:after {
+            .img-shadow {
+                transform: perspective(850px) 
+                        rotate3d(0, -1, 0, 0deg);
+
+                &:after {
+                    opacity: 0;
+                }               
+            }
+
+            /* &:after {
                 width: 800px;
                 height: 439px;
                 opacity: 0;
-            }
+            } */
         }
 //// detail: title
         h2 {
