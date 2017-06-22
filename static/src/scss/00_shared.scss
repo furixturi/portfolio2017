@@ -57,6 +57,10 @@ html {
 
 
 /* Layout -------------------*/
+html.no-scroll {
+    overflow: hidden;
+}
+
 * {
     overflow: auto; //don't collapse margin so marign-top on child doesn't move parent
     transition: all 200ms ease; //smooth everything

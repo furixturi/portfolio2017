@@ -1661,6 +1661,7 @@ window.$ === undefined && (window.$ = Zepto)
 
         var app = window.xiaoliPortfolio2017;
         app.$components = {
+            // html: $(html)
             nav : $('nav')
         }
 
@@ -1684,10 +1685,12 @@ window.$ === undefined && (window.$ = Zepto)
 //// open/close project detail
         $(document).on('project_detail_open', function(e, arg) {
             app.$components.nav.trigger('nav_hide');
+            $('html').addClass('no-scroll');
         });
 
         $(document).on('project_detail_close', function(e, arg) {
             app.$components.nav.trigger('nav_show');
+            $('html').removeClass('no-scroll');
         });
 
 
