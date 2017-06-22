@@ -329,7 +329,6 @@ nav {
   @media only screen and (min-width: 768px) {
     nav {
       position: fixed;
-      box-shadow: 0 0 5px 0 #cccccc;
       background: rgba(255, 255, 255, 0.85);
       transform-origin: top;
       transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
@@ -338,6 +337,8 @@ nav {
             max-width: 1440px;
             margin: 0 auto;
         }*/ }
+      nav * {
+        overflow: hidden; }
       nav.reveal {
         transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
       nav.hide {
@@ -359,10 +360,12 @@ nav {
       nav ul {
         float: right;
         margin-top: 20px;
-        margin-right: 50px; }
+        padding-right: 50px; }
       nav li {
         margin-left: 20px; }
         nav li a {
+          font-size: 14px;
+          font-size: 0.875rem;
           padding: 10px; } }
 
 #projects article {
@@ -390,8 +393,8 @@ nav {
     transition: transform 0.4s; }
   #projects .key-visual img {
     transition: transform 0.6s 0.4s; }
-  #projects .key-visual:after {
-    transition: opacity 0.4s,  width 0.3s, height 0.3s; }
+  #projects .key-visual .img-shadow:after {
+    transition: opacity 0.3s 0.4s; }
 
 #projects h2 {
   transition: opacity 0.4s ease-in; }
@@ -401,7 +404,7 @@ nav {
 #projects article:nth-child(even) .lines span.vertical {
   transition: height 0.4s, right 0.4s; }
   #projects article:nth-child(even) .lines span.vertical.right {
-    transition: height 0.3s 0.4s, right 0.3s 0.4s; }
+    transition: height 0.3s 0.4s, right 0.4s; }
 
 #projects article:nth-child(even) .lines span.horizontal {
   transition: width 0.4s, top 0.3s 0.4s; }
@@ -409,12 +412,14 @@ nav {
     transition: width 0.4s, top 0.4s; }
 
 #projects article:nth-child(even) .key-visual-container {
-  transition: right 0.3s 0.4s; }
+  transition: right 0.4s; }
 
 #projects article:nth-child(even) .key-visual {
-  transition: margin-top 0.3s 0.4s, margin-left 0.3s; }
+  transition: margin-top 0.3s 0.4s, margin-left 0.4s, width 0.4s, height 0.3s; }
+  #projects article:nth-child(even) .key-visual .key-visual-img-container {
+    transition: transform 0.4s; }
   #projects article:nth-child(even) .key-visual img {
-    transition: transform 0.6s 0.4s, margin-left 0.3s 0.4s; }
+    transition: transform 0.6s 0.4s, margin-left 0.4s; }
 
 #projects .detail-only {
   opacity: 0;
@@ -441,18 +446,22 @@ nav {
   #projects .key-visual img {
     display: block;
     width: 800px;
+    height: 440px; }
+  #projects .key-visual .img-shadow {
+    display: block;
+    width: 800px;
     height: 440px;
     transform-origin: 0 50%;
     transform: perspective(850px) rotate3d(0, -1, 0, -15deg); }
-  #projects .key-visual:after {
-    content: "";
-    width: 680px;
-    height: 381px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: black;
-    opacity: 0.55; }
+    #projects .key-visual .img-shadow:after {
+      content: "";
+      width: 800px;
+      height: 440px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: black;
+      opacity: 0.55; }
 
 #projects h2 {
   font-size: 100px;
@@ -550,11 +559,11 @@ nav {
   #projects .lines span.vertical {
     width: 0;
     height: 84.44444%;
-    border-left: 1px solid #b3b3b3; }
+    border-left: 1px solid rgba(26, 26, 26, 0.05); }
   #projects .lines span.horizontal {
     height: 0;
     width: 83.88889%;
-    border-top: 1px solid #b3b3b3; }
+    border-top: 1px solid rgba(26, 26, 26, 0.05); }
     #projects .lines span.horizontal.top {
       top: 22.22222%;
       left: 0;
@@ -596,7 +605,8 @@ nav {
   right: calc((200 / 1440) * 100% + 4px); }
 
 #projects article:nth-child(even) .key-visual {
-  margin-left: calc(100% - 680px); }
+  position: absolute;
+  right: 0; }
   #projects article:nth-child(even) .key-visual .key-visual-img-container {
     height: 440px;
     transform: perspective(850px) translate3d(0px, -15px, -50px);
@@ -604,11 +614,15 @@ nav {
   #projects article:nth-child(even) .key-visual img {
     position: absolute;
     right: 0;
-    display: block;
-    width: 800px;
-    height: 440px;
+    display: block; }
+  #projects article:nth-child(even) .key-visual .img-shadow {
+    position: absolute;
+    right: 0;
     transform-origin: 100% 50%;
     transform: perspective(850px) rotate3d(0, -1, 0, 15deg); }
+    #projects article:nth-child(even) .key-visual .img-shadow:after {
+      left: auto;
+      right: 0; }
 
 #projects article:nth-child(even) h2 {
   left: 13.88889%; }
@@ -630,7 +644,8 @@ nav {
   right: 13.88889%; }
 
 #projects article.detail {
-  z-index: 2; }
+  z-index: 2;
+  overflow: scroll; }
   #projects article.detail.full-viewport > .container {
     height: auto; }
   #projects article.detail .first-row {
@@ -658,15 +673,18 @@ nav {
     position: relative;
     width: 800px;
     height: auto;
-    margin-top: 180px; }
+    margin-top: 180px;
+    /* &:after {
+                width: 800px;
+                height: 439px;
+                opacity: 0;
+            } */ }
     #projects article.detail .key-visual .key-visual-img-container {
       transform: translate3d(0px, 0px, 0px); }
-    #projects article.detail .key-visual img {
+    #projects article.detail .key-visual .img-shadow {
       transform: perspective(850px) rotate3d(0, -1, 0, 0deg); }
-    #projects article.detail .key-visual:after {
-      width: 800px;
-      height: 439px;
-      opacity: 0; }
+      #projects article.detail .key-visual .img-shadow:after {
+        opacity: 0; }
   #projects article.detail h2.overview-title {
     opacity: 0; }
   #projects article.detail h2.detail-title {
@@ -716,6 +734,9 @@ nav {
         #projects article.detail .info.project-detail p span.strong {
           display: inline;
           font-weight: 400; }
+  #projects article.detail .lines span.horizontal.top, #projects article.detail .lines span.horizontal.bottom,
+  #projects article.detail .lines span.vertical.left, #projects article.detail .lines span.vertical.right {
+    border-color: rgba(255, 255, 255, 0.1); }
   #projects article.detail .lines span.horizontal {
     width: 100%; }
     #projects article.detail .lines span.horizontal.top {
@@ -744,7 +765,8 @@ nav {
     #projects article.detail:nth-child(even) .key-visual img {
       margin-left: 0; }
   #projects article.detail:nth-child(even) .info.project {
-    margin-top: 620px; }
+    position: absolute;
+    top: 620px; }
 
 #adam-visualizer {
   background: #faf5f5; }

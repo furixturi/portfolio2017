@@ -38,7 +38,9 @@ $col-padding: 14px;
 $text-color: #666666;
 $text-color-light: #b3b3b3;
 $highlight-color: #231f20;
-$line-color: #b3b3b3;
+// $line-color: #b3b3b3;
+$line-color: rgba(26, 26, 26, .05);
+$line-color-light:rgba(255, 255, 255,0.1);
 
 
 /* Fonts --------------------*/

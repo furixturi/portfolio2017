@@ -81,9 +81,15 @@ nav {
 
 // tablet and desktop
     @media only screen and (min-width: 768px) {
+
+        * {
+            overflow: hidden;
+        }
+
         position: fixed;
-        box-shadow: 0 0 5px 0 #cccccc;
+        // box-shadow: 0 0 5px 0 #cccccc;
         background: rgba(255, 255, 255, .85);
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
         transform-origin: top;
         transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
@@ -114,12 +120,13 @@ nav {
         ul {
             float: right;
             margin-top: 20px;
-            margin-right: 50px;
+            padding-right: 50px;
         }
 
         li {
             margin-left: 20px;
             a {
+                @include fontSize(14px);
                 padding: 10px;
             }
         }
