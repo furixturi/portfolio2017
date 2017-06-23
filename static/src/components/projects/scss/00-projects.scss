@@ -1,5 +1,6 @@
 $key-visual-width: 680px;
-$key-image-height:381px;
+$key-visual-height:381px;
+
 
 #projects {
 
@@ -122,7 +123,7 @@ $key-image-height:381px;
         position: relative;
         overflow: hidden;
         width: $key-visual-width;
-        height: $key-image-height;
+        height: $key-visual-height;
         margin-top: calc((200 / $ideal-viewport-height) * 100% + 4px);
         
         .key-visual-img-container {
