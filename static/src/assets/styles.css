@@ -135,9 +135,6 @@ html.no-scroll {
   height: 100vh;
   overflow: hidden; }
   .full-viewport > .container {
-    /*position: relative;
-        max-width: 1440px;
-        margin: 0 auto;*/
     overflow: auto;
     height: 100vh; }
   @media only screen and (min-width: 768px) {
@@ -187,100 +184,6 @@ html.no-scroll {
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
-
-nav {
-  z-index: 2;
-  transition: all 1000ms cubic-bezier(0.935, -0.6, 0.03, 1.65);
-  /* custom */ }
-  nav li {
-    display: inline-block; }
-  nav a {
-    color: #666666;
-    text-decoration: none;
-    display: block; }
-  nav .slogan {
-    margin-top: 30px;
-    margin-left: 40px; }
-  @media only screen and (max-width: 767px) {
-    nav {
-      position: absolute;
-      width: 100vw;
-      height: calc(100vh - 67px);
-      min-height: 600px; }
-      nav > .container {
-        height: 100%;
-        min-height: 600px; }
-      nav .slogan {
-        display: none; }
-      nav li {
-        display: block;
-        position: absolute; }
-        nav li.bottom {
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%); }
-        nav li.left {
-          transform-origin: 0 100%;
-          transform: rotate(90deg) translateX(-100%);
-          left: 20px;
-          top: 50%; }
-        nav li.right {
-          transform-origin: 100% 100%;
-          transform: rotate(-90deg) translateX(80%);
-          right: 20px;
-          top: 50%; }
-      nav a {
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        color: black;
-        padding: 5px 8px 5px 10px;
-        border: 1px solid black;
-        letter-spacing: 0.2em; } }
-  @media only screen and (max-width: 736px) and (orientation: landscape) {
-    nav {
-      min-height: 667px; }
-      nav > .container {
-        min-height: 667px; } }
-  @media only screen and (min-width: 768px) {
-    nav {
-      position: fixed;
-      background: rgba(255, 255, 255, 0.85);
-      background: white;
-      transform-origin: top;
-      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
-      width: 100vw; }
-      nav * {
-        overflow: hidden; }
-      nav.reveal {
-        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
-      nav.hide {
-        transform: perspective(800px) translateY(-100%);
-        opacity: 0;
-        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        /* easeInOutBack */ }
-      nav:after {
-        content: "";
-        display: table;
-        clear: both; }
-      nav .slogan {
-        float: left;
-        font-size: 14px;
-        font-size: 0.875rem; }
-        nav .slogan .name {
-          font-size: 18px;
-          font-size: 1.125rem; }
-      nav ul {
-        float: right;
-        margin-top: 20px;
-        padding-right: 50px; }
-      nav li {
-        margin-left: 20px; }
-        nav li a {
-          font-size: 14px;
-          font-size: 0.875rem;
-          padding: 10px; } }
 
 /* home--------------*/
 #home h1 {
@@ -442,14 +345,14 @@ nav {
   overflow: visible;
   position: relative;
   top: 0;
-  left: calc((200 / 1440) * 100% + 4px); }
+  left: calc((200 / $ideal-viewport-width) * 100% + 4px); }
 
 #projects .key-visual {
   position: relative;
   overflow: hidden;
   width: 680px;
   height: 381px;
-  margin-top: calc((200 / 900) * 100% + 4px); }
+  margin-top: calc((200 / $ideal-viewport-height) * 100% + 4px); }
   #projects .key-visual .key-visual-img-container {
     transform: perspective(850px) translate3d(0px, -15px, -50px);
     transform-origin: 0 0; }
@@ -507,14 +410,14 @@ nav {
   #projects .info.time {
     font-size: 12px;
     font-size: 0.75rem;
-    left: calc((200 / 1440) * 100% + 14px);
-    top: calc((200 / 900) * 100% + -20px); }
+    left: calc((200 / $ideal-viewport-width) * 100% + 14px);
+    top: calc((200 / $ideal-viewport-height) * 100% + -20px); }
   #projects .info.index {
     font-size: 18px;
     font-size: 1.125rem;
     font-weight: 100;
-    left: calc((200 / 1440) * 100% + 687px + 10px);
-    top: calc((200 / 900) * 100% - 30px); }
+    left: calc((200 / $ideal-viewport-width) * 100% + 687px + 10px);
+    top: calc((200 / $ideal-viewport-height) * 100% - 30px); }
   #projects .info.more-info, #projects .info.less-info {
     padding: 10px;
     white-space: nowrap;
@@ -522,8 +425,8 @@ nav {
     font-size: 12px;
     font-size: 0.75rem;
     transition: opacity 1s 0.6s;
-    left: calc((200 / 1440) * 100% + 687px);
-    top: calc((200 / 900) * 100% + 389px - 34px); }
+    left: calc((200 / $ideal-viewport-width) * 100% + 687px);
+    top: calc((200 / $ideal-viewport-height) * 100% + 389px - 34px); }
     #projects .info.more-info .icon, #projects .info.less-info .icon {
       font-size: 17px;
       font-size: 1.0625rem;
@@ -537,7 +440,7 @@ nav {
     background: transparent; }
   #projects .info.project {
     left: 13.88889%;
-    top: calc((200 / 900) * 100% + 389px + 14px);
+    top: calc((200 / $ideal-viewport-height) * 100% + 389px + 14px);
     width: 687px;
     line-height: 1.57143; }
     #projects .info.project span {
@@ -579,28 +482,28 @@ nav {
     #projects .lines span.horizontal.top {
       top: 22.22222%;
       left: 0;
-      width: calc(200 / 1440 * 100% + 687px + (140 / 1440 * 100%)); }
+      width: calc(200 / $ideal-viewport-width * 100% + 687px + (140 / $ideal-viewport-width * 100%)); }
     #projects .lines span.horizontal.bottom {
-      top: calc((200 / 900) * 100% + 389px);
+      top: calc((200 / $ideal-viewport-height) * 100% + 389px);
       right: 0;
-      width: calc(100vw - (200 / 1440) * 100% + 77px); }
+      width: calc(100vw - (200 / $ideal-viewport-width) * 100% + 77px); }
 
 #projects article:nth-child(odd) .lines span.vertical.left {
-  left: calc((200 / 1440) * 100%);
+  left: calc((200 / $ideal-viewport-width) * 100%);
   top: 0; }
 
 #projects article:nth-child(odd) .lines span.vertical.right {
-  left: calc((200 / 1440) * 100% + 687px);
+  left: calc((200 / $ideal-viewport-width) * 100% + 687px);
   bottom: 0; }
 
 #projects article:nth-child(even) span.vertical.left {
   left: auto;
-  right: calc((200 / 1440) * 100% + 687px);
+  right: calc((200 / $ideal-viewport-width) * 100% + 687px);
   bottom: 0; }
 
 #projects article:nth-child(even) span.vertical.right {
   left: auto;
-  right: calc((200 / 1440) * 100%);
+  right: calc((200 / $ideal-viewport-width) * 100%);
   top: 0; }
 
 #projects article:nth-child(even) span.horizontal.top {
@@ -614,7 +517,7 @@ nav {
 #projects article:nth-child(even) .key-visual-container {
   position: absolute;
   left: auto;
-  right: calc((200 / 1440) * 100% + 4px); }
+  right: calc((200 / $ideal-viewport-width) * 100% + 4px); }
 
 #projects article:nth-child(even) .key-visual {
   position: absolute;
@@ -641,15 +544,15 @@ nav {
 
 #projects article:nth-child(even) .info.time {
   left: auto;
-  right: calc((200 / 1440) * 100% + 687px - 70px); }
+  right: calc((200 / $ideal-viewport-width) * 100% + 687px - 70px); }
 
 #projects article:nth-child(even) .info.index {
   left: auto;
-  right: calc((200 / 1440) * 100% - 36px); }
+  right: calc((200 / $ideal-viewport-width) * 100% - 36px); }
 
 #projects article:nth-child(even) .info.more-info, #projects article:nth-child(even) .info.less-info {
   left: auto;
-  right: calc((200 / 1440) * 100% - 92px); }
+  right: calc((200 / $ideal-viewport-width) * 100% - 92px); }
 
 #projects article:nth-child(even) .info.project {
   left: auto;
@@ -798,3 +701,97 @@ nav {
   #adam-visualizer .project-detail .bg {
     background: #faf5f5;
     background: #ffea4d; }
+
+nav {
+  z-index: 2;
+  transition: all 1000ms cubic-bezier(0.935, -0.6, 0.03, 1.65);
+  /* custom */ }
+  nav li {
+    display: inline-block; }
+  nav a {
+    color: #666666;
+    text-decoration: none;
+    display: block; }
+  nav .slogan {
+    margin-top: 30px;
+    margin-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    nav {
+      position: absolute;
+      width: 100vw;
+      height: calc(100vh - 67px);
+      min-height: 600px; }
+      nav > .container {
+        height: 100%;
+        min-height: 600px; }
+      nav .slogan {
+        display: none; }
+      nav li {
+        display: block;
+        position: absolute; }
+        nav li.bottom {
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%); }
+        nav li.left {
+          transform-origin: 0 100%;
+          transform: rotate(90deg) translateX(-100%);
+          left: 20px;
+          top: 50%; }
+        nav li.right {
+          transform-origin: 100% 100%;
+          transform: rotate(-90deg) translateX(80%);
+          right: 20px;
+          top: 50%; }
+      nav a {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px 8px 5px 10px;
+        border: 1px solid black;
+        letter-spacing: 0.2em; } }
+  @media only screen and (max-width: 736px) and (orientation: landscape) {
+    nav {
+      min-height: 667px; }
+      nav > .container {
+        min-height: 667px; } }
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      background: rgba(255, 255, 255, 0.85);
+      background: white;
+      transform-origin: top;
+      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
+      width: 100vw; }
+      nav * {
+        overflow: hidden; }
+      nav.reveal {
+        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
+      nav.hide {
+        transform: perspective(800px) translateY(-100%);
+        opacity: 0;
+        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* easeInOutBack */ }
+      nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      nav .slogan {
+        float: left;
+        font-size: 14px;
+        font-size: 0.875rem; }
+        nav .slogan .name {
+          font-size: 18px;
+          font-size: 1.125rem; }
+      nav ul {
+        float: right;
+        margin-top: 20px;
+        padding-right: 50px; }
+      nav li {
+        margin-left: 20px; }
+        nav li a {
+          font-size: 14px;
+          font-size: 0.875rem;
+          padding: 10px; } }

@@ -98,7 +98,7 @@ html.no-scroll {
 
 .container {
     position: relative;
-    max-width: $ideal-viewport-widthpx;
+    max-width: #{$ideal-viewport-width}px;
     margin: 0 auto;
 }
 
@@ -113,9 +113,6 @@ html.no-scroll {
     overflow: hidden;
 
     > .container {
-        /*position: relative;
-        max-width: $ideal-viewport-widthpx;
-        margin: 0 auto;*/
         overflow: auto;
         height: 100vh;        
     }
