@@ -114,7 +114,7 @@
     .key-visual-container {
         width: 100vh; // margin top is calculated based on parent width instead of height
         // height: 100%;
-        min-width: 768px;
+        min-width: $full-viewport-min-height;
         overflow: visible;
         position: relative;
         top: 0;
@@ -277,11 +277,11 @@
         width: 100%;
         height: 100vh;
         @media only screen and (min-width: 768px) {
-            min-height: 768px;
+            min-height: $full-viewport-min-height;
         }
 
         @media only screen and (max-width: 767px) {
-            min-height: 560px;
+            min-height: $full-viewport-min-height-mobile;
         }
 
         span {

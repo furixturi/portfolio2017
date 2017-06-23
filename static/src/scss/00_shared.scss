@@ -33,6 +33,9 @@ a {
 
 /* length variables ---------*/
 $col-padding: 14px;
+$full-viewport-min-height: 768px;
+$full-viewport-min-height-mobile: 667px;
+$mobile-ui-bar-height: 67px;
 
 /* Colors -------------------*/
 $text-color: #666666;
@@ -115,16 +118,24 @@ html.no-scroll {
     }
 
     @media only screen and (min-width: 768px) {
-        min-height: 768px;
+        min-height: $full-viewport-min-height;
          > .container {
-            min-height: 768px;     
+            min-height: $full-viewport-min-height;     
         }
     }
 
     @media only screen and (max-width: 767px) {
-        min-height: 560px;
+        height: $full-viewport-min-height-mobile - $mobile-ui-bar-height;
         > .container {
-            min-height: 560px;     
+            height: $full-viewport-min-height-mobile - $mobile-ui-bar-height;     
+        }
+    }
+
+    // mobile landscape
+    @media only screen and (max-width: 767px) and (orientation: landscape) { 
+        min-height: $full-viewport-min-height-mobile;
+        > .container {
+            min-height: $full-viewport-min-height-mobile;
         }
     }
 }

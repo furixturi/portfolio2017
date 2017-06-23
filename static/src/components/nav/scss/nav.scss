@@ -22,11 +22,12 @@ nav {
     @media only screen and (max-width: 767px) {
         position: absolute;
         width: 100vw;
-        height: 100vh;
-        min-height: 560px;
+        height: calc(100vh - #{$mobile-ui-bar-height}); //fix mobile browser problem of viewport height changing
+        min-height: $full-viewport-min-height-mobile  - $mobile-ui-bar-height;
+
         > .container {
-            height: 100vh;
-            min-height: 560px;
+            height: 100%;
+            min-height: $full-viewport-min-height-mobile - $mobile-ui-bar-height;
         }
         
         .slogan {
@@ -69,14 +70,12 @@ nav {
         }
     }
 
-    // real mobile device
-    @media only screen and (max-device-width: 736px) {
-        height: calc(100vh - 67px); //fix mobile browser problem of viewport height changing
-    }
-
     // mobile landscape
-    @media only screen and (max-width: 767px) and (orientation: landscape) { 
-        min-height: 667px;
+    @media only screen and (max-width: 736px) and (orientation: landscape) { 
+        min-height: $full-viewport-min-height-mobile;
+        > .container {
+            min-height: $full-viewport-min-height-mobile;
+        }
     }
 
 // tablet and desktop
