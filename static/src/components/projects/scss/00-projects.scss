@@ -117,14 +117,14 @@ $key-visual-height:381px;
         overflow: visible;
         position: relative;
         top: 0;
-        left: calc((200 / $ideal-viewport-width) * 100% + 4px);
+        left: calc((200 / #{$ideal-viewport-width}) * 100% + 4px);
     }
     .key-visual {
         position: relative;
         overflow: hidden;
         width: $key-visual-width;
         height: $key-visual-height;
-        margin-top: calc((200 / $ideal-viewport-height) * 100% + 4px);
+        margin-top: calc((200 / #{$ideal-viewport-height}) * 100% + 4px);
         
         .key-visual-img-container {
             transform: perspective(850px) 
@@ -197,15 +197,15 @@ $key-visual-height:381px;
 
         &.time {
             @include fontSize(12px);
-            left: calc((200 / $ideal-viewport-width) * 100% + 14px);
-            top: calc((200 / $ideal-viewport-height) * 100% + -20px);
+            left: calc((200 / #{$ideal-viewport-width}) * 100% + 14px);
+            top: calc((200 / #{$ideal-viewport-height}) * 100% + -20px);
         }
 
         &.index {
             @include fontSize(18px);
             font-weight: 100;
-            left: calc((200 / $ideal-viewport-width) * 100% + 687px + 10px);
-            top: calc((200 / $ideal-viewport-height) * 100% - 30px);
+            left: calc((200 / #{$ideal-viewport-width}) * 100% + 687px + 10px);
+            top: calc((200 / #{$ideal-viewport-height}) * 100% - 30px);
         }
 
         &.more-info, 
@@ -217,8 +217,8 @@ $key-visual-height:381px;
             @include fontSize(12px);
             transition: opacity 1s 0.6s;
 
-            left: calc((200 / $ideal-viewport-width) * 100% + 687px);
-            top: calc((200 / $ideal-viewport-height) * 100% + 389px - 34px);
+            left: calc((200 / #{$ideal-viewport-width}) * 100% + 687px);
+            top: calc((200 / #{$ideal-viewport-height}) * 100% + 389px - 34px);
 
             .icon {
                 @include fontSize(17px);
@@ -241,7 +241,7 @@ $key-visual-height:381px;
         &.project {
 
             left: (200 / $ideal-viewport-width) * 100%;
-            top: calc((200 / $ideal-viewport-height) * 100% + 389px + 14px);
+            top: calc((200 / #{$ideal-viewport-height}) * 100% + 389px + 14px);
 
             width: 687px;
 
@@ -305,14 +305,14 @@ $key-visual-height:381px;
                 top: (200 / $ideal-viewport-height) * 100%;
                 left: 0;
                 // max-width: 1208px;
-                width: calc(200 / $ideal-viewport-width * 100% + 687px + (140 / $ideal-viewport-width * 100%));
+                width: calc(200 / #{$ideal-viewport-width} * 100% + 687px + (140 / #{$ideal-viewport-width} * 100%));
                 //transform: translate(0, 200px);
             }
 
             &.bottom {
-                top: calc((200 / $ideal-viewport-height) * 100% + 389px);
+                top: calc((200 / #{$ideal-viewport-height}) * 100% + 389px);
                 right: 0;
-                width: calc(100vw - (200 / $ideal-viewport-width) * 100% + 77px);
+                width: calc(100vw - (200 / #{$ideal-viewport-width}) * 100% + 77px);
                 //transform: translate(122px, 589px);
             }
         }
@@ -325,12 +325,12 @@ $key-visual-height:381px;
 
         span.vertical {            
             &.left {
-                left: calc((200 / $ideal-viewport-width) * 100%);
+                left: calc((200 / #{$ideal-viewport-width}) * 100%);
                 top: 0;
                 //transform: translate(200px, 138px);
             }
             &.right {
-                left: calc((200 / $ideal-viewport-width) * 100% + 687px);
+                left: calc((200 / #{$ideal-viewport-width}) * 100% + 687px);
                 bottom: 0;
                 //transform: translate(887px, 0px);
             }
@@ -344,13 +344,13 @@ $key-visual-height:381px;
         span.vertical {            
             &.left {
                 left: auto;
-                right: calc((200 / $ideal-viewport-width) * 100% + 687px);
+                right: calc((200 / #{$ideal-viewport-width}) * 100% + 687px);
                 bottom: 0;
                 //transform: translate(200px, 138px);
             }
             &.right {
                 left: auto;
-                right: calc((200 / $ideal-viewport-width) * 100% );
+                right: calc((200 / #{$ideal-viewport-width}) * 100% );
                 top: 0;
                 //transform: translate(887px, 0px);
             }
@@ -371,7 +371,7 @@ $key-visual-height:381px;
         .key-visual-container {
             position: absolute;
             left: auto;
-            right: calc((200 / $ideal-viewport-width) * 100% + 4px);
+            right: calc((200 / #{$ideal-viewport-width}) * 100% + 4px);
             
         }
 
@@ -415,18 +415,18 @@ $key-visual-height:381px;
 
             &.time {
                 left: auto;
-                right: calc((200 / $ideal-viewport-width) * 100% + 687px - 70px);
+                right: calc((200 / #{$ideal-viewport-width}) * 100% + 687px - 70px);
             }
 
             &.index {
                 left: auto;
-                right: calc((200 / $ideal-viewport-width) * 100% - 36px);
+                right: calc((200 / #{$ideal-viewport-width}) * 100% - 36px);
             }
 
             &.more-info,
             &.less-info {
                 left: auto;
-                right: calc((200 / $ideal-viewport-width) * 100% - 92px);
+                right: calc((200 / #{$ideal-viewport-width}) * 100% - 92px);
             }
 
             &.project {
@@ -438,15 +438,14 @@ $key-visual-height:381px;
 
 /// -------- detail ---------- ///
     article.detail {
-        position: fixed;
-        top: 0;
-        left: 0;
-        // height: 100vh;
-        z-index: 2;
-        overflow-y: scroll;
-
-        &.full-viewport {
-            // height: auto;
+        .overlay {
+            background: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 2;
+            overflow-y: scroll;
             > .container {
                 height: auto;
             }
@@ -600,9 +599,6 @@ $key-visual-height:381px;
             span.horizontal.top, span.horizontal.bottom,
             span.vertical.left, span.vertical.right {
                 border-color: $line-color-light;
-            }
-            &.horizontal-lines {
-                // position: fixed;
             }
             
             span.horizontal {

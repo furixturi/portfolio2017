@@ -10,13 +10,14 @@ $(function(){
             e.preventDefault();
             $el.addClass('detail');
             $(document).trigger('project_detail_open', [$el])
+            return false;
         });
 
         $lessInfo.on('click', function(e){
             e.preventDefault();
             $el.removeClass('detail');
             $(document).trigger('project_detail_close', [$el])
-
+            return false;
         });
 
 
