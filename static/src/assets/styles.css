@@ -127,7 +127,6 @@ html.no-scroll {
   margin: 0 auto; }
 
 .boundary {
-  box-shadow: 0 0 10px -1px #ddd;
   –webkit-overflow-scrolling: touch; }
 
 .full-viewport {
@@ -633,7 +632,7 @@ nav {
       left: auto;
       right: 0; }
 
-#projects article:nth-child(even) h2 {
+#projects article:nth-child(even) h2.overview-title {
   left: 13.88889%; }
 
 #projects article:nth-child(even) .info.time {
