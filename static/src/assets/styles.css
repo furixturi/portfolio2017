@@ -488,6 +488,8 @@ nav {
   position: absolute;
   z-index: 1;
   opacity: 1; }
+  #projects h2 a {
+    color: white; }
   #projects h2.overview-title {
     left: 25%;
     top: 37.77778%; }
@@ -696,11 +698,14 @@ nav {
             } */ }
     #projects article.detail .key-visual .key-visual-img-container {
       transform: translate3d(0px, 0px, 0px); }
+      #projects article.detail .key-visual .key-visual-img-container a {
+        pointer-events: none; }
     #projects article.detail .key-visual .img-shadow {
       transform: perspective(850px) rotate3d(0, -1, 0, 0deg); }
       #projects article.detail .key-visual .img-shadow:after {
         opacity: 0; }
   #projects article.detail h2.overview-title {
+    pointer-events: none;
     opacity: 0; }
   #projects article.detail h2.detail-title {
     opacity: 1; }
