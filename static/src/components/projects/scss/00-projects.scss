@@ -217,9 +217,6 @@ $key-visual-height:381px;
             @include fontSize(12px);
             transition: opacity 1s 0.6s;
 
-            left: calc((200 / #{$ideal-viewport-width}) * 100% + 687px);
-            top: calc((200 / #{$ideal-viewport-height}) * 100% + 389px - 34px);
-
             .icon {
                 @include fontSize(17px);
                 font-weight: 600;
@@ -229,12 +226,20 @@ $key-visual-height:381px;
         &.more-info {
             opacity: 1;
             visibility: visible;
+
+            left: calc((200 / #{$ideal-viewport-width}) * 100% + 687px);
+            top: calc((200 / #{$ideal-viewport-height}) * 100% + 389px - 34px);
         }
 
         &.less-info {
             opacity: 0;
             visibility: hidden;
-            background: rgba(0, 0, 0, 0);                       
+            pointer-events: none;
+
+            position: fixed;                
+            right: 30px;
+            bottom: 30px;
+            background: rgba(0, 0, 0, 0.5);                     
         }
 
 
@@ -423,8 +428,7 @@ $key-visual-height:381px;
                 right: calc((200 / #{$ideal-viewport-width}) * 100% - 36px);
             }
 
-            &.more-info,
-            &.less-info {
+            &.more-info {
                 left: auto;
                 right: calc((200 / #{$ideal-viewport-width}) * 100% - 92px);
             }
@@ -540,10 +544,7 @@ $key-visual-height:381px;
             &.less-info {
                 opacity: 1;
                 visibility: visible;
-                position: fixed;                
-                left: calc(50% + 415px);
-                top: 592px;
-                background: rgba(0, 0, 0, 0.5); 
+                pointer-events: auto;
             }
 
             &.more-info {
