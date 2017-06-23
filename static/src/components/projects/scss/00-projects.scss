@@ -1,3 +1,6 @@
+$key-visual-width: 680px;
+$key-image-height:381px;
+
 #projects {
 
     article {
@@ -7,11 +10,6 @@
     .key-visual-container * {
         overflow: hidden;
     }
-
-// ------------ desktop ------------ //
-@media only screen and (min-width: 961px) {
-    
-}
 
 /// * animation * ///
     // background color
@@ -118,14 +116,14 @@
         overflow: visible;
         position: relative;
         top: 0;
-        left: calc((200 / 1440) * 100% + 4px);
+        left: calc((200 / $ideal-viewport-width) * 100% + 4px);
     }
     .key-visual {
         position: relative;
         overflow: hidden;
-        width: 680px;
-        height: 381px;
-        margin-top: calc((200 / 900) * 100% + 4px);
+        width: $key-visual-width;
+        height: $key-image-height;
+        margin-top: calc((200 / $ideal-viewport-height) * 100% + 4px);
         
         .key-visual-img-container {
             transform: perspective(850px) 
@@ -177,8 +175,8 @@
         opacity: 1;
 
         &.overview-title {            
-            left: (360 / 1440) * 100%;
-            top: (340 / 900) * 100%;
+            left: (360 / $ideal-viewport-width) * 100%;
+            top: (340 / $ideal-viewport-height) * 100%;
         }
 
         &.detail-title {
@@ -198,15 +196,15 @@
 
         &.time {
             @include fontSize(12px);
-            left: calc((200 / 1440) * 100% + 14px);
-            top: calc((200 / 900) * 100% + -20px);
+            left: calc((200 / $ideal-viewport-width) * 100% + 14px);
+            top: calc((200 / $ideal-viewport-height) * 100% + -20px);
         }
 
         &.index {
             @include fontSize(18px);
             font-weight: 100;
-            left: calc((200 / 1440) * 100% + 687px + 10px);
-            top: calc((200 / 900) * 100% - 30px);
+            left: calc((200 / $ideal-viewport-width) * 100% + 687px + 10px);
+            top: calc((200 / $ideal-viewport-height) * 100% - 30px);
         }
 
         &.more-info, 
@@ -218,8 +216,8 @@
             @include fontSize(12px);
             transition: opacity 1s 0.6s;
 
-            left: calc((200 / 1440) * 100% + 687px);
-            top: calc((200 / 900) * 100% + 389px - 34px);
+            left: calc((200 / $ideal-viewport-width) * 100% + 687px);
+            top: calc((200 / $ideal-viewport-height) * 100% + 389px - 34px);
 
             .icon {
                 @include fontSize(17px);
@@ -241,8 +239,8 @@
 
         &.project {
 
-            left: (200 / 1440) * 100%;
-            top: calc((200 / 900) * 100% + 389px + 14px);
+            left: (200 / $ideal-viewport-width) * 100%;
+            top: calc((200 / $ideal-viewport-height) * 100% + 389px + 14px);
 
             width: 687px;
 
@@ -293,27 +291,27 @@
 
         span.vertical {
             width: 0;
-            height: (760 / 900) * 100%;
+            height: (760 / $ideal-viewport-height) * 100%;
             border-left: 1px solid $line-color;              
         }
 
         span.horizontal {
             height: 0;
-            width: (1208 / 1440) * 100%;
+            width: (1208 / $ideal-viewport-width) * 100%;
             border-top: 1px solid $line-color;
 
             &.top {
-                top: (200 / 900) * 100%;
+                top: (200 / $ideal-viewport-height) * 100%;
                 left: 0;
                 // max-width: 1208px;
-                width: calc(200 / 1440 * 100% + 687px + (140 / 1440 * 100%));
+                width: calc(200 / $ideal-viewport-width * 100% + 687px + (140 / $ideal-viewport-width * 100%));
                 //transform: translate(0, 200px);
             }
 
             &.bottom {
-                top: calc((200 / 900) * 100% + 389px);
+                top: calc((200 / $ideal-viewport-height) * 100% + 389px);
                 right: 0;
-                width: calc(100vw - (200 / 1440) * 100% + 77px);
+                width: calc(100vw - (200 / $ideal-viewport-width) * 100% + 77px);
                 //transform: translate(122px, 589px);
             }
         }
@@ -326,12 +324,12 @@
 
         span.vertical {            
             &.left {
-                left: calc((200 / 1440) * 100%);
+                left: calc((200 / $ideal-viewport-width) * 100%);
                 top: 0;
                 //transform: translate(200px, 138px);
             }
             &.right {
-                left: calc((200 / 1440) * 100% + 687px);
+                left: calc((200 / $ideal-viewport-width) * 100% + 687px);
                 bottom: 0;
                 //transform: translate(887px, 0px);
             }
@@ -345,13 +343,13 @@
         span.vertical {            
             &.left {
                 left: auto;
-                right: calc((200 / 1440) * 100% + 687px);
+                right: calc((200 / $ideal-viewport-width) * 100% + 687px);
                 bottom: 0;
                 //transform: translate(200px, 138px);
             }
             &.right {
                 left: auto;
-                right: calc((200 / 1440) * 100% );
+                right: calc((200 / $ideal-viewport-width) * 100% );
                 top: 0;
                 //transform: translate(887px, 0px);
             }
@@ -372,7 +370,7 @@
         .key-visual-container {
             position: absolute;
             left: auto;
-            right: calc((200 / 1440) * 100% + 4px);
+            right: calc((200 / $ideal-viewport-width) * 100% + 4px);
             
         }
 
@@ -409,30 +407,30 @@
         }
         
         h2 {
-            left: (200 / 1440) * 100%;
+            left: (200 / $ideal-viewport-width) * 100%;
         }
 
         .info {
 
             &.time {
                 left: auto;
-                right: calc((200 / 1440) * 100% + 687px - 70px);
+                right: calc((200 / $ideal-viewport-width) * 100% + 687px - 70px);
             }
 
             &.index {
                 left: auto;
-                right: calc((200 / 1440) * 100% - 36px);
+                right: calc((200 / $ideal-viewport-width) * 100% - 36px);
             }
 
             &.more-info,
             &.less-info {
                 left: auto;
-                right: calc((200 / 1440) * 100% - 92px);
+                right: calc((200 / $ideal-viewport-width) * 100% - 92px);
             }
 
             &.project {
                 left: auto;
-                right: (200 / 1440) * 100%;
+                right: (200 / $ideal-viewport-width) * 100%;
             }
         }
     }
@@ -671,5 +669,20 @@
     }
 
 
+
+
+
+// ------------ smaller desktop and tablet landscape------------ //
+    @media only screen and (min-width: 1024px) and (max-width: 1160px) {
+        h2 {
+            @include fontSize(84px);
+        }
+    }
+// ------------ tablet portrait --------------- //
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        
+    }
+
+// ------------ mobile -------------//
 
 }

@@ -32,6 +32,8 @@ a {
 }
 
 /* length variables ---------*/
+$ideal-viewport-width: 1440;
+$ideal-viewport-height: 900;
 $col-padding: 14px;
 $full-viewport-min-height: 768px;
 $full-viewport-min-height-mobile: 667px;
@@ -96,12 +98,13 @@ html.no-scroll {
 
 .container {
     position: relative;
-    max-width: 1440px;
+    max-width: $ideal-viewport-widthpx;
     margin: 0 auto;
 }
 
 .boundary {
     box-shadow: 0 0 10px -1px #ddd;
+    –webkit-overflow-scrolling: touch; // for older iOS
 }
 
 .full-viewport {
@@ -111,7 +114,7 @@ html.no-scroll {
 
     > .container {
         /*position: relative;
-        max-width: 1440px;
+        max-width: $ideal-viewport-widthpx;
         margin: 0 auto;*/
         overflow: auto;
         height: 100vh;        

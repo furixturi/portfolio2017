@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -126,7 +127,8 @@ html.no-scroll {
   margin: 0 auto; }
 
 .boundary {
-  box-shadow: 0 0 10px -1px #ddd; }
+  box-shadow: 0 0 10px -1px #ddd;
+  –webkit-overflow-scrolling: touch; }
 
 .full-viewport {
   width: 100%;
@@ -185,6 +187,100 @@ html.no-scroll {
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
+
+nav {
+  z-index: 2;
+  transition: all 1000ms cubic-bezier(0.935, -0.6, 0.03, 1.65);
+  /* custom */ }
+  nav li {
+    display: inline-block; }
+  nav a {
+    color: #666666;
+    text-decoration: none;
+    display: block; }
+  nav .slogan {
+    margin-top: 30px;
+    margin-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    nav {
+      position: absolute;
+      width: 100vw;
+      height: calc(100vh - 67px);
+      min-height: 600px; }
+      nav > .container {
+        height: 100%;
+        min-height: 600px; }
+      nav .slogan {
+        display: none; }
+      nav li {
+        display: block;
+        position: absolute; }
+        nav li.bottom {
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%); }
+        nav li.left {
+          transform-origin: 0 100%;
+          transform: rotate(90deg) translateX(-100%);
+          left: 20px;
+          top: 50%; }
+        nav li.right {
+          transform-origin: 100% 100%;
+          transform: rotate(-90deg) translateX(80%);
+          right: 20px;
+          top: 50%; }
+      nav a {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px 8px 5px 10px;
+        border: 1px solid black;
+        letter-spacing: 0.2em; } }
+  @media only screen and (max-width: 736px) and (orientation: landscape) {
+    nav {
+      min-height: 667px; }
+      nav > .container {
+        min-height: 667px; } }
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      background: rgba(255, 255, 255, 0.85);
+      background: white;
+      transform-origin: top;
+      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
+      width: 100vw; }
+      nav * {
+        overflow: hidden; }
+      nav.reveal {
+        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
+      nav.hide {
+        transform: perspective(800px) translateY(-100%);
+        opacity: 0;
+        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* easeInOutBack */ }
+      nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      nav .slogan {
+        float: left;
+        font-size: 14px;
+        font-size: 0.875rem; }
+        nav .slogan .name {
+          font-size: 18px;
+          font-size: 1.125rem; }
+      nav ul {
+        float: right;
+        margin-top: 20px;
+        padding-right: 50px; }
+      nav li {
+        margin-left: 20px; }
+        nav li a {
+          font-size: 14px;
+          font-size: 0.875rem;
+          padding: 10px; } }
 
 /* home--------------*/
 #home h1 {
@@ -278,104 +374,6 @@ html.no-scroll {
   #home .craft {
     font-size: 48px;
     font-size: 3rem; } }
-
-nav {
-  z-index: 2;
-  transition: all 1000ms cubic-bezier(0.935, -0.6, 0.03, 1.65);
-  /* custom */ }
-  nav li {
-    display: inline-block; }
-  nav a {
-    color: #666666;
-    text-decoration: none;
-    display: block; }
-  nav .slogan {
-    margin-top: 30px;
-    margin-left: 40px; }
-  @media only screen and (max-width: 767px) {
-    nav {
-      position: absolute;
-      width: 100vw;
-      height: calc(100vh - 67px);
-      min-height: 600px; }
-      nav > .container {
-        height: 100%;
-        min-height: 600px; }
-      nav .slogan {
-        display: none; }
-      nav li {
-        display: block;
-        position: absolute; }
-        nav li.bottom {
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%); }
-        nav li.left {
-          transform-origin: 0 100%;
-          transform: rotate(90deg) translateX(-100%);
-          left: 20px;
-          top: 50%; }
-        nav li.right {
-          transform-origin: 100% 100%;
-          transform: rotate(-90deg) translateX(80%);
-          right: 20px;
-          top: 50%; }
-      nav a {
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        color: black;
-        padding: 5px 8px 5px 10px;
-        border: 1px solid black;
-        letter-spacing: 0.2em; } }
-  @media only screen and (max-width: 736px) and (orientation: landscape) {
-    nav {
-      min-height: 667px; }
-      nav > .container {
-        min-height: 667px; } }
-  @media only screen and (min-width: 768px) {
-    nav {
-      position: fixed;
-      background: rgba(255, 255, 255, 0.85);
-      background: white;
-      transform-origin: top;
-      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
-      width: 100vw;
-      /*> .container {
-            max-width: 1440px;
-            margin: 0 auto;
-        }*/ }
-      nav * {
-        overflow: hidden; }
-      nav.reveal {
-        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
-      nav.hide {
-        transform: perspective(800px) translateY(-100%);
-        opacity: 0;
-        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        /* easeInOutBack */ }
-      nav:after {
-        content: "";
-        display: table;
-        clear: both; }
-      nav .slogan {
-        float: left;
-        font-size: 14px;
-        font-size: 0.875rem; }
-        nav .slogan .name {
-          font-size: 18px;
-          font-size: 1.125rem; }
-      nav ul {
-        float: right;
-        margin-top: 20px;
-        padding-right: 50px; }
-      nav li {
-        margin-left: 20px; }
-        nav li a {
-          font-size: 14px;
-          font-size: 0.875rem;
-          padding: 10px; } }
 
 #projects article {
   position: relative; }
@@ -787,6 +785,11 @@ nav {
   #projects article.detail:nth-child(even) .info.project {
     position: absolute;
     top: 620px; }
+
+@media only screen and (min-width: 1024px) and (max-width: 1160px) {
+  #projects h2 {
+    font-size: 84px;
+    font-size: 5.25rem; } }
 
 #adam-visualizer {
   background: #ffea4d; }

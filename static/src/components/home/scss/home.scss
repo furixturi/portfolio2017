@@ -69,7 +69,7 @@
 
         img#face {
             max-width: 160px;
-            margin-top: 200 / 900 * 100vh;
+            margin-top: 200 / $ideal-viewport-height * 100vh;
             margin-bottom: 40px;
         }
 
