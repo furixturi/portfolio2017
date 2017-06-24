@@ -25,6 +25,10 @@
 }
 
 /* Normalize ----------------*/
+body {
+    -webkit-text-size-adjust: 100% // Prevent font scaling in iOS landscape
+}
+
 a {
     text-decoration: none;
 }
@@ -61,22 +65,27 @@ html {
 
 
 /* Layout -------------------*/
-html.no-scroll {
-    overflow: hidden;
-}
+
 
 * {
     overflow: auto; //don't collapse margin so marign-top on child doesn't move parent
     transition: all 200ms ease; //smooth everything
 }
 
-.row {
-    @include clearfix();
-    box-sizing: border-box;
-    padding: 0 $col-padding / 2;
-}
+
 
 @media only screen and (min-width: 768px) {
+
+    html.no-scroll {
+        overflow: hidden;
+    }
+
+    .row {
+        @include clearfix();
+        box-sizing: border-box;
+        padding: 0 $col-padding / 2;
+    }
+
     .col {
         float: left;
         box-sizing: border-box;
