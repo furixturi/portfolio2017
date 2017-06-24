@@ -620,13 +620,13 @@ nav {
     margin-top: calc((200 / 900) * 100% + 4px); }
     #projects .key-visual img {
       width: 800px;
-      height: 440px; }
+      height: 438px; }
     #projects .key-visual .img-shadow {
       width: 800px;
-      height: 440px; }
+      height: 438px; }
       #projects .key-visual .img-shadow:after {
         width: 800px;
-        height: 440px; }
+        height: 438px; }
   #projects h2 {
     font-size: 100px;
     font-size: 6.25rem;
@@ -729,7 +729,7 @@ nav {
     position: absolute;
     right: 0; }
     #projects article:nth-child(even) .key-visual .key-visual-img-container {
-      height: 440px;
+      height: 438px;
       transform: perspective(850px) translate3d(0px, -15px, -50px);
       transform-origin: 100% 0; }
     #projects article:nth-child(even) .key-visual img {
@@ -797,7 +797,7 @@ nav {
       #projects article.detail .lines span.horizontal.top {
         top: 180px; }
       #projects article.detail .lines span.horizontal.bottom {
-        top: 620px; }
+        top: 618px; }
     #projects article.detail .lines span.vertical.left {
       top: 0;
       bottom: 0;
@@ -956,8 +956,6 @@ nav {
       left: calc(50% + 350px); } }
 
 @media only screen and (max-width: 767px) {
-  #projects article *, #projects article:nth-child(odd) *, #projects article:nth-child(even) * {
-    transition: all 0.05s ease; }
   #projects article .overview-only-mobile, #projects article:nth-child(odd) .overview-only-mobile, #projects article:nth-child(even) .overview-only-mobile {
     display: block; }
   #projects article h2, #projects article:nth-child(odd) h2, #projects article:nth-child(even) h2 {
@@ -984,12 +982,13 @@ nav {
       transition: opacity 0.4s ease-in 0.2s; }
   #projects article .lines, #projects article:nth-child(odd) .lines, #projects article:nth-child(even) .lines {
     display: none; }
+  #projects article .key-visual-container, #projects article .key-visual-container *, #projects article:nth-child(odd) .key-visual-container, #projects article:nth-child(odd) .key-visual-container *, #projects article:nth-child(even) .key-visual-container, #projects article:nth-child(even) .key-visual-container * {
+    transition: all 0.4s ease-in; }
   #projects article .key-visual .key-visual-img-container, #projects article:nth-child(odd) .key-visual .key-visual-img-container, #projects article:nth-child(even) .key-visual .key-visual-img-container {
     transform: none; }
     #projects article .key-visual .key-visual-img-container .img-shadow, #projects article:nth-child(odd) .key-visual .key-visual-img-container .img-shadow, #projects article:nth-child(even) .key-visual .key-visual-img-container .img-shadow {
       width: 100vw;
-      height: 100vw;
-      max-height: 100vh;
+      height: 438px;
       transform: none; }
       #projects article .key-visual .key-visual-img-container .img-shadow:after, #projects article:nth-child(odd) .key-visual .key-visual-img-container .img-shadow:after, #projects article:nth-child(even) .key-visual .key-visual-img-container .img-shadow:after {
         opacity: 0.45;
@@ -998,7 +997,7 @@ nav {
         transition: opacity 0.4s ease-in; }
       #projects article .key-visual .key-visual-img-container .img-shadow img, #projects article:nth-child(odd) .key-visual .key-visual-img-container .img-shadow img, #projects article:nth-child(even) .key-visual .key-visual-img-container .img-shadow img {
         width: 800px;
-        height: 440px;
+        height: 438px;
         transition: all 0.4s ease-in; }
   #projects article .info, #projects article:nth-child(odd) .info, #projects article:nth-child(even) .info {
     font-size: 14px;
@@ -1021,6 +1020,8 @@ nav {
       font-size: 0.9375rem;
       padding: 40px 20px 0px 20px;
       line-height: 1.8; }
+      #projects article .info.project, #projects article .info.project *, #projects article:nth-child(odd) .info.project, #projects article:nth-child(odd) .info.project *, #projects article:nth-child(even) .info.project, #projects article:nth-child(even) .info.project * {
+        transition: 0s; }
       #projects article .info.project .short-row, #projects article:nth-child(odd) .info.project .short-row, #projects article:nth-child(even) .info.project .short-row {
         width: 84%; }
       #projects article .info.project .col span, #projects article:nth-child(odd) .info.project .col span, #projects article:nth-child(even) .info.project .col span {
@@ -1037,7 +1038,7 @@ nav {
         letter-spacing: 0.15em;
         line-height: 1.5;
         padding: 0 12px 0px 4px;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #000000;
         margin-bottom: 10px; }
       #projects article .info.project .col span.content, #projects article .info.project .text span.content, #projects article:nth-child(odd) .info.project .col span.content, #projects article:nth-child(odd) .info.project .text span.content, #projects article:nth-child(even) .info.project .col span.content, #projects article:nth-child(even) .info.project .text span.content {
         display: block; }
@@ -1064,7 +1065,7 @@ nav {
       font-size: 16px;
       font-size: 1rem;
       position: absolute;
-      top: 100vmin;
+      top: 438px;
       right: 0px;
       transform: translateY(-100%);
       padding: 5px 15px;
@@ -1104,7 +1105,7 @@ nav {
     #projects article.detail .info.project .project-detail .text span.title {
       font-size: 15px;
       font-size: 0.9375rem;
-      border-color: white;
+      border-color: #ffffff;
       margin-bottom: 0; }
     #projects article.detail .info.project .col.col-2-3, #projects article.detail .info.project .text.col-2-3,
     #projects article.detail .info.project .project-detail .col.col-2-3,

@@ -3,7 +3,7 @@
     $key-visual-width: 680px;
     $key-visual-height: 381px;
     $key-visual-width-detail: 800px;
-    $key-visual-height-detail: 440px;
+    $key-visual-height-detail: 438px;
     $line-distance-horizontal: 687px;
     $line-distance-vertical: 389px;
 
@@ -1011,7 +1011,6 @@
 // ------------ mobile -------------//
     @media only screen and (max-width: 767px) {
         article, article:nth-child(odd), article:nth-child(even) {
-            * { transition: all 0.05s ease; }
             .overview-only-mobile {
                 display: block;
             }
@@ -1051,17 +1050,18 @@
                 display: none;
             }
 
+            .key-visual-container, .key-visual-container * {
+                transition: all 0.4s ease-in;
+            }
+
             .key-visual {
                 .key-visual-img-container {
                     transform: none;
 
                     .img-shadow {
                         width: 100vw;
-                        height: 100vw;
-                        max-height: 100vh;
+                        height: $key-visual-height-detail;
                         transform: none;
-                        // max-width: 414px;
-                        // max-height: 414px;
 
                         &:after {
                             opacity: 0.45;
@@ -1101,6 +1101,9 @@
                 }
 
                 &.project {
+                    &, & * {
+                        transition: 0s;
+                    }
                     @include fontSize(15px);
                     padding: 40px 20px 0px 20px;
                     .short-row {
@@ -1130,7 +1133,7 @@
                             line-height: 1.5;
 
                             padding: 0 12px 0px 4px;                            
-                            border-bottom: 1px solid black;
+                            border-bottom: 1px solid #000000;
                             margin-bottom: 10px;
                         }
 
@@ -1174,7 +1177,7 @@
                     @include fontSize(16px);
 
                     position: absolute;
-                    top: 100vmin;
+                    top: $key-visual-height-detail;
                     right: 0px;
                     transform: translateY(-100%);  
                     padding: 5px 15px;                   
@@ -1248,7 +1251,7 @@
                     .col, .text {
                         span.title {
                             @include fontSize(15px);
-                            border-color: white;
+                            border-color: #ffffff;
                             margin-bottom: 0;
                         }
 
