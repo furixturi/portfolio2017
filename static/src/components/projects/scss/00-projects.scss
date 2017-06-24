@@ -1,16 +1,21 @@
-$key-visual-width: 680px;
-$key-visual-height: 381px;
-$key-visual-width-detail: 800px;
-$key-visual-height-detail: 440px;
-$line-distance-horizontal: 687px;
-$line-distance-vertical: 389px;
+// length variables
+    $line-vertical-margin: 200;
+    $key-visual-width: 680px;
+    $key-visual-height: 381px;
+    $key-visual-width-detail: 800px;
+    $key-visual-height-detail: 440px;
+    $line-distance-horizontal: 687px;
+    $line-distance-vertical: 389px;
 
-$tablet-key-visual-width: 580px;
-$tablet-key-visual-height: 325px;
-$tablet-key-visual-width-detail: 580px;
-$tablet-key-visual-height-detail: 325px;
+    $tablet-line-vertical-margin: 50;
+    $tablet-key-visual-width: 595px;
+    $tablet-key-visual-height: 333px;
+    $tablet-key-visual-width-detail: 700px;
+    $tablet-key-visual-height-detail: 385px;
+    $tablet-line-distance-horizontal: 602px;
+    $tablet-line-distance-vertical: 340px;
 
-
+// styles
 #projects {
 
     article {
@@ -275,6 +280,7 @@ $tablet-key-visual-height-detail: 325px;
             overflow-y: scroll;
             > .container {
                 height: auto;
+                min-height: 100vh;
             }
         }
 
@@ -393,7 +399,7 @@ $tablet-key-visual-height-detail: 325px;
 
 
 // ------------ big desktop ------------ //
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 768px) {
     /// -------- <big desktop> overview ---------- ///
     //// <big desktop> overview: key visual
         .key-visual-container {
@@ -766,24 +772,136 @@ $tablet-key-visual-height-detail: 325px;
     }
 // ------------ tablet portrait --------------- //
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
-        article, article:nth-child(odd), article:nth-child(even) {            
-    /// ----------- <tablet portrait> overview ----------///
-        //// <tablet portrait> overview: title
-            h2.overview-title {
-                @include fontSize(74px);
-                width: 100%;
-                text-align: center;
-                left: 0;
+        h2.overview-title {
+            @include fontSize(74px);;
+        } 
+
+        .key-visual {   
+            width: $tablet-key-visual-width;
+            height: $tablet-key-visual-height;
+            margin-top: calc((200 / #{$ideal-viewport-height}) * 100% + 4px); 
+            img {
+                width: $tablet-key-visual-width-detail;
+                height: $tablet-key-visual-height-detail;        
+            }
+            .img-shadow {
+                width: $tablet-key-visual-width-detail;
+                height: $tablet-key-visual-height-detail;
+                &:after {
+                    width: $tablet-key-visual-width-detail;
+                    height: $tablet-key-visual-height-detail;
+                }               
+            }        
+        }
+
+        .info {
+            &.index {
+                @include fontSize(18px);
+                left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal} + 10px);
+                top: calc((200 / #{$ideal-viewport-height}) * 100% - 30px);
             }
 
-        //// <tablet portrait> lines
-            
-        // detail
-            &.detail {
-
+            &.more-info {
+                left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
+                top: calc((200 / #{$ideal-viewport-height}) * 100% + #{$tablet-line-distance-vertical} - 34px);
             }
 
-        }        
+            &.project {
+                width: $tablet-line-distance-horizontal;
+            }
+        }  
+
+        .lines {
+            span.horizontal {
+                &.top {
+                    width: calc(200 / #{$ideal-viewport-width} * 100% + #{$tablet-line-distance-horizontal} + (140 / #{$ideal-viewport-width} * 100%));
+                }
+
+                &.bottom {
+                    top: calc((200 / #{$ideal-viewport-height}) * 100% + #{$tablet-line-distance-vertical});                    
+                }
+            }
+        }
+
+        article:nth-child(odd) .lines {
+            span.vertical {            
+                &.left {
+                    left: calc((200 / #{$ideal-viewport-width}) * 100%);
+                    top: 0;
+                }
+                &.right {
+                    left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
+                    bottom: 0;
+                }
+            }          
+        }    
+    
+        article:nth-child(even) {
+            .key-visual {
+                .key-visual-img-container {
+                    height: $tablet-key-visual-height-detail;
+                    transform: perspective(850px) 
+                        translate3d(0px, -15px, -50px);
+                    transform-origin: 100% 0;
+                }
+            }
+        
+            span.vertical {            
+                &.left {
+                    right: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
+                }
+            }
+
+            .info {
+
+                &.time {
+                    right: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal} - 70px);
+                }
+            }
+        }
+        
+        article.detail {   
+            .key-visual {
+                width: $tablet-key-visual-width-detail;
+                margin-top: 180px;
+            }
+
+            .info {
+
+                &.time {
+                    left: calc(50% - 380px);
+                    top: 156px;
+                }
+
+                &.index {
+                    left: calc(50% + 415px);
+                    top: 150px;
+                }
+                
+
+                &.project {
+                    position: relative;
+                    width: $tablet-key-visual-width-detail;
+                    left: calc(50% - 400px);
+                    padding-top: 40px;                    
+                }
+
+                &.project .project-detail {                   
+                    width: $tablet-key-visual-width-detail;
+                    margin: 0px auto;
+
+                    .text {
+                        padding: 30px 14px; 
+                    }
+
+                    p {
+                        width: 70%;
+                    }
+                }
+            }
+        }
+
+        
     }
 
 // ------------ mobile -------------//
