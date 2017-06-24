@@ -7,7 +7,7 @@
     $line-distance-horizontal: 687px;
     $line-distance-vertical: 389px;
 
-    $tablet-line-vertical-margin: 50;
+    $tablet-line-vertical-margin: 145;
     $tablet-key-visual-width: 595px;
     $tablet-key-visual-height: 333px;
     $tablet-key-visual-width-detail: 700px;
@@ -407,13 +407,13 @@
             // height: 100%;
             min-width: $full-viewport-min-height;
             top: 0;
-            left: calc((200 / #{$ideal-viewport-width}) * 100% + 4px);
+            left: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 4px);
         }
 
         .key-visual {   
             width: $key-visual-width;
             height: $key-visual-height;
-            margin-top: calc((200 / #{$ideal-viewport-height}) * 100% + 4px); 
+            margin-top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% + 4px); 
             img {
                 width: $key-visual-width-detail;
                 height: $key-visual-height-detail;        
@@ -434,13 +434,14 @@
 
             &.overview-title {            
                 left: (360 / $ideal-viewport-width) * 100%;
-                top: (340 / $ideal-viewport-height) * 100%;
+                top: (320 / $ideal-viewport-height) * 100vmin;
             }
 
             &.detail-title {
-                left: calc(50% + 380px);
+                @include fontSize(60px); 
+                left: calc(50% + #{($key-visual-width-detail / 2)} - 10px);
                 top: 180px;
-                transform: scale(0.6, 0.6) translate(-100%, -100%);
+                transform: translate(-100%, -100%);
                 transform-origin: 0 0;
             }
         }
@@ -451,19 +452,19 @@
 
             &.time {
                 @include fontSize(12px);
-                left: calc((200 / #{$ideal-viewport-width}) * 100% + 14px);
-                top: calc((200 / #{$ideal-viewport-height}) * 100% + -20px);
+                left: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 14px);
+                top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% + -20px);
             }
 
             &.index {
                 @include fontSize(18px);
-                left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal} + 10px);
-                top: calc((200 / #{$ideal-viewport-height}) * 100% - 30px);
+                left: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal} + 10px);
+                top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% - 30px);
             }
 
             &.more-info {
-                left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal});
-                top: calc((200 / #{$ideal-viewport-height}) * 100% + #{$line-distance-vertical} - 34px);
+                left: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal});
+                top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% + #{$line-distance-vertical} - 34px);
             }
 
             &.less-info {
@@ -475,8 +476,8 @@
 
             &.project {
 
-                left: (200 / $ideal-viewport-width) * 100%;
-                top: calc((200 / #{$ideal-viewport-height}) * 100% + #{$line-distance-vertical} + 14px);
+                left: ($line-vertical-margin / $ideal-viewport-width) * 100%;
+                top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% + #{$line-distance-vertical} + 14px);
 
                 width: $line-distance-horizontal;
 
@@ -511,22 +512,22 @@
             }
 
             span.vertical {
-                height: (760 / $ideal-viewport-height) * 100%;
+                // height: (760 / $ideal-viewport-height) * 100%;
             }
 
             span.horizontal {
                 width: (1208 / $ideal-viewport-width) * 100%;
 
                 &.top {
-                    top: (200 / $ideal-viewport-height) * 100%;
+                    top: ($line-vertical-margin / $ideal-viewport-height) * 100%;
                     left: 0;
-                    width: calc(200 / #{$ideal-viewport-width} * 100% + #{$line-distance-horizontal} + (140 / #{$ideal-viewport-width} * 100%));
+                    width: calc(#{$line-vertical-margin} / #{$ideal-viewport-width} * 100% + #{$line-distance-horizontal} + (140 / #{$ideal-viewport-width} * 100%));
                 }
 
                 &.bottom {
-                    top: calc((200 / #{$ideal-viewport-height}) * 100% + #{$line-distance-vertical});
+                    top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% + #{$line-distance-vertical});
                     right: 0;
-                    width: calc(100vw - (200 / #{$ideal-viewport-width}) * 100% + 77px);
+                    width: calc(100vw - (#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 77px);
                 }
             }
         } 
@@ -535,11 +536,13 @@
         article:nth-child(odd) .lines {
             span.vertical {            
                 &.left {
-                    left: calc((200 / #{$ideal-viewport-width}) * 100%);
+                    left: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100%);
                     top: 0;
+                    bottom: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100%);
                 }
                 &.right {
-                    left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal});
+                    left: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal});
+                    top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% - 45px);
                     bottom: 0;
                 }
             }            
@@ -549,13 +552,15 @@
             span.vertical {            
                 &.left {
                     left: auto;
-                    right: calc((200 / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal});
+                    right: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal});
+                    top: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100% - 45px);
                     bottom: 0;
                 }
                 &.right {
                     left: auto;
-                    right: calc((200 / #{$ideal-viewport-width}) * 100% );
+                    right: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% );
                     top: 0;
+                    bottom: calc((#{$line-vertical-margin} / #{$ideal-viewport-height}) * 100%);
                 }
             }
 
@@ -574,7 +579,7 @@
             .key-visual-container {
                 position: absolute;
                 left: auto;
-                right: calc((200 / #{$ideal-viewport-width}) * 100% + 4px);
+                right: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 4px);
             }
 
             .key-visual {
@@ -610,35 +615,36 @@
             }
             
             h2.overview-title {
-                left: (200 / $ideal-viewport-width) * 100%;
+                left: ($line-vertical-margin / $ideal-viewport-width) * 100%;
             }
 
             .info {
 
                 &.time {
                     left: auto;
-                    right: calc((200 / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal} - 70px);
+                    right: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$line-distance-horizontal} - 70px);
                 }
 
                 &.index {
                     left: auto;
-                    right: calc((200 / #{$ideal-viewport-width}) * 100% - 36px);
+                    right: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% - 36px);
                 }
 
                 &.more-info {
                     left: auto;
-                    right: calc((200 / #{$ideal-viewport-width}) * 100% - 92px);
+                    right: calc((#{$line-vertical-margin} / #{$ideal-viewport-width}) * 100% - 92px);
                 }
 
                 &.project {
                     left: auto;
-                    right: (200 / $ideal-viewport-width) * 100%;
+                    right: ($line-vertical-margin / $ideal-viewport-width) * 100%;
                 }
             }
         }
 
     /// -------- <big desktop> detail ---------- ///
-        article.detail {            
+        article.detail {
+            * { transition: all 0.05s ease; }
 
             .first-row {
                 margin-bottom: 30px;
@@ -650,7 +656,7 @@
         
     //// <big desktop> detail: key visual
             .key-visual-container {
-                left: calc(50% - 400px);
+                left: calc(50% - #{($key-visual-width-detail / 2)});
                 position: relative;
             }
             .key-visual {
@@ -676,7 +682,7 @@
                 &.project {
                     position: relative;
                     width: $key-visual-width-detail;
-                    left: calc(50% - 400px);
+                    left: calc(50% - #{($key-visual-width-detail / 2)});
                     padding-top: 40px;                    
                 }
 
@@ -695,7 +701,7 @@
             }
     //// <big desktop> detail: lines
             .lines {
-                
+                height: 100%;
                 span.horizontal {
                     width: 100%;
 
@@ -705,18 +711,22 @@
                     }
 
                     &.bottom {
-                        top: (180 + 438) * 1px;
+                        top: (180 + $key-visual-height-detail);
                     }
                 }
                 span.vertical {
-                    height: 100%;
+                    
 
                     &.left {
-                        left: calc(50% - 400px);
+                        top: 0;
+                        bottom: 0;
+                        left: calc(50% - #{($key-visual-width-detail / 2)});
                     }
 
                     &.right {
-                        left: calc(50% + 400px);
+                        top: 0;
+                        bottom: 0;
+                        left: calc(50% + #{($key-visual-width-detail / 2)});
                     }
                 }
             }
@@ -726,18 +736,22 @@
             &:nth-child(even) {
                 span.vertical {            
                     &.left {
+                        top: 0;
+                        bottom: 0;
                         left: auto;
-                        right: calc(50% + 400px);;
+                        right: calc(50% + #{($key-visual-width-detail / 2)});;
                     }
                     &.right {
+                        top: 0;
+                        bottom: 0;
                         left: auto;
-                        right: calc(50% - 400px);
+                        right: calc(50% - #{($key-visual-width-detail / 2)});
                     }
                 }
 
                 .key-visual-container {
                     left: auto;
-                    right: calc(50% - 400px);
+                    right: calc(50% - #{($key-visual-width-detail / 2)});
                     position: absolute;
                 }
 
@@ -773,13 +787,24 @@
 // ------------ tablet portrait --------------- //
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
         h2.overview-title {
+            white-space: normal;
             @include fontSize(74px);;
         } 
+
+        h2.detail-title {
+            @include fontSize(44px); 
+            left: calc(50% + #{($tablet-key-visual-width-detail / 2)} - 10px);
+            top: 180px;
+        }
+
+        .key-visual-container {
+            left: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 4px);
+        }
 
         .key-visual {   
             width: $tablet-key-visual-width;
             height: $tablet-key-visual-height;
-            margin-top: calc((200 / #{$ideal-viewport-height}) * 100% + 4px); 
+            margin-top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% + 4px); 
             img {
                 width: $tablet-key-visual-width-detail;
                 height: $tablet-key-visual-height-detail;        
@@ -795,18 +820,30 @@
         }
 
         .info {
+
+            &.time {
+                left: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 14px);
+                top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% + -20px);
+            }
+
             &.index {
                 @include fontSize(18px);
-                left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal} + 10px);
-                top: calc((200 / #{$ideal-viewport-height}) * 100% - 30px);
+                left: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal} + 10px);
+                top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% - 30px);
             }
 
             &.more-info {
-                left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
-                top: calc((200 / #{$ideal-viewport-height}) * 100% + #{$tablet-line-distance-vertical} - 34px);
+                background: rgba(white, 0.5);
+                left: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal} - 94px);
+                top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% + #{$tablet-line-distance-vertical} - 43px);
+                border: 1px solid rgba(26, 26, 26, 0.05);
+                border-right: 0 transparent;
+                border-bottom: 0 transparent;
             }
 
             &.project {
+                left: ($tablet-line-vertical-margin / $ideal-viewport-width) * 100%;
+                top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% + #{$tablet-line-distance-vertical} + 14px);
                 width: $tablet-line-distance-horizontal;
             }
         }  
@@ -814,11 +851,13 @@
         .lines {
             span.horizontal {
                 &.top {
-                    width: calc(200 / #{$ideal-viewport-width} * 100% + #{$tablet-line-distance-horizontal} + (140 / #{$ideal-viewport-width} * 100%));
+                    top: ($tablet-line-vertical-margin / $ideal-viewport-height) * 100%;
+                    width: calc(#{$tablet-line-vertical-margin} / #{$ideal-viewport-width} * 100% + #{$tablet-line-distance-horizontal} + (140 / #{$ideal-viewport-width} * 100%));
                 }
 
                 &.bottom {
-                    top: calc((200 / #{$ideal-viewport-height}) * 100% + #{$tablet-line-distance-vertical});                    
+                    top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% + #{$tablet-line-distance-vertical});                    
+                    width: calc(100vw - (#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 77px);
                 }
             }
         }
@@ -826,17 +865,23 @@
         article:nth-child(odd) .lines {
             span.vertical {            
                 &.left {
-                    left: calc((200 / #{$ideal-viewport-width}) * 100%);
+                    left: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100%);
                     top: 0;
+                    bottom: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100%);
                 }
                 &.right {
-                    left: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
+                    left: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
+                    top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% - 45px);
                     bottom: 0;
                 }
             }          
         }    
     
         article:nth-child(even) {
+            .key-visual-container {
+                right: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 4px);
+            }
+
             .key-visual {
                 .key-visual-img-container {
                     height: $tablet-key-visual-height-detail;
@@ -846,21 +891,48 @@
                 }
             }
         
+            h2.overview-title {
+                left: ($tablet-line-vertical-margin / $ideal-viewport-width) * 100%;
+            }
+
             span.vertical {            
                 &.left {
-                    right: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
+                    top: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100% - 45px);
+                    right: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal});
+                }
+            
+                &.right {
+                    left: auto;
+                    right: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% );
+                    bottom: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-height}) * 100%);
                 }
             }
 
             .info {
 
                 &.time {
-                    right: calc((200 / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal} - 70px);
+                    right: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + #{$tablet-line-distance-horizontal} - 70px);
+                }
+
+                &.index {
+                    right: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% - 36px);
+                }
+
+                &.more-info {
+                    right: calc((#{$tablet-line-vertical-margin} / #{$ideal-viewport-width}) * 100% + 1px);
+                }
+
+                &.project {
+                    right: ($tablet-line-vertical-margin / $ideal-viewport-width) * 100%;
                 }
             }
         }
         
         article.detail {   
+            .key-visual-container {
+                left: calc(50% - #{($tablet-key-visual-width-detail / 2)});
+            }
+
             .key-visual {
                 width: $tablet-key-visual-width-detail;
                 margin-top: 180px;
@@ -869,7 +941,7 @@
             .info {
 
                 &.time {
-                    left: calc(50% - 380px);
+                    left: calc(50% - #{($tablet-key-visual-width-detail / 2)} + 10px);
                     top: 156px;
                 }
 
@@ -882,7 +954,7 @@
                 &.project {
                     position: relative;
                     width: $tablet-key-visual-width-detail;
-                    left: calc(50% - 400px);
+                    left: calc(50% - #{($tablet-key-visual-width-detail / 2)});
                     padding-top: 40px;                    
                 }
 
@@ -896,6 +968,38 @@
 
                     p {
                         width: 70%;
+                    }
+                }
+            }
+
+            .lines {
+                
+                span.horizontal {
+                    width: 100%;
+
+                    &.top {
+                        top: 180px;
+                        
+                    }
+
+                    &.bottom {
+                        top: (180 + $tablet-key-visual-height-detail);
+                    }
+                }
+
+                span.vertical {
+                    height: 100%;
+
+                    &.left {
+                        top: 0;
+                        bottom: 0;
+                        left: calc(50% - #{($tablet-key-visual-width-detail / 2)});
+                    }
+
+                    &.right {
+                        top: 0;
+                        bottom: 0;
+                        left: calc(50% + #{($tablet-key-visual-width-detail / 2)});
                     }
                 }
             }
@@ -1076,7 +1180,7 @@
                     padding: 5px 15px;                   
 
                     color: rgba(255, 255, 255, .9);                    
-                    background: transparentize($theme-color-adam-configurator, .25);                    
+                    // background: transparentize($theme-color-adam-configurator, .25);                    
                     border: 1px solid rgba(255, 255, 255, .15);
                 }
             }

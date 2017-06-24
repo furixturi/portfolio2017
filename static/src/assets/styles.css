@@ -185,6 +185,98 @@ html {
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
 
+nav {
+  z-index: 5;
+  transition: all 0.8s cubic-bezier(0.935, -0.6, 0.03, 1.65); }
+  nav li {
+    display: inline-block; }
+  nav a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    display: block; }
+  nav .slogan {
+    margin-top: 30px;
+    margin-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    nav {
+      position: absolute;
+      width: 100vw;
+      height: calc(100vh - 67px);
+      min-height: 600px; }
+      nav > .container {
+        height: 100%;
+        min-height: 600px; }
+      nav .slogan {
+        display: none; }
+      nav li {
+        display: block;
+        position: absolute; }
+        nav li.bottom {
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%); }
+        nav li.left {
+          transform-origin: 0 100%;
+          transform: rotate(90deg) translateX(-100%);
+          left: 20px;
+          top: 50%; }
+        nav li.right {
+          transform-origin: 100% 100%;
+          transform: rotate(-90deg) translateX(80%);
+          right: 20px;
+          top: 50%; }
+      nav a {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px 8px 5px 10px;
+        border: 1px solid black;
+        letter-spacing: 0.2em; } }
+  @media only screen and (max-width: 736px) and (orientation: landscape) {
+    nav {
+      min-height: 667px; }
+      nav > .container {
+        min-height: 667px; } }
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      background: white;
+      transform-origin: top;
+      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
+      width: 100vw; }
+      nav * {
+        overflow: hidden; }
+      nav.reveal {
+        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
+      nav.hide {
+        transform: perspective(800px) translateY(-100%);
+        opacity: 0;
+        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* easeInOutBack */ }
+      nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      nav .slogan {
+        float: left;
+        font-size: 14px;
+        font-size: 0.875rem; }
+        nav .slogan .name {
+          font-size: 18px;
+          font-size: 1.125rem; }
+      nav ul {
+        float: right;
+        margin-top: 20px;
+        padding-right: 50px; }
+      nav li {
+        margin-left: 20px; }
+        nav li a {
+          font-size: 14px;
+          font-size: 0.875rem;
+          padding: 10px; } }
+
 /* home--------------*/
 #home h1 {
   font-weight: 100;
@@ -278,98 +370,6 @@ html {
   #home .craft {
     font-size: 48px;
     font-size: 3rem; } }
-
-nav {
-  z-index: 5;
-  transition: all 0.8s cubic-bezier(0.935, -0.6, 0.03, 1.65); }
-  nav li {
-    display: inline-block; }
-  nav a {
-    color: rgba(0, 0, 0, 0.7);
-    text-decoration: none;
-    display: block; }
-  nav .slogan {
-    margin-top: 30px;
-    margin-left: 40px; }
-  @media only screen and (max-width: 767px) {
-    nav {
-      position: absolute;
-      width: 100vw;
-      height: calc(100vh - 67px);
-      min-height: 600px; }
-      nav > .container {
-        height: 100%;
-        min-height: 600px; }
-      nav .slogan {
-        display: none; }
-      nav li {
-        display: block;
-        position: absolute; }
-        nav li.bottom {
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%); }
-        nav li.left {
-          transform-origin: 0 100%;
-          transform: rotate(90deg) translateX(-100%);
-          left: 20px;
-          top: 50%; }
-        nav li.right {
-          transform-origin: 100% 100%;
-          transform: rotate(-90deg) translateX(80%);
-          right: 20px;
-          top: 50%; }
-      nav a {
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        color: black;
-        padding: 5px 8px 5px 10px;
-        border: 1px solid black;
-        letter-spacing: 0.2em; } }
-  @media only screen and (max-width: 736px) and (orientation: landscape) {
-    nav {
-      min-height: 667px; }
-      nav > .container {
-        min-height: 667px; } }
-  @media only screen and (min-width: 768px) {
-    nav {
-      position: fixed;
-      background: white;
-      transform-origin: top;
-      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
-      width: 100vw; }
-      nav * {
-        overflow: hidden; }
-      nav.reveal {
-        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
-      nav.hide {
-        transform: perspective(800px) translateY(-100%);
-        opacity: 0;
-        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        /* easeInOutBack */ }
-      nav:after {
-        content: "";
-        display: table;
-        clear: both; }
-      nav .slogan {
-        float: left;
-        font-size: 14px;
-        font-size: 0.875rem; }
-        nav .slogan .name {
-          font-size: 18px;
-          font-size: 1.125rem; }
-      nav ul {
-        float: right;
-        margin-top: 20px;
-        padding-right: 50px; }
-      nav li {
-        margin-left: 20px; }
-        nav li a {
-          font-size: 14px;
-          font-size: 0.875rem;
-          padding: 10px; } }
 
 #projects article {
   position: relative; }
@@ -633,11 +633,13 @@ nav {
     position: absolute; }
     #projects h2.overview-title {
       left: 25%;
-      top: 37.77778%; }
+      top: 35.55556vmin; }
     #projects h2.detail-title {
-      left: calc(50% + 380px);
+      font-size: 60px;
+      font-size: 3.75rem;
+      left: calc(50% + 400px - 10px);
       top: 180px;
-      transform: scale(0.6, 0.6) translate(-100%, -100%);
+      transform: translate(-100%, -100%);
       transform-origin: 0 0; }
   #projects .info {
     font-size: 14px;
@@ -685,8 +687,6 @@ nav {
     #projects .lines span {
       display: block;
       position: absolute; }
-    #projects .lines span.vertical {
-      height: 84.44444%; }
     #projects .lines span.horizontal {
       width: 83.88889%; }
       #projects .lines span.horizontal.top {
@@ -699,18 +699,22 @@ nav {
         width: calc(100vw - (200 / 1440) * 100% + 77px); }
   #projects article:nth-child(odd) .lines span.vertical.left {
     left: calc((200 / 1440) * 100%);
-    top: 0; }
+    top: 0;
+    bottom: calc((200 / 900) * 100%); }
   #projects article:nth-child(odd) .lines span.vertical.right {
     left: calc((200 / 1440) * 100% + 687px);
+    top: calc((200 / 900) * 100% - 45px);
     bottom: 0; }
   #projects article:nth-child(even) span.vertical.left {
     left: auto;
     right: calc((200 / 1440) * 100% + 687px);
+    top: calc((200 / 900) * 100% - 45px);
     bottom: 0; }
   #projects article:nth-child(even) span.vertical.right {
     left: auto;
     right: calc((200 / 1440) * 100%);
-    top: 0; }
+    top: 0;
+    bottom: calc((200 / 900) * 100%); }
   #projects article:nth-child(even) span.horizontal.top {
     left: auto;
     right: 0; }
@@ -754,6 +758,8 @@ nav {
   #projects article:nth-child(even) .info.project {
     left: auto;
     right: 13.88889%; }
+  #projects article.detail * {
+    transition: all 0.05s ease; }
   #projects article.detail .first-row {
     margin-bottom: 30px; }
   #projects article.detail .detail-short-row {
@@ -784,22 +790,30 @@ nav {
       padding: 30px 14px; }
     #projects article.detail .info.project .project-detail p {
       width: 70%; }
-  #projects article.detail .lines span.horizontal {
-    width: 100%; }
-    #projects article.detail .lines span.horizontal.top {
-      top: 180px; }
-    #projects article.detail .lines span.horizontal.bottom {
-      top: 618px; }
-  #projects article.detail .lines span.vertical {
+  #projects article.detail .lines {
     height: 100%; }
+    #projects article.detail .lines span.horizontal {
+      width: 100%; }
+      #projects article.detail .lines span.horizontal.top {
+        top: 180px; }
+      #projects article.detail .lines span.horizontal.bottom {
+        top: 620px; }
     #projects article.detail .lines span.vertical.left {
+      top: 0;
+      bottom: 0;
       left: calc(50% - 400px); }
     #projects article.detail .lines span.vertical.right {
+      top: 0;
+      bottom: 0;
       left: calc(50% + 400px); }
   #projects article.detail:nth-child(even) span.vertical.left {
+    top: 0;
+    bottom: 0;
     left: auto;
     right: calc(50% + 400px); }
   #projects article.detail:nth-child(even) span.vertical.right {
+    top: 0;
+    bottom: 0;
     left: auto;
     right: calc(50% - 400px); }
   #projects article.detail:nth-child(even) .key-visual-container {
@@ -822,12 +836,20 @@ nav {
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   #projects h2.overview-title {
+    white-space: normal;
     font-size: 74px;
     font-size: 4.625rem; }
+  #projects h2.detail-title {
+    font-size: 44px;
+    font-size: 2.75rem;
+    left: calc(50% + 350px - 10px);
+    top: 180px; }
+  #projects .key-visual-container {
+    left: calc((145 / 1440) * 100% + 4px); }
   #projects .key-visual {
     width: 595px;
     height: 333px;
-    margin-top: calc((200 / 900) * 100% + 4px); }
+    margin-top: calc((145 / 900) * 100% + 4px); }
     #projects .key-visual img {
       width: 700px;
       height: 385px; }
@@ -837,39 +859,69 @@ nav {
       #projects .key-visual .img-shadow:after {
         width: 700px;
         height: 385px; }
+  #projects .info.time {
+    left: calc((145 / 1440) * 100% + 14px);
+    top: calc((145 / 900) * 100% + -20px); }
   #projects .info.index {
     font-size: 18px;
     font-size: 1.125rem;
-    left: calc((200 / 1440) * 100% + 602px + 10px);
-    top: calc((200 / 900) * 100% - 30px); }
+    left: calc((145 / 1440) * 100% + 602px + 10px);
+    top: calc((145 / 900) * 100% - 30px); }
   #projects .info.more-info {
-    left: calc((200 / 1440) * 100% + 602px);
-    top: calc((200 / 900) * 100% + 340px - 34px); }
+    background: rgba(255, 255, 255, 0.5);
+    left: calc((145 / 1440) * 100% + 602px - 94px);
+    top: calc((145 / 900) * 100% + 340px - 43px);
+    border: 1px solid rgba(26, 26, 26, 0.05);
+    border-right: 0 transparent;
+    border-bottom: 0 transparent; }
   #projects .info.project {
+    left: 10.06944%;
+    top: calc((145 / 900) * 100% + 340px + 14px);
     width: 602px; }
   #projects .lines span.horizontal.top {
-    width: calc(200 / 1440 * 100% + 602px + (140 / 1440 * 100%)); }
+    top: 16.11111%;
+    width: calc(145 / 1440 * 100% + 602px + (140 / 1440 * 100%)); }
   #projects .lines span.horizontal.bottom {
-    top: calc((200 / 900) * 100% + 340px); }
+    top: calc((145 / 900) * 100% + 340px);
+    width: calc(100vw - (145 / 1440) * 100% + 77px); }
   #projects article:nth-child(odd) .lines span.vertical.left {
-    left: calc((200 / 1440) * 100%);
-    top: 0; }
+    left: calc((145 / 1440) * 100%);
+    top: 0;
+    bottom: calc((145 / 900) * 100%); }
   #projects article:nth-child(odd) .lines span.vertical.right {
-    left: calc((200 / 1440) * 100% + 602px);
+    left: calc((145 / 1440) * 100% + 602px);
+    top: calc((145 / 900) * 100% - 45px);
     bottom: 0; }
+  #projects article:nth-child(even) .key-visual-container {
+    right: calc((145 / 1440) * 100% + 4px); }
   #projects article:nth-child(even) .key-visual .key-visual-img-container {
     height: 385px;
     transform: perspective(850px) translate3d(0px, -15px, -50px);
     transform-origin: 100% 0; }
+  #projects article:nth-child(even) h2.overview-title {
+    left: 10.06944%; }
   #projects article:nth-child(even) span.vertical.left {
-    right: calc((200 / 1440) * 100% + 602px); }
+    top: calc((145 / 900) * 100% - 45px);
+    right: calc((145 / 1440) * 100% + 602px); }
+  #projects article:nth-child(even) span.vertical.right {
+    left: auto;
+    right: calc((145 / 1440) * 100%);
+    bottom: calc((145 / 900) * 100%); }
   #projects article:nth-child(even) .info.time {
-    right: calc((200 / 1440) * 100% + 602px - 70px); }
+    right: calc((145 / 1440) * 100% + 602px - 70px); }
+  #projects article:nth-child(even) .info.index {
+    right: calc((145 / 1440) * 100% - 36px); }
+  #projects article:nth-child(even) .info.more-info {
+    right: calc((145 / 1440) * 100% + 1px); }
+  #projects article:nth-child(even) .info.project {
+    right: 10.06944%; }
+  #projects article.detail .key-visual-container {
+    left: calc(50% - 350px); }
   #projects article.detail .key-visual {
     width: 700px;
     margin-top: 180px; }
   #projects article.detail .info.time {
-    left: calc(50% - 380px);
+    left: calc(50% - 350px + 10px);
     top: 156px; }
   #projects article.detail .info.index {
     left: calc(50% + 415px);
@@ -877,7 +929,7 @@ nav {
   #projects article.detail .info.project {
     position: relative;
     width: 700px;
-    left: calc(50% - 400px);
+    left: calc(50% - 350px);
     padding-top: 40px; }
   #projects article.detail .info.project .project-detail {
     width: 700px;
@@ -885,7 +937,23 @@ nav {
     #projects article.detail .info.project .project-detail .text {
       padding: 30px 14px; }
     #projects article.detail .info.project .project-detail p {
-      width: 70%; } }
+      width: 70%; }
+  #projects article.detail .lines span.horizontal {
+    width: 100%; }
+    #projects article.detail .lines span.horizontal.top {
+      top: 180px; }
+    #projects article.detail .lines span.horizontal.bottom {
+      top: 565px; }
+  #projects article.detail .lines span.vertical {
+    height: 100%; }
+    #projects article.detail .lines span.vertical.left {
+      top: 0;
+      bottom: 0;
+      left: calc(50% - 350px); }
+    #projects article.detail .lines span.vertical.right {
+      top: 0;
+      bottom: 0;
+      left: calc(50% + 350px); } }
 
 @media only screen and (max-width: 767px) {
   #projects article *, #projects article:nth-child(odd) *, #projects article:nth-child(even) * {
@@ -1001,7 +1069,6 @@ nav {
       transform: translateY(-100%);
       padding: 5px 15px;
       color: rgba(255, 255, 255, 0.9);
-      background: rgba(255, 234, 77, 0.75);
       border: 1px solid rgba(255, 255, 255, 0.15); }
   #projects article.detail .overview-only-mobile {
     display: none; }
@@ -1049,3 +1116,6 @@ nav {
 
 #adam-visualizer {
   background: #ffea4d; }
+  @media only screen and (max-width: 1023px) {
+    #adam-visualizer .info.more-info {
+      background: rgba(255, 234, 77, 0.75); } }
