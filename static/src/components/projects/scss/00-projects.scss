@@ -1160,7 +1160,7 @@
                     .images {
                         margin-left: -10px;
                         margin-right: -10px;
-                        margin-bottom: 20px;
+                        margin-bottom: 40px;
                         img {
                             display: block;
                             width: 100%;
@@ -1183,6 +1183,15 @@
                     // background: transparentize($theme-color-adam-configurator, .25);                    
                     border: 1px solid rgba(255, 255, 255, .15);
                 }
+
+                &.less-info {
+                    position: fixed;
+                    right: -1px;
+                    top: 70%;
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-right: 0 transparent;
+                    background: rgba(0, 0, 0, 0.5);
+                }
             }
 
         }
@@ -1193,8 +1202,9 @@
             }        
             .overlay {
                 background: black;
-                position: relative;;
-                height: auto;
+                // position: relative;;
+                // height: auto;
+                -webkit-overflow-scrolling: touch;
 
                 > .container {
                     height: auto;
