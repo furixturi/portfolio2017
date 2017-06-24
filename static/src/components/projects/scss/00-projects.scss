@@ -334,7 +334,7 @@ $tablet-key-visual-height-detail: 325px;
                 overflow: visible;
             }
 
-            &.project-detail {
+            &.project .project-detail {
                 background: rgba(0, 0, 0, .8);
                 position: relative;
                 .text {
@@ -674,7 +674,7 @@ $tablet-key-visual-height-detail: 325px;
                     padding-top: 40px;                    
                 }
 
-                &.project-detail {                   
+                &.project .project-detail {                   
                     width: $key-visual-width-detail;
                     margin: 0px auto;
 
@@ -765,7 +765,7 @@ $tablet-key-visual-height-detail: 325px;
         }
     }
 // ------------ tablet portrait --------------- //
-    @media only screen and (min-width: 769px) and (max-width: 1023px) {
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
         article, article:nth-child(odd), article:nth-child(even) {            
     /// ----------- <tablet portrait> overview ----------///
         //// <tablet portrait> overview: title
@@ -790,6 +790,10 @@ $tablet-key-visual-height-detail: 325px;
     @media only screen and (max-width: 767px) {
         article, article:nth-child(odd), article:nth-child(even) {
             * { transition: all 0.05s ease; }
+            .overview-only-mobile {
+                display: block;
+            }
+
             h2 {
                 white-space: normal;
                 position: absolute;  
@@ -961,7 +965,10 @@ $tablet-key-visual-height-detail: 325px;
 
         }
 
-        article.detail {            
+        article.detail {    
+            .overview-only-mobile {
+                display: none;
+            }        
             .overlay {
                 background: black;
                 position: relative;;
@@ -1004,7 +1011,8 @@ $tablet-key-visual-height-detail: 325px;
 
             .info {
                 color: white;
-                &.project, &.project-detail {
+                &.project, 
+                &.project .project-detail {
                     .col, .text {
                         span.title {
                             @include fontSize(15px);
