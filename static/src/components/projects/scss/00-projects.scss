@@ -1,13 +1,14 @@
 $key-visual-width: 680px;
 $key-visual-height: 381px;
+$key-visual-width-detail: 800px;
+$key-visual-height-detail: 440px;
 $line-distance-horizontal: 687px;
 $line-distance-vertical: 389px;
 
-$key-visual-width-detail: 800px;
-$key-visual-height-detail: 440px;
-
 $tablet-key-visual-width: 580px;
 $tablet-key-visual-height: 325px;
+$tablet-key-visual-width-detail: 580px;
+$tablet-key-visual-height-detail: 325px;
 
 
 #projects {
@@ -270,7 +271,7 @@ $tablet-key-visual-height: 325px;
             top: 0;
             left: 0;
             height: 100vh;
-            z-index: 2;
+            z-index: 5;
             overflow-y: scroll;
             > .container {
                 height: auto;
@@ -391,9 +392,10 @@ $tablet-key-visual-height: 325px;
 
 
 
-
+// ------------ big desktop ------------ //
     @media only screen and (min-width: 1024px) {
-        //// overview: key visual
+    /// -------- <big desktop> overview ---------- ///
+    //// <big desktop> overview: key visual
         .key-visual-container {
             width: 100vh; // margin top is calculated based on parent width instead of height
             // height: 100%;
@@ -403,36 +405,23 @@ $tablet-key-visual-height: 325px;
         }
 
         .key-visual {   
-
             width: $key-visual-width;
             height: $key-visual-height;
             margin-top: calc((200 / #{$ideal-viewport-height}) * 100% + 4px); 
-
-            // .key-visual-img-container {
-            //     transform: perspective(850px) 
-            //         translate3d(0px, -15px, -50px);
-            //     transform-origin: 0 0;
-            // }   
-
             img {
                 width: $key-visual-width-detail;
                 height: $key-visual-height-detail;        
             }
-
             .img-shadow {
                 width: $key-visual-width-detail;
                 height: $key-visual-height-detail;
-                // transform-origin: 0 50%;
-                // transform: perspective(850px) 
-                //     rotate3d(0, -1, 0, -15deg);
-
                 &:after {
                     width: $key-visual-width-detail;
                     height: $key-visual-height-detail;
                 }               
             }        
         }
-        //// overview: title
+    //// <big desktop> overview: title
         h2 {            
             @include fontSize(100px);            
             position: absolute;            
@@ -449,7 +438,7 @@ $tablet-key-visual-height: 325px;
                 transform-origin: 0 0;
             }
         }
-        //// overview: info texts
+    //// <big desktop> overview: info texts
         .info {
             @include fontSize(14px);
             position: absolute;
@@ -494,7 +483,7 @@ $tablet-key-visual-height: 325px;
         }
 
 
-    //// overview: lines
+    //// <big desktop> overview: lines
         .lines {
             pointer-events: none;
             position: absolute;
@@ -536,7 +525,7 @@ $tablet-key-visual-height: 325px;
             }
         } 
 
-    //// overview: odd even
+    //// <big desktop> overview: odd even
         article:nth-child(odd) .lines {
             span.vertical {            
                 &.left {
@@ -642,7 +631,7 @@ $tablet-key-visual-height: 325px;
             }
         }
 
-    /// -------- detail ---------- ///
+    /// -------- <big desktop> detail ---------- ///
         article.detail {            
 
             .first-row {
@@ -653,7 +642,7 @@ $tablet-key-visual-height: 325px;
                 width: 78%;
             }
         
-    //// detail: key visual
+    //// <big desktop> detail: key visual
             .key-visual-container {
                 left: calc(50% - 400px);
                 position: relative;
@@ -664,10 +653,7 @@ $tablet-key-visual-height: 325px;
                 height: auto;            
                 margin-top: 180px;
             }
-    //// detail: title
-            
-
-    //// detail: info texts
+    //// <big desktop> detail: info texts
             .info {
 
                 &.time {
@@ -701,7 +687,7 @@ $tablet-key-visual-height: 325px;
                     }
                 }
             }
-    //// detail: lines
+    //// <big desktop> detail: lines
             .lines {
                 
                 span.horizontal {
@@ -729,7 +715,7 @@ $tablet-key-visual-height: 325px;
                 }
             }
 
-    //// detail: odd even
+    //// <big desktop> detail: odd even
 
             &:nth-child(even) {
                 span.vertical {            
@@ -780,9 +766,9 @@ $tablet-key-visual-height: 325px;
     }
 // ------------ tablet portrait --------------- //
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
-        article, article:nth-child(odd), article:nth-child(even) {
-            
-            // overview
+        article, article:nth-child(odd), article:nth-child(even) {            
+    /// ----------- <tablet portrait> overview ----------///
+        //// <tablet portrait> overview: title
             h2.overview-title {
                 @include fontSize(74px);
                 width: 100%;
@@ -790,12 +776,148 @@ $tablet-key-visual-height: 325px;
                 left: 0;
             }
 
-            // lines
+        //// <tablet portrait> lines
+            
+        // detail
+            &.detail {
 
+            }
 
         }        
     }
 
 // ------------ mobile -------------//
+    @media only screen and (max-width: 767px) {
+        article, article:nth-child(odd), article:nth-child(even) {
+            h2 {
+                white-space: normal;
+                position: absolute;  
 
+                &.overview-title {                                      
+                    @include fontSize(72px);
+                    text-align: right;
+                    top: 50vw;
+                    transform: translateY(-50%);
+                    right: 10px;
+                }
+
+            }
+
+            .lines {
+                display: none;
+            }
+
+            .key-visual {
+                .key-visual-img-container {
+                    transform: none;
+
+                    .img-shadow {
+                        width: 100vw;
+                        height: 100vw;
+                        transform: none;
+                        max-width: 414px;
+                        max-height: 414px;
+
+                        &:after {
+                            opacity: 0.45;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .info {
+                color: black;
+                &.time {
+                    display: none;
+                }
+
+                &.index {
+                    padding: 5px 10px;
+                    @include fontSize(24px);
+
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+
+                    color: rgba(255, 255, 255, .6);
+                    border: 1px solid rgba(255, 255, 255, .15);
+                    background: rgba(0, 0, 0, .35);                    
+                }
+
+                &.project {
+                    @include fontSize(14px);
+                    padding: 30px 50px 0px 15px;
+                    line-height: 1.8;
+
+                    .col.col-1-3 {
+                        display: none;
+                    }
+
+                    .col.col-2-3 {
+
+                        span.title {
+                            font-family: $roboto;
+                            @include fontSize(16px);
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            color: black;
+
+                            display: inline-block;
+                            letter-spacing: 0.15em;
+                            line-height: 1.5;
+
+                            padding: 0 12px 0px 4px;                            
+                            border-bottom: 1px solid black;
+                            margin-bottom: 10px;
+                        }
+
+                        span {
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+
+                &.more-info {
+                    @include fontSize(16px);
+
+                    position: absolute;
+                    top: 100vw;
+                    right: 0px;
+                    transform: translateY(-100%);  
+                    padding: 5px 15px;                   
+
+                    color: rgba(255, 255, 255, .9);                    
+                    background: transparentize($theme-color-adam-configurator, .25);                    
+                    border: 1px solid rgba(255, 255, 255, .15);
+                }
+            }
+
+        }
+
+        article.detail {
+            
+            .overlay {
+                background: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                z-index: 5;
+                overflow-y: scroll;
+
+                // overflow: touch;
+                –webkit-overflow-scrolling: touch;
+                // -webkit-transform: translateZ(0px);
+                // -webkit-transform: translate3d(0,0,0);
+                // -webkit-perspective: 1000;
+                &:after { height: calc(100% + 1px);}
+
+                > .container {
+                    height: auto;
+                }
+            }
+        }
+    }
 }
