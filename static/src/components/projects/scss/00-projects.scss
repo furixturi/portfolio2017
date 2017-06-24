@@ -794,11 +794,13 @@ $tablet-key-visual-height-detail: 325px;
                 position: absolute;  
 
                 &.overview-title {                                      
-                    @include fontSize(72px);
+                    @include fontSize(68px);
+                    line-height: 1;
                     text-align: right;
                     top: 50vw;
-                    transform: translateY(-50%);
-                    right: 10px;
+                    transform: translateY(-60%);
+                    right: 25px;
+                    overflow: visible;
                 }
 
             }
@@ -835,7 +837,7 @@ $tablet-key-visual-height-detail: 325px;
 
                 &.index {
                     padding: 5px 10px;
-                    @include fontSize(24px);
+                    @include fontSize(20px);
 
                     position: absolute;
                     top: 0px;
@@ -847,8 +849,8 @@ $tablet-key-visual-height-detail: 325px;
                 }
 
                 &.project {
-                    @include fontSize(14px);
-                    padding: 30px 50px 0px 15px;
+                    @include fontSize(15px);
+                    padding: 50px 40px 0px 30px;
                     line-height: 1.8;
 
                     .col.col-1-3 {

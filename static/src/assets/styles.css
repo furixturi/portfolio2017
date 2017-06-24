@@ -831,12 +831,14 @@ nav {
     white-space: normal;
     position: absolute; }
     #projects article h2.overview-title, #projects article:nth-child(odd) h2.overview-title, #projects article:nth-child(even) h2.overview-title {
-      font-size: 72px;
-      font-size: 4.5rem;
+      font-size: 68px;
+      font-size: 4.25rem;
+      line-height: 1;
       text-align: right;
       top: 50vw;
-      transform: translateY(-50%);
-      right: 10px; }
+      transform: translateY(-60%);
+      right: 25px;
+      overflow: visible; }
   #projects article .lines, #projects article:nth-child(odd) .lines, #projects article:nth-child(even) .lines {
     display: none; }
   #projects article .key-visual .key-visual-img-container, #projects article:nth-child(odd) .key-visual .key-visual-img-container, #projects article:nth-child(even) .key-visual .key-visual-img-container {
@@ -857,8 +859,8 @@ nav {
       display: none; }
     #projects article .info.index, #projects article:nth-child(odd) .info.index, #projects article:nth-child(even) .info.index {
       padding: 5px 10px;
-      font-size: 24px;
-      font-size: 1.5rem;
+      font-size: 20px;
+      font-size: 1.25rem;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -866,9 +868,9 @@ nav {
       border: 1px solid rgba(255, 255, 255, 0.15);
       background: rgba(0, 0, 0, 0.35); }
     #projects article .info.project, #projects article:nth-child(odd) .info.project, #projects article:nth-child(even) .info.project {
-      font-size: 14px;
-      font-size: 0.875rem;
-      padding: 30px 50px 0px 15px;
+      font-size: 15px;
+      font-size: 0.9375rem;
+      padding: 50px 40px 0px 30px;
       line-height: 1.8; }
       #projects article .info.project .col.col-1-3, #projects article:nth-child(odd) .info.project .col.col-1-3, #projects article:nth-child(even) .info.project .col.col-1-3 {
         display: none; }
