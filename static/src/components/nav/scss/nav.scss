@@ -11,6 +11,14 @@ nav {
         color: $text-color;
         text-decoration: none;
         display: block;
+
+        &.changing {
+            color: blue;
+        }
+        
+        &.active {
+            color: red;
+        }
     }
 
     .slogan {

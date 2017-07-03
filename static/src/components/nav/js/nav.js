@@ -1,6 +1,6 @@
 $(function(){
     var $el = $('nav'),
-        revealTimeout = 100;
+        revealTimeout = 400;
 
     // show
     setTimeout(function(){
@@ -11,26 +11,28 @@ $(function(){
     $el.find('a').on('click', function(e){
         var $navEl = $(this);
         e.preventDefault();
+
+        if($navEl.hasClass('active') || $navEl.hasClass('changing')) return; 
+
         $(document).trigger('nav_change', [$navEl.data('navi')]);
+        $navEl.addClass('changing');
     });
 
     $el.on('nav_change_complete', function(e, arg){
-
-        $to = $el.find('a[data-navi="arg"]');
+        $to = $el.find('a[data-navi="' + arg + '"]');
 
         if( $to && !$to.hasClass('active') ) {
 
             $from = $el.find('a.active');
             if($from) $from.removeClass('active')
 
-            $to.addClass('active');
+            $to.removeClass('changing').addClass('active');
 
         }
 
     })
 
     $el.on('nav_hide', function(e, arg) {
-        console.log('hide nav')
         $el.addClass('hide');
     });
 

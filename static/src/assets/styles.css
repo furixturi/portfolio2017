@@ -288,6 +288,10 @@ nav {
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
     display: block; }
+    nav a.changing {
+      color: blue; }
+    nav a.active {
+      color: red; }
   nav .slogan {
     margin-top: 30px;
     margin-left: 40px; }
