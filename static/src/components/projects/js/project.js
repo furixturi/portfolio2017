@@ -1,4 +1,10 @@
+/**
+ * project.js
+ */
+
 $(function(){
+    'use strict';
+
     var projects = $('#projects article');
 
     $.each(projects, function(){

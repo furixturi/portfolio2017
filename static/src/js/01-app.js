@@ -1,7 +1,10 @@
 /**
  * 01-app.js
  */
+
 ; (function ($) {
+    'use strict';
+
     // namespace
     window.xiaoliPortfolio2017 = {
         info: "Xiaoli Shen | Portfolio 2017"

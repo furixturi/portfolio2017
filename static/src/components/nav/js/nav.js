@@ -1,4 +1,10 @@
+/**
+ * nav.js
+ */
+
 $(function(){
+    'use strict';
+
     var $el = $('nav'),
         revealTimeout = 400;
 
@@ -19,11 +25,12 @@ $(function(){
     });
 
     $el.on('nav_change_complete', function(e, arg){
-        $to = $el.find('a[data-navi="' + arg + '"]');
+        var $to = $el.find('a[data-navi="' + arg + '"]');
 
         if( $to && !$to.hasClass('active') ) {
 
-            $from = $el.find('a.active');
+            var $from = $el.find('a.active');
+            
             if($from) $from.removeClass('active')
 
             $to.removeClass('changing').addClass('active');

@@ -27512,7 +27512,10 @@ jQuery.extend( jQuery.easing,
 /**
  * 01-app.js
  */
+
 ; (function ($) {
+    'use strict';
+
     // namespace
     window.xiaoliPortfolio2017 = {
         info: "Xiaoli Shen | Portfolio 2017"
@@ -27601,7 +27604,13 @@ jQuery.extend( jQuery.easing,
 
     });
 })($);
+/**
+ * home.js
+ */
+
 $(function(){
+    'use strict';
+
     var $el = $("#home");
 
     $el.find('.scrollCTA').on("click", function(e){
@@ -27610,7 +27619,13 @@ $(function(){
     })
 })
 
+/**
+ * nav.js
+ */
+
 $(function(){
+    'use strict';
+
     var $el = $('nav'),
         revealTimeout = 400;
 
@@ -27631,11 +27646,12 @@ $(function(){
     });
 
     $el.on('nav_change_complete', function(e, arg){
-        $to = $el.find('a[data-navi="' + arg + '"]');
+        var $to = $el.find('a[data-navi="' + arg + '"]');
 
         if( $to && !$to.hasClass('active') ) {
 
-            $from = $el.find('a.active');
+            var $from = $el.find('a.active');
+            
             if($from) $from.removeClass('active')
 
             $to.removeClass('changing').addClass('active');
@@ -27655,7 +27671,13 @@ $(function(){
     
     
 });
+/**
+ * project.js
+ */
+
 $(function(){
+    'use strict';
+
     var projects = $('#projects article');
 
     $.each(projects, function(){
@@ -27679,4 +27701,11 @@ $(function(){
 
 
     })
+});
+/**
+ * top-button.js
+ */
+
+$(function(){
+    'use strict';
 });

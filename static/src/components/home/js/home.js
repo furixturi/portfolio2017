@@ -1,4 +1,10 @@
+/**
+ * home.js
+ */
+
 $(function(){
+    'use strict';
+
     var $el = $("#home");
 
     $el.find('.scrollCTA').on("click", function(e){
