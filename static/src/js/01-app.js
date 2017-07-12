@@ -15,8 +15,10 @@
         var app = window.xiaoliPortfolio2017;
         app.$components = {
             // html: $(html)
+            body: $('body'),
             nav : $('nav'),
-            sections : $('section')
+            sections : $('section'),
+            topButton : $('.top-button')
         }
 
 //// navigation
@@ -27,7 +29,8 @@
             $('html, body').animate({
                 scrollTop: $('#' + target).offset().top
             }, 400, 'easeInOutExpo', function(){
-                app.$components.nav.trigger('nav_change_complete', target)
+                app.$components.nav.trigger('nav_change_complete', target);
+                app.$components.body.trigger('nav_change_complete');
             })
         }
 
@@ -59,34 +62,55 @@
             return current; 
         }
 
+        app.updateActiveSection = function(){
+            var currentActiveSection = app.checkCurrentActiveSection();
+            if( currentActiveSection && app.currentActiveSection !== currentActiveSection ) {
+                app.oldActiveSection = app.currentActiveSection;
+                app.currentActiveSection = currentActiveSection;
+                app.$components.nav.trigger('nav_change_complete', currentActiveSection);
+                app.$components.body.trigger('nav_change_complete');                
+            }
+        }
+
+        app.$components.body.on('nav_change_complete', function(){
+            app.$components.body.removeClass(app.oldActiveSection).addClass(app.currentActiveSection);
+        })
+
         // update when a nav link is clicked
         $(document).on('nav_change_start', function (e, arg) {
             app.onNavChange(arg);
         });
 
         // update while scrolling (throttled to execute every 100ms while scrolling)
-        $(window).on('scroll', _.throttle(function(){
-            var currentActiveSection = app.checkCurrentActiveSection();
-            if( currentActiveSection && app.currentActiveSection !== currentActiveSection ) {
-                app.oldActiveSection = app.currentActiveSection;
-                app.currentActiveSection = currentActiveSection;
-                app.$components.nav.trigger('nav_change_complete', currentActiveSection)
+        $(window).on('scroll', _.throttle(
+            function(){
+                var windowScrollTop = $(window).scrollTop(),
+                windowHeight = window.innerHeight;
+                
+                if(windowScrollTop > windowHeight) {
+                    app.$components.topButton.addClass("show");
+                } else {
+                    app.$components.topButton.removeClass("show");
+                }
 
-            }
-        }, 100));
+                app.updateActiveSection();
+            }, 100));
+
         // fix navi while window resizing (debounced to only execute at 100ms after the last resize event is fired)
-        $(window).on('resize', _.debounce(function(){
+        $(window).on('resize', _.debounce(app.updateActiveSection, 100))
 
-        }, 100))
+
         
 //// open/close project detail
         $(document).on('project_detail_open', function(e, arg) {
             app.$components.nav.trigger('nav_hide');
+            app.$components.body.addClass('project-detail-opened');
             $('html').addClass('no-scroll');
         });
 
         $(document).on('project_detail_close', function(e, arg) {
             app.$components.nav.trigger('nav_show');
+            app.$components.body.removeClass('project-detail-opened');
             $('html').removeClass('no-scroll');
         });
 

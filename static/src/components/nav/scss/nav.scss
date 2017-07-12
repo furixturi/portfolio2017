@@ -78,10 +78,12 @@ nav {
             }
 
             a {
+                color: black;
                 &:hover,
                 &.changing,
                 &:active,
                 &.active {
+                    font-weight: 400;
                     color: black;
                     background: none;
                 }
