@@ -287,11 +287,15 @@ nav {
   nav a {
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
-    display: block; }
-    nav a.changing {
-      color: blue; }
-    nav a.active {
-      color: red; }
+    display: block;
+    /*&:hover,
+        &.changing {
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            color: white;
+            background: rgba(0, 0, 0, 0.3);
+        }*/ }
   nav .slogan {
     margin-top: 30px;
     margin-left: 40px; }
@@ -373,7 +377,19 @@ nav {
         nav li a {
           font-size: 14px;
           font-size: 0.875rem;
-          padding: 10px; } }
+          padding: 10px; }
+          nav li a:hover, nav li a.changing {
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            color: white;
+            background: rgba(0, 0, 0, 0.3); }
+          nav li a:active, nav li a.active {
+            color: white;
+            background: black;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.2em; } }
 
 #projects article {
   position: relative; }
