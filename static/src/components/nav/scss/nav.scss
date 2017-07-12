@@ -7,28 +7,35 @@ nav {
         display: inline-block;
     }
 
-    a {
+    li a {
         color: $text-color;
         text-decoration: none;
         display: block;
 
-        /*&:hover,
+        &:hover,
         &.changing {
             text-transform: uppercase;
             font-weight: 800;
             letter-spacing: 0.2em;
             color: white;
             background: rgba(0, 0, 0, 0.3);
-        }*/
-        
-        
+        }
+
+        &:active,
+        &.active {
+            color: white;
+            background: black;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+        }        
     }
 
     .slogan {
         margin-top: 30px;
         margin-left: 40px;
     }
-
+    
 // mobile
     @media only screen and (max-width: 767px) {
         position: absolute;
@@ -67,6 +74,16 @@ nav {
                 transform: rotate(-90deg) translateX(80%);
                 right: 20px;
                 top: 50%;
+            }
+
+            a {
+                &:hover,
+                &.changing,
+                &:active,
+                &.active {
+                    color: black;
+                    background: none;
+                }
             }
         }
 
@@ -134,23 +151,7 @@ nav {
                 @include fontSize(14px);
                 padding: 10px;
 
-                &:hover,
-                &.changing {
-                    text-transform: uppercase;
-                    font-weight: 800;
-                    letter-spacing: 0.2em;
-                    color: white;
-                    background: rgba(0, 0, 0, 0.3);
-                }
-
-                &:active,
-                &.active {
-                    color: white;
-                    background: black;
-                    text-transform: uppercase;
-                    font-weight: 800;
-                    letter-spacing: 0.2em;
-                }
+                
             }
         }
     }
