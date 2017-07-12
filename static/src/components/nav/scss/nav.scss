@@ -11,6 +11,7 @@ nav {
         color: $text-color;
         text-decoration: none;
         display: block;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 
         &:hover,
         &.changing {

@@ -14,7 +14,7 @@ $(function(){
 
         if($navEl.hasClass('active') || $navEl.hasClass('changing')) return; 
 
-        $(document).trigger('nav_change', [$navEl.data('navi')]);
+        $(document).trigger('nav_change_start', [$navEl.data('navi')]);
         $navEl.addClass('changing');
     });
 

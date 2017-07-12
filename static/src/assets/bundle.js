@@ -27568,18 +27568,19 @@ jQuery.extend( jQuery.easing,
         }
 
         // update when a nav link is clicked
-        $(document).on('nav_change', function (e, arg) {
+        $(document).on('nav_change_start', function (e, arg) {
             app.onNavChange(arg);
         });
+
         // update while scrolling (throttled to execute every 100ms while scrolling)
         $(window).on('scroll', _.throttle(function(){
             var currentActiveSection = app.checkCurrentActiveSection();
             if( currentActiveSection && app.currentActiveSection !== currentActiveSection ) {
+                app.oldActiveSection = app.currentActiveSection;
                 app.currentActiveSection = currentActiveSection;
                 app.$components.nav.trigger('nav_change_complete', currentActiveSection)
 
             }
-            console.log("!!!!!!!! active: " + currentActiveSection);
         }, 100));
         // fix navi while window resizing (debounced to only execute at 100ms after the last resize event is fired)
         $(window).on('resize', _.debounce(function(){
@@ -27601,6 +27602,15 @@ jQuery.extend( jQuery.easing,
     });
 })($);
 $(function(){
+    var $el = $("#home");
+
+    $el.find('.scrollCTA').on("click", function(e){
+        e.preventDefault();
+        $(document).trigger('nav_change_start', [$(this).data('navi')]);
+    })
+})
+
+$(function(){
     var $el = $('nav'),
         revealTimeout = 400;
 
@@ -27616,7 +27626,7 @@ $(function(){
 
         if($navEl.hasClass('active') || $navEl.hasClass('changing')) return; 
 
-        $(document).trigger('nav_change', [$navEl.data('navi')]);
+        $(document).trigger('nav_change_start', [$navEl.data('navi')]);
         $navEl.addClass('changing');
     });
 
