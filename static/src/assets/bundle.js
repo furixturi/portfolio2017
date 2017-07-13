@@ -27558,13 +27558,13 @@ jQuery.extend( jQuery.easing,
                     bottomDistanceToWindowBottom = bottom - (windowScrollTop + windowHeight);
 
                 if (topDistanceToWindowTop < 0 && bottomDistanceToWindowBottom > 0) {
-                    console.log($(this).attr('id') + " found by whole content in viewport")
+                    // console.log($(this).attr('id') + " found by whole content in viewport")
                     current = $(this).attr('id');
                 } else if ( topDistanceToWindowTop >= 0 && topDistanceToWindowTop < windowHeight / 2 ) {
-                    console.log($(this).attr('id') + " found by top in upper half of viewport")
+                    // console.log($(this).attr('id') + " found by top in upper half of viewport")
                     current = $(this).attr('id');
                 } else if (bottomDistanceToWindowBottom <= 0 && bottomDistanceToWindowBottom > -windowHeight / 2) {
-                    console.log($(this).attr('id') + " found by bottom in lower half of viewport")
+                    // console.log($(this).attr('id') + " found by bottom in lower half of viewport")
                     current = $(this).attr('id');
                 }
 
@@ -27735,7 +27735,6 @@ $(function(){
     var $el = $(".top-button");
 
     $el.on('click', function(e){
-        console.log('to top button clicked')
         e.preventDefault();
         $(document).trigger('nav_change_start', [$el.data('navi')]);
     });
