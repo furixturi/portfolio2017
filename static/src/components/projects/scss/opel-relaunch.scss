@@ -1,0 +1,9 @@
+#opel-relaunch{
+    background: $theme-color-opel-relaunch;
+
+    @media only screen and (max-width: 1023px) {
+        .info.more-info {
+                background: transparentize($theme-color-opel-relaunch, 0.25);
+        }
+    }
+}

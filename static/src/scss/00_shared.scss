@@ -33,11 +33,18 @@ a {
     text-decoration: none;
 }
 
+/* breakpoint */
+$hd-desktop-min: 1330px;
+$desktop-min: 1024px;
+$tablet-min: 768px;
+$mobile-max: 767px;
+
 /* length variables ---------*/
 $ideal-viewport-width: 1440;
 $ideal-viewport-height: 900;
 $col-padding: 14px;
 $full-viewport-min-height: 768px;
+$hd-full-viewport-min-height: 832px;
 $full-viewport-min-height-mobile: 667px;
 $mobile-ui-bar-height: 67px;
 
@@ -49,6 +56,7 @@ $highlight-color: #231f20;
 $line-color: rgba(26, 26, 26, .05);
 $line-color-light:rgba(255, 255, 255,0.1);
 
+$theme-color-opel-relaunch: #5cb7fd;
 $theme-color-adam-configurator: #ffea4d;
 
 /* Fonts --------------------*/
@@ -132,6 +140,13 @@ html {
         min-height: $full-viewport-min-height;
          > .container {
             min-height: $full-viewport-min-height;     
+        }
+    }
+
+    @media only screen and (min-width: $hd-desktop-min) {
+        min-height: $hd-full-viewport-min-height;
+         > .container {
+            min-height: $hd-full-viewport-min-height;     
         }
     }
 

@@ -87,6 +87,7 @@ body {
 a {
   text-decoration: none; }
 
+/* breakpoint */
 /* length variables ---------*/
 /* Colors -------------------*/
 /* Fonts --------------------*/
@@ -140,6 +141,11 @@ html {
       min-height: 768px; }
       .full-viewport > .container {
         min-height: 768px; } }
+  @media only screen and (min-width: 1330px) {
+    .full-viewport {
+      min-height: 832px; }
+      .full-viewport > .container {
+        min-height: 832px; } }
   @media only screen and (max-width: 767px) {
     .full-viewport {
       height: auto;
@@ -184,6 +190,105 @@ html {
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
+
+/* home--------------*/
+#home h1 {
+  font-weight: 100;
+  margin: 0 auto; }
+  #home h1 span {
+    display: block; }
+
+#home .name {
+  font-weight: 600; }
+
+#home img#face {
+  display: block;
+  width: 33.333333%;
+  border-radius: 50%;
+  margin: 0 auto; }
+
+@media only screen and (max-width: 767px) {
+  #home {
+    height: auto;
+    min-height: calc(100vh - 67px); }
+    #home .scrollCTA {
+      display: none; }
+    #home img#face {
+      max-width: 250px;
+      margin-top: 80px;
+      margin-bottom: 30px; }
+    #home h1 {
+      text-align: center;
+      line-height: 1.35; }
+      #home h1 .greeting {
+        font-size: 30px;
+        font-size: 1.875rem; }
+      #home h1 .preps, #home h1 .residence, #home h1 .role {
+        font-size: 20px;
+        font-size: 1.25rem; }
+      #home h1 .name {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 1.3125; }
+      #home h1 .role {
+        line-height: 1.5; }
+      #home h1 .craft {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 1.23077; } }
+
+@media only screen and (min-width: 768px) {
+  #home img#face {
+    max-width: 160px;
+    margin-top: 22.22222vh;
+    margin-bottom: 40px; }
+  #home h1 {
+    line-height: 1.28571;
+    max-width: 392px; }
+  #home .greeting, #home .preps, #home .residence, #home .role {
+    display: inline;
+    font-size: 24px;
+    font-size: 1.5rem; }
+  #home .name {
+    font-weight: 400;
+    font-size: 50px;
+    font-size: 3.125rem;
+    line-height: 1.28125; }
+  #home .craft {
+    font-size: 36px;
+    font-size: 2.25rem; }
+  #home .scrollCTA {
+    color: black;
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* easeOutBack */ }
+    #home .scrollCTA .icon {
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 10px;
+      letter-spacing: 0; }
+    #home .scrollCTA:hover {
+      letter-spacing: 0.4em; } }
+
+@media only screen and (min-width: 1024px) {
+  #home h1 {
+    font-size: 28px;
+    font-size: 1.75rem;
+    max-width: 456px; }
+  #home .name {
+    font-size: 64px;
+    font-size: 4rem; }
+  #home .craft {
+    font-size: 48px;
+    font-size: 3rem; } }
 
 nav {
   z-index: 5;
@@ -295,105 +400,6 @@ nav {
           font-size: 14px;
           font-size: 0.875rem;
           padding: 10px; } }
-
-/* home--------------*/
-#home h1 {
-  font-weight: 100;
-  margin: 0 auto; }
-  #home h1 span {
-    display: block; }
-
-#home .name {
-  font-weight: 600; }
-
-#home img#face {
-  display: block;
-  width: 33.333333%;
-  border-radius: 50%;
-  margin: 0 auto; }
-
-@media only screen and (max-width: 767px) {
-  #home {
-    height: auto;
-    min-height: calc(100vh - 67px); }
-    #home .scrollCTA {
-      display: none; }
-    #home img#face {
-      max-width: 250px;
-      margin-top: 80px;
-      margin-bottom: 30px; }
-    #home h1 {
-      text-align: center;
-      line-height: 1.35; }
-      #home h1 .greeting {
-        font-size: 30px;
-        font-size: 1.875rem; }
-      #home h1 .preps, #home h1 .residence, #home h1 .role {
-        font-size: 20px;
-        font-size: 1.25rem; }
-      #home h1 .name {
-        font-size: 32px;
-        font-size: 2rem;
-        line-height: 1.3125; }
-      #home h1 .role {
-        line-height: 1.5; }
-      #home h1 .craft {
-        font-size: 26px;
-        font-size: 1.625rem;
-        line-height: 1.23077; } }
-
-@media only screen and (min-width: 768px) {
-  #home img#face {
-    max-width: 160px;
-    margin-top: 22.22222vh;
-    margin-bottom: 40px; }
-  #home h1 {
-    line-height: 1.28571;
-    max-width: 392px; }
-  #home .greeting, #home .preps, #home .residence, #home .role {
-    display: inline;
-    font-size: 24px;
-    font-size: 1.5rem; }
-  #home .name {
-    font-weight: 400;
-    font-size: 50px;
-    font-size: 3.125rem;
-    line-height: 1.28125; }
-  #home .craft {
-    font-size: 36px;
-    font-size: 2.25rem; }
-  #home .scrollCTA {
-    color: black;
-    display: block;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* easeOutBack */ }
-    #home .scrollCTA .icon {
-      display: block;
-      text-align: center;
-      font-size: 30px;
-      margin-top: 10px;
-      letter-spacing: 0; }
-    #home .scrollCTA:hover {
-      letter-spacing: 0.4em; } }
-
-@media only screen and (min-width: 1024px) {
-  #home h1 {
-    font-size: 28px;
-    font-size: 1.75rem;
-    max-width: 456px; }
-  #home .name {
-    font-size: 64px;
-    font-size: 4rem; }
-  #home .craft {
-    font-size: 48px;
-    font-size: 3rem; } }
 
 #projects article {
   position: relative; }
@@ -562,7 +568,8 @@ nav {
   overflow-y: scroll; }
   #projects article.detail .overlay > .container {
     height: auto;
-    min-height: 100vh; }
+    min-height: 100vh;
+    max-width: 100vw; }
 
 #projects article.detail .first-row:after {
   content: "";
@@ -613,7 +620,7 @@ nav {
         width: 100%; }
     #projects article.detail .info.project .project-detail p {
       font-family: "Roboto", Arial, sans-serif;
-      font-weight: 100; }
+      font-weight: 400; }
       #projects article.detail .info.project .project-detail p span.strong {
         display: inline;
         font-weight: 400; }
@@ -637,20 +644,50 @@ nav {
     width: 100vh;
     min-width: 768px;
     top: 0;
-    left: calc((200 / 1440) * 100% + 4px); }
+    left: calc((200 / 1440) * 100% + 4px); } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects .key-visual-container {
+      left: calc((200 / 1440) * 100% + 4px); } }
+
+@media only screen and (min-width: 768px) {
   #projects .key-visual {
     width: 680px;
     height: 381px;
-    margin-top: calc((200 / 900) * 100% + 4px); }
+    margin-top: calc((200 / 900) * 100% + 4px); } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects .key-visual {
+      width: 800px;
+      height: 508px;
+      margin-top: calc((100 / 900) * 100% + 4px); } }
+
+@media only screen and (min-width: 768px) {
     #projects .key-visual img {
       width: 800px;
-      height: 438px; }
+      height: 438px; } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects .key-visual img {
+        width: 1200px;
+        height: 657px; } }
+
+@media only screen and (min-width: 768px) {
     #projects .key-visual .img-shadow {
       width: 800px;
-      height: 438px; }
+      height: 438px; } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects .key-visual .img-shadow {
+        width: 1200px;
+        height: 657px; } }
+
+@media only screen and (min-width: 768px) {
       #projects .key-visual .img-shadow:after {
         width: 800px;
-        height: 438px; }
+        height: 438px; } }
+      @media only screen and (min-width: 768px) and (min-width: 1330px) {
+        #projects .key-visual .img-shadow:after {
+          width: 1200px;
+          height: 657px; } }
+
+@media only screen and (min-width: 768px) {
   #projects h2 {
     font-size: 100px;
     font-size: 6.25rem;
@@ -664,7 +701,12 @@ nav {
       left: calc(50% + 400px - 10px);
       top: 180px;
       transform: translate(-100%, -100%);
-      transform-origin: 0 0; }
+      transform-origin: 0 0; } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects h2.detail-title {
+        left: calc(50% + 600px - 10px); } }
+
+@media only screen and (min-width: 768px) {
   #projects .info {
     font-size: 14px;
     font-size: 0.875rem;
@@ -673,15 +715,33 @@ nav {
       font-size: 12px;
       font-size: 0.75rem;
       left: calc((200 / 1440) * 100% + 14px);
-      top: calc((200 / 900) * 100% + -20px); }
+      top: calc((200 / 900) * 100% + -20px); } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects .info.time {
+        left: calc((200 / 1440) * 100% + 14px);
+        top: calc((100 / 900) * 100% + -20px); } }
+
+@media only screen and (min-width: 768px) {
     #projects .info.index {
       font-size: 18px;
       font-size: 1.125rem;
       left: calc((200 / 1440) * 100% + 687px + 10px);
-      top: calc((200 / 900) * 100% - 30px); }
+      top: calc((200 / 900) * 100% - 30px); } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects .info.index {
+        left: calc((200 / 1440) * 100% + 807px + 10px);
+        top: calc((100 / 900) * 100% - 30px); } }
+
+@media only screen and (min-width: 768px) {
     #projects .info.more-info {
       left: calc((200 / 1440) * 100% + 687px);
-      top: calc((200 / 900) * 100% + 389px - 34px); }
+      top: calc((200 / 900) * 100% + 389px - 34px); } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects .info.more-info {
+        left: calc((200 / 1440) * 100% + 807px);
+        top: calc((100 / 900) * 100% + 516px - 34px); } }
+
+@media only screen and (min-width: 768px) {
     #projects .info.less-info {
       position: fixed;
       right: 30px;
@@ -689,7 +749,14 @@ nav {
     #projects .info.project {
       left: 13.88889%;
       top: calc((200 / 900) * 100% + 389px + 14px);
-      width: 687px; }
+      width: 687px; } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects .info.project {
+        left: 13.88889%;
+        top: calc((100 / 900) * 100% + 516px + 14px);
+        width: 807px; } }
+
+@media only screen and (min-width: 768px) {
       #projects .info.project span.title {
         font-size: 12px;
         font-size: 0.75rem; }
@@ -700,6 +767,9 @@ nav {
     left: 0;
     width: 100%;
     height: 100vh; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects .lines {
+      min-height: 832px; } }
   @media only screen and (min-width: 768px) and (min-width: 768px) {
     #projects .lines {
       min-height: 768px; } }
@@ -720,7 +790,18 @@ nav {
       #projects .lines span.horizontal.bottom {
         top: calc((200 / 900) * 100% + 389px);
         right: 0;
-        width: calc(100vw - (200 / 1440) * 100% + 77px); }
+        width: calc(100vw - (200 / 1440) * 100% + 77px); } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects .lines span.horizontal.top {
+        top: 11.11111%;
+        left: 0;
+        width: calc(100 / 1440 * 100% + 807px + (140 / 1440 * 100%)); }
+      #projects .lines span.horizontal.bottom {
+        top: calc((100 / 900) * 100% + 516px);
+        right: 0;
+        width: calc(100vw - (100 / 1440) * 100% + 77px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article:nth-child(odd) .lines span.vertical.left {
     left: calc((200 / 1440) * 100%);
     top: 0;
@@ -728,7 +809,19 @@ nav {
   #projects article:nth-child(odd) .lines span.vertical.right {
     left: calc((200 / 1440) * 100% + 687px);
     top: calc((200 / 900) * 100% - 45px);
-    bottom: 0; }
+    bottom: 0; } }
+
+@media only screen and (min-width: 768px) and (min-width: 1330px) {
+  #projects article:nth-child(odd) .lines span.vertical.left {
+    left: calc((100 * 2 / 1440) * 100%);
+    top: 0;
+    bottom: calc((100 / 900) * 100%); }
+  #projects article:nth-child(odd) .lines span.vertical.right {
+    left: calc((100 * 2 / 1440) * 100% + 807px);
+    top: calc((100 / 900) * 100% - 45px);
+    bottom: 0; } }
+
+@media only screen and (min-width: 768px) {
   #projects article:nth-child(even) span.vertical.left {
     left: auto;
     right: calc((200 / 1440) * 100% + 687px);
@@ -738,7 +831,21 @@ nav {
     left: auto;
     right: calc((200 / 1440) * 100%);
     top: 0;
-    bottom: calc((200 / 900) * 100%); }
+    bottom: calc((200 / 900) * 100%); } }
+
+@media only screen and (min-width: 768px) and (min-width: 1330px) {
+  #projects article:nth-child(even) span.vertical.left {
+    left: auto;
+    right: calc((200 / 1440) * 100% + 807px);
+    top: calc((100 / 900) * 100% - 45px);
+    bottom: 0; }
+  #projects article:nth-child(even) span.vertical.right {
+    left: auto;
+    right: calc((200 / 1440) * 100%);
+    top: 0;
+    bottom: calc((100 / 900) * 100%); } }
+
+@media only screen and (min-width: 768px) {
   #projects article:nth-child(even) span.horizontal.top {
     left: auto;
     right: 0; }
@@ -748,14 +855,24 @@ nav {
   #projects article:nth-child(even) .key-visual-container {
     position: absolute;
     left: auto;
-    right: calc((200 / 1440) * 100% + 4px); }
+    right: calc((200 / 1440) * 100% + 4px); } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article:nth-child(even) .key-visual-container {
+      right: calc((200 / 1440) * 100% + 4px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article:nth-child(even) .key-visual {
     position: absolute;
     right: 0; }
     #projects article:nth-child(even) .key-visual .key-visual-img-container {
       height: 438px;
       transform: perspective(850px) translate3d(0px, -15px, -50px);
-      transform-origin: 100% 0; }
+      transform-origin: 100% 0; } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects article:nth-child(even) .key-visual .key-visual-img-container {
+        height: 657px; } }
+
+@media only screen and (min-width: 768px) {
     #projects article:nth-child(even) .key-visual img {
       position: absolute;
       right: 0;
@@ -769,7 +886,12 @@ nav {
         left: auto;
         right: 0; }
   #projects article:nth-child(even) h2.overview-title {
-    left: 13.88889%; }
+    left: 13.88889%; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article:nth-child(even) h2.overview-title {
+      left: 13.88889%; } }
+
+@media only screen and (min-width: 768px) {
   #projects article:nth-child(even) .info.time {
     left: auto;
     right: calc((200 / 1440) * 100% + 687px - 70px); }
@@ -781,7 +903,23 @@ nav {
     right: calc((200 / 1440) * 100% - 92px); }
   #projects article:nth-child(even) .info.project {
     left: auto;
-    right: 13.88889%; }
+    right: 13.88889%; } }
+
+@media only screen and (min-width: 768px) and (min-width: 1330px) {
+  #projects article:nth-child(even) .info.time {
+    left: auto;
+    right: calc((200 / 1440) * 100% + 807px - 70px); }
+  #projects article:nth-child(even) .info.index {
+    left: auto;
+    right: calc((200 / 1440) * 100% - 36px); }
+  #projects article:nth-child(even) .info.more-info {
+    left: auto;
+    right: calc((200 / 1440) * 100% - 92px); }
+  #projects article:nth-child(even) .info.project {
+    left: auto;
+    right: 13.88889%; } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail * {
     transition: all 0.05s ease; }
   #projects article.detail .first-row {
@@ -790,12 +928,22 @@ nav {
     width: 78%; }
   #projects article.detail .key-visual-container {
     left: calc(50% - 400px);
-    position: relative; }
+    position: relative; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail .key-visual-container {
+      left: calc(50% - 600px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail .key-visual {
     position: relative;
     width: 800px;
     height: auto;
-    margin-top: 180px; }
+    margin-top: 180px; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail .key-visual {
+      width: 1200px; } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail .info.time {
     left: calc(50% - 380px);
     top: 156px; }
@@ -806,10 +954,21 @@ nav {
     position: relative;
     width: 800px;
     left: calc(50% - 400px);
-    padding-top: 40px; }
+    padding-top: 40px; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail .info.project {
+      width: 1200px;
+      left: calc(50% - 600px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail .info.project .project-detail {
     width: 800px;
-    margin: 0px auto; }
+    margin: 0px auto; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail .info.project .project-detail {
+      width: 1200px; } }
+
+@media only screen and (min-width: 768px) {
     #projects article.detail .info.project .project-detail .text {
       padding: 30px 14px; }
     #projects article.detail .info.project .project-detail p {
@@ -825,25 +984,50 @@ nav {
     #projects article.detail .lines span.vertical.left {
       top: 0;
       bottom: 0;
-      left: calc(50% - 400px); }
+      left: calc(50% - 400px); } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects article.detail .lines span.vertical.left {
+        left: calc(50% - 600px); } }
+
+@media only screen and (min-width: 768px) {
     #projects article.detail .lines span.vertical.right {
       top: 0;
       bottom: 0;
-      left: calc(50% + 400px); }
+      left: calc(50% + 400px); } }
+    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+      #projects article.detail .lines span.vertical.right {
+        left: calc(50% + 600px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail:nth-child(even) span.vertical.left {
     top: 0;
     bottom: 0;
     left: auto;
-    right: calc(50% + 400px); }
+    right: calc(50% + 400px); } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail:nth-child(even) span.vertical.left {
+      right: calc(50% + 600px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail:nth-child(even) span.vertical.right {
     top: 0;
     bottom: 0;
     left: auto;
-    right: calc(50% - 400px); }
+    right: calc(50% - 400px); } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail:nth-child(even) span.vertical.right {
+      right: calc(50% - 600px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail:nth-child(even) .key-visual-container {
     left: auto;
     right: calc(50% - 400px);
-    position: absolute; }
+    position: absolute; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail:nth-child(even) .key-visual-container {
+      right: calc(50% - 600px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail:nth-child(even) .key-visual {
     right: 0;
     position: absolute; }
@@ -1108,7 +1292,8 @@ nav {
     background: black;
     -webkit-overflow-scrolling: touch; }
     #projects article.detail .overlay > .container {
-      height: auto; }
+      height: auto;
+      max-width: 100vw; }
   #projects article.detail .key-visual .key-visual-img-container .img-shadow, #projects article.detail .key-visual .key-visual-img-container .img-shadow:after {
     height: 56.02941vw; }
   #projects article.detail .key-visual .key-visual-img-container .img-shadow:after {
@@ -1150,6 +1335,12 @@ nav {
   @media only screen and (max-width: 1023px) {
     #adam-visualizer .info.more-info {
       background: rgba(255, 234, 77, 0.75); } }
+
+#opel-relaunch {
+  background: #5cb7fd; }
+  @media only screen and (max-width: 1023px) {
+    #opel-relaunch .info.more-info {
+      background: rgba(92, 183, 253, 0.75); } }
 
 .top-button {
   position: fixed;
