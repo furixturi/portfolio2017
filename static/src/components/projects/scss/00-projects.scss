@@ -812,12 +812,23 @@
             .info {
 
                 &.time {
-                    left: calc(50% - 380px);
+                    left: calc(50% - #{$key-visual-width-detail / 2 - 20});
+
+                    @media only screen and (min-width: $hd-desktop-min) {
+                        left: calc(50% - #{$hd-key-visual-width-detail / 2 - 20});
+                    }
+
                     top: 156px;
                 }
 
                 &.index {
-                    left: calc(50% + 415px);
+                    min-width: 30px;
+                    left: calc(50% + #{$key-visual-width-detail / 2 + 15});
+
+                    @media only screen and (min-width: $hd-desktop-min) {
+                        left: calc(50% + #{$hd-key-visual-width-detail / 2 + 15});
+                    }
+
                     top: 150px;
                 }
                 
@@ -866,11 +877,13 @@
 
                     &.bottom {
                         top: (180 + $key-visual-height-detail);
+                        @media only screen and (min-width: $hd-desktop-min) {
+                            top: (180 + $hd-key-visual-height-detail);
+                        }
                     }
                 }
                 span.vertical {
-                    
-
+                    position: fixed;
                     &.left {
                         top: 0;
                         bottom: 0;
@@ -936,6 +949,11 @@
                     &.project {
                         position: absolute;
                         top: 620px;
+                        top: $key-visual-height-detail + 182px;
+                        @media only screen and (min-width: $hd-desktop-min) {
+                            top: $hd-key-visual-height-detail + 182px;
+                        }
+
                     }
                 }
             }

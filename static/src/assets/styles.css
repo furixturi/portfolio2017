@@ -946,10 +946,21 @@ nav {
 @media only screen and (min-width: 768px) {
   #projects article.detail .info.time {
     left: calc(50% - 380px);
-    top: 156px; }
+    top: 156px; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail .info.time {
+      left: calc(50% - 580px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail .info.index {
+    min-width: 30px;
     left: calc(50% + 415px);
-    top: 150px; }
+    top: 150px; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail .info.index {
+      left: calc(50% + 615px); } }
+
+@media only screen and (min-width: 768px) {
   #projects article.detail .info.project {
     position: relative;
     width: 800px;
@@ -980,23 +991,30 @@ nav {
       #projects article.detail .lines span.horizontal.top {
         top: 180px; }
       #projects article.detail .lines span.horizontal.bottom {
-        top: 618px; }
-    #projects article.detail .lines span.vertical.left {
-      top: 0;
-      bottom: 0;
-      left: calc(50% - 400px); } }
-    @media only screen and (min-width: 768px) and (min-width: 1330px) {
-      #projects article.detail .lines span.vertical.left {
-        left: calc(50% - 600px); } }
+        top: 618px; } }
+      @media only screen and (min-width: 768px) and (min-width: 1330px) {
+        #projects article.detail .lines span.horizontal.bottom {
+          top: 837px; } }
 
 @media only screen and (min-width: 768px) {
-    #projects article.detail .lines span.vertical.right {
-      top: 0;
-      bottom: 0;
-      left: calc(50% + 400px); } }
-    @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail .lines span.vertical {
+      position: fixed; }
+      #projects article.detail .lines span.vertical.left {
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 400px); } }
+      @media only screen and (min-width: 768px) and (min-width: 1330px) {
+        #projects article.detail .lines span.vertical.left {
+          left: calc(50% - 600px); } }
+
+@media only screen and (min-width: 768px) {
       #projects article.detail .lines span.vertical.right {
-        left: calc(50% + 600px); } }
+        top: 0;
+        bottom: 0;
+        left: calc(50% + 400px); } }
+      @media only screen and (min-width: 768px) and (min-width: 1330px) {
+        #projects article.detail .lines span.vertical.right {
+          left: calc(50% + 600px); } }
 
 @media only screen and (min-width: 768px) {
   #projects article.detail:nth-child(even) span.vertical.left {
@@ -1035,7 +1053,11 @@ nav {
       margin-left: 0; }
   #projects article.detail:nth-child(even) .info.project {
     position: absolute;
+    top: 620px;
     top: 620px; } }
+  @media only screen and (min-width: 768px) and (min-width: 1330px) {
+    #projects article.detail:nth-child(even) .info.project {
+      top: 839px; } }
 
 @media only screen and (min-width: 1024px) and (max-width: 1160px) {
   #projects h2.overview-title {
