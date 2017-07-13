@@ -617,7 +617,8 @@ nav {
       margin: 10px 0 100px; }
       #projects article.detail .info.project .project-detail .images img {
         display: block;
-        width: 100%; }
+        width: 100%;
+        margin-bottom: 15px; }
     #projects article.detail .info.project .project-detail p {
       font-family: "Roboto", Arial, sans-serif;
       font-weight: 400; }
@@ -694,7 +695,8 @@ nav {
     position: absolute; }
     #projects h2.overview-title {
       left: 25%;
-      top: 35.55556vmin; }
+      top: 40vmin;
+      transform: translateY(-50%); }
     #projects h2.detail-title {
       font-size: 60px;
       font-size: 3.75rem;
@@ -1359,10 +1361,10 @@ nav {
       background: rgba(255, 234, 77, 0.75); } }
 
 #opel-relaunch {
-  background: #5cb7fd; }
+  background: #88cbff; }
   @media only screen and (max-width: 1023px) {
     #opel-relaunch .info.more-info {
-      background: rgba(92, 183, 253, 0.75); } }
+      background: rgba(136, 203, 255, 0.75); } }
 
 .top-button {
   position: fixed;

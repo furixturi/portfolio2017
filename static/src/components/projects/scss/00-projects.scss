@@ -362,6 +362,7 @@
                     img {
                         display: block;
                         width: 100%;
+                        margin-bottom: 15px;
                     }
                 }                   
 
@@ -466,7 +467,8 @@
 
             &.overview-title {            
                 left: (360 / $ideal-viewport-width) * 100%;
-                top: (320 / $ideal-viewport-height) * 100vmin;
+                top: (360 / $ideal-viewport-height) * 100vmin;
+                transform: translateY(-50%);
             }
 
             &.detail-title {
