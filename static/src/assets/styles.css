@@ -191,105 +191,6 @@ html {
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
 
-/* home--------------*/
-#home h1 {
-  font-weight: 100;
-  margin: 0 auto; }
-  #home h1 span {
-    display: block; }
-
-#home .name {
-  font-weight: 600; }
-
-#home img#face {
-  display: block;
-  width: 33.333333%;
-  border-radius: 50%;
-  margin: 0 auto; }
-
-@media only screen and (max-width: 767px) {
-  #home {
-    height: auto;
-    min-height: calc(100vh - 67px); }
-    #home .scrollCTA {
-      display: none; }
-    #home img#face {
-      max-width: 250px;
-      margin-top: 80px;
-      margin-bottom: 30px; }
-    #home h1 {
-      text-align: center;
-      line-height: 1.35; }
-      #home h1 .greeting {
-        font-size: 30px;
-        font-size: 1.875rem; }
-      #home h1 .preps, #home h1 .residence, #home h1 .role {
-        font-size: 20px;
-        font-size: 1.25rem; }
-      #home h1 .name {
-        font-size: 32px;
-        font-size: 2rem;
-        line-height: 1.3125; }
-      #home h1 .role {
-        line-height: 1.5; }
-      #home h1 .craft {
-        font-size: 26px;
-        font-size: 1.625rem;
-        line-height: 1.23077; } }
-
-@media only screen and (min-width: 768px) {
-  #home img#face {
-    max-width: 160px;
-    margin-top: 22.22222vh;
-    margin-bottom: 40px; }
-  #home h1 {
-    line-height: 1.28571;
-    max-width: 392px; }
-  #home .greeting, #home .preps, #home .residence, #home .role {
-    display: inline;
-    font-size: 24px;
-    font-size: 1.5rem; }
-  #home .name {
-    font-weight: 400;
-    font-size: 50px;
-    font-size: 3.125rem;
-    line-height: 1.28125; }
-  #home .craft {
-    font-size: 36px;
-    font-size: 2.25rem; }
-  #home .scrollCTA {
-    color: black;
-    display: block;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* easeOutBack */ }
-    #home .scrollCTA .icon {
-      display: block;
-      text-align: center;
-      font-size: 30px;
-      margin-top: 10px;
-      letter-spacing: 0; }
-    #home .scrollCTA:hover {
-      letter-spacing: 0.4em; } }
-
-@media only screen and (min-width: 1024px) {
-  #home h1 {
-    font-size: 28px;
-    font-size: 1.75rem;
-    max-width: 456px; }
-  #home .name {
-    font-size: 64px;
-    font-size: 4rem; }
-  #home .craft {
-    font-size: 48px;
-    font-size: 3rem; } }
-
 nav {
   z-index: 5;
   transition: all 0.8s cubic-bezier(0.935, -0.6, 0.03, 1.65); }
@@ -400,6 +301,105 @@ nav {
           font-size: 14px;
           font-size: 0.875rem;
           padding: 10px; } }
+
+/* home--------------*/
+#home h1 {
+  font-weight: 100;
+  margin: 0 auto; }
+  #home h1 span {
+    display: block; }
+
+#home .name {
+  font-weight: 600; }
+
+#home img#face {
+  display: block;
+  width: 33.333333%;
+  border-radius: 50%;
+  margin: 0 auto; }
+
+@media only screen and (max-width: 767px) {
+  #home {
+    height: auto;
+    min-height: calc(100vh - 67px); }
+    #home .scrollCTA {
+      display: none; }
+    #home img#face {
+      max-width: 250px;
+      margin-top: 80px;
+      margin-bottom: 30px; }
+    #home h1 {
+      text-align: center;
+      line-height: 1.35; }
+      #home h1 .greeting {
+        font-size: 30px;
+        font-size: 1.875rem; }
+      #home h1 .preps, #home h1 .residence, #home h1 .role {
+        font-size: 20px;
+        font-size: 1.25rem; }
+      #home h1 .name {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 1.3125; }
+      #home h1 .role {
+        line-height: 1.5; }
+      #home h1 .craft {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 1.23077; } }
+
+@media only screen and (min-width: 768px) {
+  #home img#face {
+    max-width: 160px;
+    margin-top: 22.22222vh;
+    margin-bottom: 40px; }
+  #home h1 {
+    line-height: 1.28571;
+    max-width: 392px; }
+  #home .greeting, #home .preps, #home .residence, #home .role {
+    display: inline;
+    font-size: 24px;
+    font-size: 1.5rem; }
+  #home .name {
+    font-weight: 400;
+    font-size: 50px;
+    font-size: 3.125rem;
+    line-height: 1.28125; }
+  #home .craft {
+    font-size: 36px;
+    font-size: 2.25rem; }
+  #home .scrollCTA {
+    color: black;
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* easeOutBack */ }
+    #home .scrollCTA .icon {
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 10px;
+      letter-spacing: 0; }
+    #home .scrollCTA:hover {
+      letter-spacing: 0.4em; } }
+
+@media only screen and (min-width: 1024px) {
+  #home h1 {
+    font-size: 28px;
+    font-size: 1.75rem;
+    max-width: 456px; }
+  #home .name {
+    font-size: 64px;
+    font-size: 4rem; }
+  #home .craft {
+    font-size: 48px;
+    font-size: 3rem; } }
 
 #projects article {
   position: relative; }
@@ -1365,11 +1365,17 @@ nav {
     #adam-visualizer .info.more-info {
       background: rgba(255, 234, 77, 0.75); } }
 
+#ard {
+  background: #FF8A80; }
+  @media only screen and (max-width: 1023px) {
+    #ard .info.more-info {
+      background: rgba(255, 138, 128, 0.75); } }
+
 #opel-relaunch {
-  background: #88cbff; }
+  background: #90CAF9; }
   @media only screen and (max-width: 1023px) {
     #opel-relaunch .info.more-info {
-      background: rgba(136, 203, 255, 0.75); } }
+      background: rgba(144, 202, 249, 0.75); } }
 
 .top-button {
   position: fixed;
