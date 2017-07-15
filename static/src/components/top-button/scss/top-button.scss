@@ -25,7 +25,15 @@
 
     &.show {
         opacity: 1;
+
+        &:hover {
+            color: white;
+            background: black;
+            font-weight: bold;
+        }
     }
+
+
 }
 
 body.project-detail-opened .top-button {

@@ -1386,6 +1386,10 @@ nav {
       border: 1px solid rgba(0, 0, 0, 0.8); } }
   .top-button.show {
     opacity: 1; }
+    .top-button.show:hover {
+      color: white;
+      background: black;
+      font-weight: bold; }
 
 body.project-detail-opened .top-button {
   display: none; }
