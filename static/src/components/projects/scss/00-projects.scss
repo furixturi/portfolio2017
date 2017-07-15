@@ -952,13 +952,13 @@
                     &.project {
                         position: absolute;
 
-                        top: $key-visual-height-detail + 182px;
+                        top: calc(#{$detail-margin-top} + #{$key-visual-height-detail});
 
                         @media only screen and (min-width: $hd-desktop-min) {
-                            top: $hd-key-visual-height-detail + 182px;
+                            top: calc(#{$detail-margin-top} + #{$hd-key-visual-height-detail});
                         }
                         @media only screen and (min-width: 768px) and (max-width: 1023px) {
-                            top: $tablet-key-visual-height-detail + 182px;
+                            top: calc(#{$detail-margin-top} + #{$tablet-key-visual-height-detail});
                         }
                     }
                 }

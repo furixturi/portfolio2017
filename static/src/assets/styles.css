@@ -1054,13 +1054,13 @@ nav {
       margin-left: 0; }
   #projects article.detail:nth-child(even) .info.project {
     position: absolute;
-    top: 620px; } }
+    top: calc(130px + 438px); } }
   @media only screen and (min-width: 768px) and (min-width: 1330px) {
     #projects article.detail:nth-child(even) .info.project {
-      top: 839px; } }
+      top: calc(130px + 657px); } }
   @media only screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1023px) {
     #projects article.detail:nth-child(even) .info.project {
-      top: 567px; } }
+      top: calc(130px + 385px); } }
 
 @media only screen and (min-width: 1024px) and (max-width: 1160px) {
   #projects h2.overview-title {
