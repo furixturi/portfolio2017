@@ -9,7 +9,7 @@
         }
 }
 
-// font size and line height calculation s
+// font size and line height calculations
 @function calculateRem($size) {
     $remSize: $size / 16px;
     @return #{$remSize}rem;
@@ -22,6 +22,10 @@
 
 @function lineHeight($pixelFontSize, $pixelLineHeight) {
     @return $pixelLineHeight / $pixelFontSize;
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
 }
 
 /* Normalize ----------------*/
@@ -51,7 +55,6 @@ $mobile-ui-bar-height: 67px;
 /* Colors -------------------*/
 $text-color: rgba(0, 0, 0, 0.7);
 $text-color-light: #b3b3b3;
-$highlight-color: #231f20;
 // $line-color: #b3b3b3;
 $line-color: rgba(26, 26, 26, .05);
 $line-color-light:rgba(255, 255, 255,0.1);
