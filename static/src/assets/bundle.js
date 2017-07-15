@@ -27661,12 +27661,15 @@ $(function(){
 
     $el.find('a').on('click', function(e){
         var $navEl = $(this);
-        e.preventDefault();
 
-        if($navEl.hasClass('active') || $navEl.hasClass('changing')) return; 
+        if($navEl.data('navi')) {
+            e.preventDefault();
 
-        $(document).trigger('nav_change_start', [$navEl.data('navi')]);
-        $navEl.addClass('changing');
+            if($navEl.hasClass('active') || $navEl.hasClass('changing')) return; 
+
+            $(document).trigger('nav_change_start', [$navEl.data('navi')]);
+            $navEl.addClass('changing');
+        }
     });
 
     $el.on('nav_change_complete', function(e, arg){
