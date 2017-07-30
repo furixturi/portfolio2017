@@ -191,6 +191,12 @@ html {
 @media only screen and (min-width: 1824px) {
   /* Styles */ }
 
+/**
+ * component: about
+ */
+#about {
+  background: #000000; }
+
 /* home--------------*/
 #home h1 {
   font-weight: 100;
