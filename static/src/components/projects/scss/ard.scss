@@ -1,6 +1,6 @@
 #ard{
     background: $theme-color-ard;
-
+    .info {color: white;}
     @media only screen and (max-width: 1023px) {
         .info.more-info {
                 background: transparentize($theme-color-ard, 0.25);
