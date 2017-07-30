@@ -18,12 +18,15 @@ gulp.task('js', function() {
         .pipe(gulp.dest('src/assets'))
 })
 
-gulp.task('watch', function() {
+gulp.task('watchJS', function() {
     gulp.watch(['src/js/*.js',
-            'src/scss/*.scss',
-            'src/components/*/js/*.js', 
+            'src/components/*/js/*.js'],            
+            ['js'])
+});
+gulp.task('watchCSS', function() {
+    gulp.watch(['src/scss/*.scss',
             'src/components/*/scss/*.scss'],            
-            ['sass', 'js'])
+            ['sass'])
 });
 
 gulp.task('webserver', function() {
@@ -36,4 +39,4 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('default', ['webserver', 'watch']);
+gulp.task('default', ['webserver', 'watchJS', 'watchCSS']);
