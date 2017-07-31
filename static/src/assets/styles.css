@@ -379,7 +379,7 @@ html {
 @media only screen and (min-width: 768px) {
   #home img#face {
     max-width: 160px;
-    margin-top: 22.22222%;
+    margin-top: 200px;
     margin-bottom: 40px; }
   #home h1 {
     line-height: 1.28571;
@@ -428,6 +428,118 @@ html {
   #home .craft {
     font-size: 48px;
     font-size: 3rem; } }
+
+nav {
+  z-index: 5;
+  transition: all 0.8s cubic-bezier(0.935, -0.6, 0.03, 1.65); }
+  nav li {
+    display: inline-block; }
+  nav li a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* easeOutBack */ }
+    nav li a:hover, nav li a.changing {
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      background: rgba(0, 0, 0, 0.05); }
+    nav li a:active, nav li a.active {
+      color: white;
+      background: black;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.2em; }
+  nav .slogan {
+    margin-top: 30px;
+    margin-left: 40px; }
+  @media only screen and (max-width: 767px) {
+    nav {
+      position: absolute;
+      width: 100vw;
+      height: calc(100vh - 67px);
+      min-height: 600px;
+      max-height: 900px; }
+      nav > .container {
+        height: 100%;
+        min-height: 600px; }
+      nav .slogan {
+        display: none; }
+      nav li {
+        display: block;
+        position: absolute; }
+        nav li.bottom {
+          bottom: 40px;
+          left: 50%;
+          transform: translateX(-50%); }
+        nav li.left {
+          transform-origin: 0 100%;
+          transform: rotate(90deg) translateX(-100%);
+          left: 20px;
+          top: 50%; }
+        nav li.right {
+          transform-origin: 100% 100%;
+          transform: rotate(-90deg) translateX(80%);
+          right: 20px;
+          top: 50%; }
+        nav li a {
+          color: black; }
+          nav li a:hover, nav li a.changing, nav li a:active, nav li a.active {
+            font-weight: 400;
+            color: black;
+            background: none; }
+      nav a {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px 8px 5px 10px;
+        border: 1px solid black;
+        letter-spacing: 0.2em; } }
+  @media only screen and (max-width: 736px) and (orientation: landscape) {
+    nav {
+      min-height: 667px; }
+      nav > .container {
+        min-height: 667px; } }
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      background: white;
+      transform-origin: top;
+      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
+      width: 100vw; }
+      nav * {
+        overflow: hidden; }
+      nav.reveal {
+        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
+      nav.hide {
+        transform: perspective(800px) translateY(-100%);
+        opacity: 0;
+        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* easeInOutBack */ }
+      nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      nav .slogan {
+        float: left;
+        font-size: 14px;
+        font-size: 0.875rem; }
+        nav .slogan .name {
+          font-size: 18px;
+          font-size: 1.125rem; }
+      nav ul {
+        float: right;
+        margin-top: 20px;
+        padding-right: 50px; }
+      nav li {
+        margin-left: 20px; }
+        nav li a {
+          font-size: 14px;
+          font-size: 0.875rem;
+          padding: 10px; } }
 
 #projects article {
   position: relative; }
@@ -1406,118 +1518,6 @@ html {
   @media only screen and (max-width: 1023px) {
     #opel-relaunch .info.more-info {
       background: rgba(136, 198, 249, 0.75); } }
-
-nav {
-  z-index: 5;
-  transition: all 0.8s cubic-bezier(0.935, -0.6, 0.03, 1.65); }
-  nav li {
-    display: inline-block; }
-  nav li a {
-    color: rgba(0, 0, 0, 0.7);
-    text-decoration: none;
-    display: block;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* easeOutBack */ }
-    nav li a:hover, nav li a.changing {
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      background: rgba(0, 0, 0, 0.05); }
-    nav li a:active, nav li a.active {
-      color: white;
-      background: black;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 0.2em; }
-  nav .slogan {
-    margin-top: 30px;
-    margin-left: 40px; }
-  @media only screen and (max-width: 767px) {
-    nav {
-      position: absolute;
-      width: 100vw;
-      height: calc(100vh - 67px);
-      min-height: 600px;
-      max-height: 900px; }
-      nav > .container {
-        height: 100%;
-        min-height: 600px; }
-      nav .slogan {
-        display: none; }
-      nav li {
-        display: block;
-        position: absolute; }
-        nav li.bottom {
-          bottom: 40px;
-          left: 50%;
-          transform: translateX(-50%); }
-        nav li.left {
-          transform-origin: 0 100%;
-          transform: rotate(90deg) translateX(-100%);
-          left: 20px;
-          top: 50%; }
-        nav li.right {
-          transform-origin: 100% 100%;
-          transform: rotate(-90deg) translateX(80%);
-          right: 20px;
-          top: 50%; }
-        nav li a {
-          color: black; }
-          nav li a:hover, nav li a.changing, nav li a:active, nav li a.active {
-            font-weight: 400;
-            color: black;
-            background: none; }
-      nav a {
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        color: black;
-        padding: 5px 8px 5px 10px;
-        border: 1px solid black;
-        letter-spacing: 0.2em; } }
-  @media only screen and (max-width: 736px) and (orientation: landscape) {
-    nav {
-      min-height: 667px; }
-      nav > .container {
-        min-height: 667px; } }
-  @media only screen and (min-width: 768px) {
-    nav {
-      position: fixed;
-      background: white;
-      transform-origin: top;
-      transform: perspective(800px) rotate3d(1, 0, 0, 90deg);
-      width: 100vw; }
-      nav * {
-        overflow: hidden; }
-      nav.reveal {
-        transform: perspective(800px) rotate3d(1, 0, 0, 0deg); }
-      nav.hide {
-        transform: perspective(800px) translateY(-100%);
-        opacity: 0;
-        transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        /* easeInOutBack */ }
-      nav:after {
-        content: "";
-        display: table;
-        clear: both; }
-      nav .slogan {
-        float: left;
-        font-size: 14px;
-        font-size: 0.875rem; }
-        nav .slogan .name {
-          font-size: 18px;
-          font-size: 1.125rem; }
-      nav ul {
-        float: right;
-        margin-top: 20px;
-        padding-right: 50px; }
-      nav li {
-        margin-left: 20px; }
-        nav li a {
-          font-size: 14px;
-          font-size: 0.875rem;
-          padding: 10px; } }
 
 .top-button {
   position: fixed;
