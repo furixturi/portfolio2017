@@ -194,108 +194,75 @@ html {
 /**
  * component: about
  */
-#about {
-  background: #000000; }
+#about * {
+  overflow: visible; }
 
-/* home--------------*/
-#home h1 {
-  font-weight: 100;
-  margin: 0 auto; }
-  #home h1 span {
-    display: block; }
-
-#home .name {
-  font-weight: 600; }
-
-#home img#face {
-  display: block;
-  width: 33.333333%;
-  border-radius: 50%;
-  margin: 0 auto; }
-
-@media only screen and (max-width: 767px) {
-  #home {
-    height: auto;
-    min-height: calc(100vh - 67px); }
-    #home .scrollCTA {
-      display: none; }
-    #home img#face {
-      max-width: 250px;
-      margin-top: 80px;
-      margin-bottom: 30px; }
-    #home h1 {
-      text-align: center;
-      line-height: 1.35; }
-      #home h1 .greeting {
-        font-size: 30px;
-        font-size: 1.875rem; }
-      #home h1 .preps, #home h1 .residence, #home h1 .role {
-        font-size: 20px;
-        font-size: 1.25rem; }
-      #home h1 .name {
-        font-size: 32px;
-        font-size: 2rem;
-        line-height: 1.3125; }
-      #home h1 .role {
-        line-height: 1.5; }
-      #home h1 .craft {
-        font-size: 26px;
-        font-size: 1.625rem;
-        line-height: 1.23077; } }
-
-@media only screen and (min-width: 768px) {
-  #home img#face {
-    max-width: 160px;
-    margin-top: 22.22222vh;
-    margin-bottom: 40px; }
-  #home h1 {
-    line-height: 1.28571;
-    max-width: 392px; }
-  #home .greeting, #home .preps, #home .residence, #home .role {
-    display: inline;
-    font-size: 24px;
-    font-size: 1.5rem; }
-  #home .name {
-    font-weight: 400;
-    font-size: 50px;
-    font-size: 3.125rem;
-    line-height: 1.28125; }
-  #home .craft {
-    font-size: 36px;
-    font-size: 2.25rem; }
-  #home .scrollCTA {
-    color: black;
+#about .container {
+  padding: 60px 20px 150px; }
+  #about .container:before, #about .container:after {
+    content: "";
     display: block;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* easeOutBack */ }
-    #home .scrollCTA .icon {
-      display: block;
-      text-align: center;
-      font-size: 30px;
-      margin-top: 10px;
-      letter-spacing: 0; }
-    #home .scrollCTA:hover {
-      letter-spacing: 0.4em; } }
+    width: 50px;
+    height: 80px;
+    border: 10px solid black;
+    position: absolute; }
+  #about .container:before {
+    border-right: none;
+    border-bottom: none;
+    top: 35px; }
+  #about .container::after {
+    border-left: none;
+    border-top: none;
+    right: 20px;
+    bottom: 100px; }
 
-@media only screen and (min-width: 1024px) {
-  #home h1 {
-    font-size: 28px;
-    font-size: 1.75rem;
-    max-width: 456px; }
-  #home .name {
-    font-size: 64px;
-    font-size: 4rem; }
-  #home .craft {
-    font-size: 48px;
-    font-size: 3rem; } }
+#about .picture-container {
+  text-align: center;
+  margin-bottom: 40px; }
 
+#about #profile-photo {
+  max-width: 300px; }
+
+#about .text {
+  font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.625; }
+  #about .text p {
+    margin-bottom: 1em; }
+    #about .text p::last-child {
+      margin-bottom: 2em; }
+  #about .text .emphasis {
+    font-family: arial;
+    font-weight: bold; }
+
+#about .col:first-child {
+  margin-bottom: 50px; }
+  #about .col:first-child:after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: black;
+    position: relative;
+    float: right;
+    top: -72px; }
+
+#about .text.little-facts {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-right: 75px; }
+
+#about .links {
+  margin: 50px 80px 0 0; }
+  #about .links ul {
+    text-align: right; }
+  #about .links li {
+    line-height: 1.625; }
+  #about .links a, #about .links a:hover, #about .links a:active, #about .links a:visited {
+    font-size: 14px;
+    color: black;
+    border-bottom: 1px solid black; }
+
+/** End of component: about */
 nav {
   z-index: 5;
   transition: all 0.8s cubic-bezier(0.935, -0.6, 0.03, 1.65); }
@@ -406,6 +373,105 @@ nav {
           font-size: 14px;
           font-size: 0.875rem;
           padding: 10px; } }
+
+/* home--------------*/
+#home h1 {
+  font-weight: 100;
+  margin: 0 auto; }
+  #home h1 span {
+    display: block; }
+
+#home .name {
+  font-weight: 600; }
+
+#home img#face {
+  display: block;
+  width: 33.333333%;
+  border-radius: 50%;
+  margin: 0 auto; }
+
+@media only screen and (max-width: 767px) {
+  #home {
+    height: auto;
+    min-height: calc(100vh - 67px); }
+    #home .scrollCTA {
+      display: none; }
+    #home img#face {
+      max-width: 250px;
+      margin-top: 80px;
+      margin-bottom: 30px; }
+    #home h1 {
+      text-align: center;
+      line-height: 1.35; }
+      #home h1 .greeting {
+        font-size: 30px;
+        font-size: 1.875rem; }
+      #home h1 .preps, #home h1 .residence, #home h1 .role {
+        font-size: 20px;
+        font-size: 1.25rem; }
+      #home h1 .name {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 1.3125; }
+      #home h1 .role {
+        line-height: 1.5; }
+      #home h1 .craft {
+        font-size: 26px;
+        font-size: 1.625rem;
+        line-height: 1.23077; } }
+
+@media only screen and (min-width: 768px) {
+  #home img#face {
+    max-width: 160px;
+    margin-top: 22.22222vh;
+    margin-bottom: 40px; }
+  #home h1 {
+    line-height: 1.28571;
+    max-width: 392px; }
+  #home .greeting, #home .preps, #home .residence, #home .role {
+    display: inline;
+    font-size: 24px;
+    font-size: 1.5rem; }
+  #home .name {
+    font-weight: 400;
+    font-size: 50px;
+    font-size: 3.125rem;
+    line-height: 1.28125; }
+  #home .craft {
+    font-size: 36px;
+    font-size: 2.25rem; }
+  #home .scrollCTA {
+    color: black;
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* easeOutBack */ }
+    #home .scrollCTA .icon {
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 10px;
+      letter-spacing: 0; }
+    #home .scrollCTA:hover {
+      letter-spacing: 0.4em; } }
+
+@media only screen and (min-width: 1024px) {
+  #home h1 {
+    font-size: 28px;
+    font-size: 1.75rem;
+    max-width: 456px; }
+  #home .name {
+    font-size: 64px;
+    font-size: 4rem; }
+  #home .craft {
+    font-size: 48px;
+    font-size: 3rem; } }
 
 #projects article {
   position: relative; }
@@ -1240,8 +1306,7 @@ nav {
         transition: all 0.4s ease-in; }
   #projects article .info, #projects article:nth-child(odd) .info, #projects article:nth-child(even) .info {
     font-size: 14px;
-    font-size: 0.875rem;
-    color: black; }
+    font-size: 0.875rem; }
     #projects article .info.time, #projects article:nth-child(odd) .info.time, #projects article:nth-child(even) .info.time {
       display: none; }
     #projects article .info.index, #projects article:nth-child(odd) .info.index, #projects article:nth-child(even) .info.index {
@@ -1370,12 +1435,12 @@ nav {
       background: rgba(255, 234, 77, 0.75); } }
 
 #ard {
-  background: #d2255d; }
+  background: #e0386e; }
   #ard .info {
     color: white; }
   @media only screen and (max-width: 1023px) {
     #ard .info.more-info {
-      background: rgba(210, 37, 93, 0.75); } }
+      background: rgba(224, 56, 110, 0.75); } }
 
 #opel-relaunch {
   background: #88c6f9; }

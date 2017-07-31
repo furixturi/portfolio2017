@@ -3,5 +3,96 @@
  */
 
 #about {
-    background: #000000;
+    * {
+        overflow: visible;
+    }
+    .container {
+        padding: 60px 20px 150px;
+
+        &:before, 
+        &:after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 80px;
+            border: 10px solid black;
+            position: absolute;
+        }
+
+        &:before {
+            border-right: none;
+            border-bottom: none;
+            top: 35px;
+        }
+
+        &::after {
+            border-left: none;
+            border-top: none;
+            right: 20px;
+            bottom: 100px;
+        }
+    }
+
+    .picture-container {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    #profile-photo {
+        max-width: 300px;
+    }
+
+    .text {
+        font-family: $raleway;
+        line-height: (26px / 16px);
+        p {
+            margin-bottom: 1em;
+
+            &::last-child {
+                margin-bottom: 2em;
+            }
+        }
+        .emphasis {
+            font-family: arial;
+            font-weight: bold;
+        }
+    }
+
+    .col:first-child {
+        margin-bottom: 50px;
+        &:after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 70px;
+            background: black;
+            position: relative;
+            float: right;
+            top: -72px;
+        }
+    }
+
+    .text.little-facts {
+        @include fontSize(14px);
+        margin-right: 75px;
+    }
+
+    .links {
+        margin: 50px 80px 0 0;
+
+        ul {
+            text-align: right;
+        }
+
+        li {
+            line-height: (26px / 16px);
+        }
+        a, a:hover, a:active, a:visited {
+            font-size: 14px;
+            color: black;
+            border-bottom: 1px solid black;
+        }
+    }
 }
+
+/** End of component: about */

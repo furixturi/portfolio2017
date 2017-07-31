@@ -1280,7 +1280,7 @@
 
             .info {
                 @include fontSize(14px);
-                color: black;
+                // color: black;
                 &.time {
                     display: none;
                 }
