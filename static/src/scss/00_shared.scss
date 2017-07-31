@@ -37,6 +37,10 @@ a {
     text-decoration: none;
 }
 
+* {
+    overflow-x: visible !important;
+}
+
 /* breakpoint */
 $hd-desktop-min: 1330px;
 $desktop-min: 1024px;
