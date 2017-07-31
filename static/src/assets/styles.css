@@ -695,6 +695,8 @@ nav {
   top: 0;
   left: 0;
   height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   z-index: 5;
   overflow-y: scroll; }
   #projects article.detail .overlay > .container {
