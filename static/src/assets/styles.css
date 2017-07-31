@@ -221,6 +221,7 @@ html {
     text-align: center;
     margin-bottom: 40px; }
   #about #profile-photo {
+    width: 100%;
     max-width: 300px; }
   #about .text {
     font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -257,7 +258,7 @@ html {
       font-size: 14px;
       color: black;
       border-bottom: 1px solid black; }
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  @media only screen and (min-width: 768px) {
     #about .col {
       float: none; }
     #about .container {
@@ -266,6 +267,52 @@ html {
     #about .picture-container {
       text-align: left;
       padding-left: 20px; } }
+  @media only screen and (min-width: 1024px) {
+    #about .container {
+      padding: 120px 40px 0; }
+      #about .container:before {
+        top: 90px; }
+      #about .container:after {
+        right: 40px; }
+    #about .col {
+      float: left; }
+      #about .col.col-left {
+        width: 63.90977%; }
+      #about .col.col-right {
+        float: right;
+        width: 32.33083%; }
+    #about .picture-container {
+      float: left;
+      margin: 0 20px 0 0;
+      width: 35.92814%;
+      min-width: 240px; }
+    #about .col-left .text {
+      margin-top: 100px; }
+    #about .col-right .text {
+      margin-top: 200px; }
+    #about .links {
+      margin: 150px 100px 0 0; }
+      #about .links li {
+        display: inline-block;
+        margin-left: 50px; }
+    #about .col.col-left:after {
+      width: 50px;
+      height: 50px;
+      top: -50px; } }
+  @media only screen and (min-width: 1281px) {
+    #about .picture-container {
+      margin-right: 40px; }
+    #about .col-left .text {
+      width: 55.68862%;
+      float: left; }
+    #about .col.col-left:after {
+      width: 80px;
+      height: 80px;
+      top: -60px; }
+    #about .links {
+      margin: 550px 140px 0 0; }
+      #about .links li {
+        margin-left: 60px; } }
 
 /** End of component: about */
 /* home--------------*/
