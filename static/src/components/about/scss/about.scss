@@ -3,7 +3,10 @@
  */
 
 #about {
-    * {
+    height: auto;
+    min-height: 100vh;
+
+    &, & * {
         overflow: visible;
     }
     .container {
@@ -91,6 +94,23 @@
             font-size: 14px;
             color: black;
             border-bottom: 1px solid black;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+        .col {
+            float: none;
+        }
+
+        .container {
+            height: auto;
+            padding-top: 80px;
+        }
+
+        .picture-container {
+            text-align: left;
+            padding-left: 20px;
         }
     }
 }
