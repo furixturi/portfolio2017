@@ -98,6 +98,8 @@
     }
 
     @media only screen and (min-width: 768px) {
+        min-height: $full-viewport-min-height;
+        max-height: $ideal-viewport-height * 1px;
 
         .col {
             float: none;
@@ -115,6 +117,8 @@
     }
 
     @media only screen and (min-width: 1024px) {
+        min-height: $hd-full-viewport-min-height;
+
         .container {
             padding: 120px 40px 0;
 
@@ -173,6 +177,7 @@
 
     @media only screen and (min-width: 1281px) {
         max-height: ($ideal-viewport-height + 200) * 1px;
+        min-height: $ideal-viewport-height * 1px;
 
         .picture-container {
             margin-right: 40px;
