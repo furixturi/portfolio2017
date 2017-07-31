@@ -741,7 +741,6 @@ nav {
   #projects article.detail .info.project {
     overflow: visible; }
   #projects article.detail .info.project .project-detail {
-    background: rgba(0, 0, 0, 0.8);
     position: relative; }
     #projects article.detail .info.project .project-detail .text {
       position: relative; }
