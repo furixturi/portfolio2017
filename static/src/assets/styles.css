@@ -262,49 +262,55 @@ html {
       color: black;
       border-bottom: 1px solid black; }
   @media only screen and (min-width: 768px) {
-    #about .col {
-      float: none; }
-    #about .container {
-      height: auto;
-      padding-top: 80px; }
-    #about .picture-container {
-      text-align: left;
-      padding-left: 20px; } }
+    #about {
+      min-height: 768px;
+      max-height: 900px; }
+      #about .col {
+        float: none; }
+      #about .container {
+        height: auto;
+        padding-top: 80px; }
+      #about .picture-container {
+        text-align: left;
+        padding-left: 20px; } }
   @media only screen and (min-width: 1024px) {
-    #about .container {
-      padding: 120px 40px 0; }
-      #about .container:before {
-        top: 90px; }
-      #about .container:after {
-        right: 40px; }
-    #about .col {
-      float: left; }
-      #about .col.col-left {
-        width: 63.90977%; }
-      #about .col.col-right {
-        float: right;
-        width: 32.33083%; }
-    #about .picture-container {
-      float: left;
-      margin: 0 20px 0 0;
-      width: 35.92814%;
-      min-width: 240px; }
-    #about .col-left .text {
-      margin-top: 100px; }
-    #about .col-right .text {
-      margin-top: 200px; }
-    #about .links {
-      margin: 150px 100px 0 0; }
-      #about .links li {
-        display: inline-block;
-        margin-left: 50px; }
-    #about .col.col-left:after {
-      width: 50px;
-      height: 50px;
-      top: -50px; } }
+    #about {
+      min-height: 832px; }
+      #about .container {
+        padding: 120px 40px 0; }
+        #about .container:before {
+          top: 90px; }
+        #about .container:after {
+          right: 40px; }
+      #about .col {
+        float: left; }
+        #about .col.col-left {
+          width: 63.90977%; }
+        #about .col.col-right {
+          float: right;
+          width: 32.33083%; }
+      #about .picture-container {
+        float: left;
+        margin: 0 20px 0 0;
+        width: 35.92814%;
+        min-width: 240px; }
+      #about .col-left .text {
+        margin-top: 100px; }
+      #about .col-right .text {
+        margin-top: 200px; }
+      #about .links {
+        margin: 150px 100px 0 0; }
+        #about .links li {
+          display: inline-block;
+          margin-left: 50px; }
+      #about .col.col-left:after {
+        width: 50px;
+        height: 50px;
+        top: -50px; } }
   @media only screen and (min-width: 1281px) {
     #about {
-      max-height: 1100px; }
+      max-height: 1100px;
+      min-height: 900px; }
       #about .picture-container {
         margin-right: 40px; }
       #about .col-left .text {
