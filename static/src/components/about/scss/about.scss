@@ -4,7 +4,6 @@
 
 #about {
     height: auto;
-    min-height: 100vh;
 
     &, & * {
         overflow: visible;
@@ -173,6 +172,8 @@
     }
 
     @media only screen and (min-width: 1281px) {
+        max-height: ($ideal-viewport-height + 200) * 1px;
+
         .picture-container {
             margin-right: 40px;
         }

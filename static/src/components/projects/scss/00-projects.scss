@@ -415,6 +415,7 @@
     //// <big desktop> overview: key visual
         .key-visual-container {
             width: 100vh; // margin top is calculated based on parent width instead of height
+            max-width: $ideal-viewport-height * 1px;
             // height: 100%;
             min-width: $full-viewport-min-height;
             top: 0;
@@ -467,8 +468,8 @@
             position: absolute;            
 
             &.overview-title {            
-                left: (360 / $ideal-viewport-width) * 100%;
-                top: (360 / $ideal-viewport-height) * 100vmin;
+                left: percentage(360 / $ideal-viewport-width);
+                top: percentage(360 / $ideal-viewport-height);
                 transform: translateY(-50%);
             }
 
@@ -558,6 +559,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
+            max-height: $ideal-viewport-height * 1px;
 
             @media only screen and (min-width: $hd-desktop-min) {
                 min-height: $hd-full-viewport-min-height;

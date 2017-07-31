@@ -23,8 +23,9 @@
 
     // mobile
     @media only screen and (max-width: 767px) {
-        height: auto;
-        min-height: calc(100vh - 67px);
+        height: calc(100vh - #{$mobile-ui-bar-height});
+        min-height: $full-viewport-min-height;
+        max-height: $ideal-viewport-height * 1px;
 
         .scrollCTA {
             display: none;
@@ -70,7 +71,7 @@
 
         img#face {
             max-width: 160px;
-            margin-top: 200 / $ideal-viewport-height * 100vh;
+            margin-top: percentage(200 / $ideal-viewport-height);
             margin-bottom: 40px;
         }
 

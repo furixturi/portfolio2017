@@ -132,22 +132,27 @@ html {
 .boundary {
     // box-shadow: 0 0 10px -1px #ddd;
     –webkit-overflow-scrolling: touch; // for older iOS
+    overflow: hidden;
 }
 
 .full-viewport {
     width: 100%;
     height: 100vh;
+    
     overflow: hidden;
 
     > .container {
         overflow: auto;
-        height: 100vh;        
+        height: 100vh;     
+        max-height: $ideal-viewport-height * 1px;   
     }
 
     @media only screen and (min-width: 768px) {
         min-height: $full-viewport-min-height;
+        max-height: $ideal-viewport-height * 1px;
          > .container {
-            min-height: $full-viewport-min-height;     
+            min-height: $full-viewport-min-height;    
+            max-height: $ideal-viewport-height * 1px; 
         }
     }
 

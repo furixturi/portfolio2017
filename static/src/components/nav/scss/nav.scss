@@ -43,6 +43,7 @@ nav {
         width: 100vw;
         height: calc(100vh - #{$mobile-ui-bar-height}); //fix mobile browser problem of viewport height changing
         min-height: $full-viewport-min-height-mobile  - $mobile-ui-bar-height;
+        max-height: $ideal-viewport-height * 1px;
 
         > .container {
             height: 100%;
